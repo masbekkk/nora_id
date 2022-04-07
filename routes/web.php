@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('/');
 Route::get('/test', [App\Http\Controllers\TestController::class, 'index'])->name('test');
+Route::get('/test-dashboard', [App\Http\Controllers\TestController::class, 'show'])->name('test-dashboard');
 Route::get('/coba', [App\Http\Controllers\TestController::class, 'coba'])->name('test');
 Route::post('/test/store', [App\Http\Controllers\TestController::class, 'store'])->name('test.store');
 

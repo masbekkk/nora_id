@@ -21,6 +21,15 @@ class TestController extends Controller
         return view('test');
     }
 
+    public function show()
+    {
+        $data = Test::all();
+        view()->share([
+            'data' => $data
+        ]);
+        return view('test-dashboard');
+    }
+
     public function coba()
     {
         $hasil = Test::find(8);

@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('/');
+Route::get('/test', [App\Http\Controllers\TestController::class, 'index'])->name('test');
+Route::get('/coba', [App\Http\Controllers\TestController::class, 'coba'])->name('test');
+Route::post('/test/store', [App\Http\Controllers\TestController::class, 'store'])->name('test.store');
 
 Auth::routes();
 

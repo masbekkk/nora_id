@@ -63,12 +63,14 @@ class TestController extends Controller
         // dd(count($anu));
         // $array[] =  $anu;
         foreach($anu as $a){
-            $emel = User::where('id', $a)->first();
+            $emel = User::find($a);
             Notification::route('mail' , $emel->email) //Sending mail to subscriber
             ->notify(new NewNotulensiNotify($emel->name));
-            // $result[] = $emel->email;
+            $result[] = $emel->name;
             // $result[] = $a;
         }
+        $data->users_id = implode(',', $result);
+        $data->save();
         // $batas = count($anu);
         // dd($batas);
         // for($i = 0; $i<=$batas; $i++){
@@ -78,6 +80,7 @@ class TestController extends Controller
         // }
         
         return "oke";
+        // return $result;
 
         
     }

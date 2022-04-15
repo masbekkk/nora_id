@@ -29,3 +29,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/annisa', function () {
     return view('input-notulensi');
 })->name('/');
+Route::get('/denas', function () {
+    return view('denas');
+})->name('/denas');

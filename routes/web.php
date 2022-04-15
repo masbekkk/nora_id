@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,7 @@ Route::post('/test/store', [App\Http\Controllers\TestController::class, 'store']
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/annisa', function () {
+    return view('input-notulensi');
+})->name('/');

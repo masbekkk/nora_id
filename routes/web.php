@@ -29,3 +29,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/denas', function () {
     return view('denas');
 })->name('/denas');
+
+Route::get('/abdill', function () {
+    return view('abdill');
+})->name('/abdill');

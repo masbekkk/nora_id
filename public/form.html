@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="./jq/jquery.mobile.css" /> -->
+<link rel="stylesheet" href="style1.css"/>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function (){
+$('#kirimdata').click(function(){
+    var s;
+    s = $('#myform').serialize();
+$.post('add.php', s, function(resp,status){
+$('#pesan').html(resp);
+})
+return false;
+});
+$('#ambildata').click( function(){
+$('#pesan1').load("index2.php");
+return false;
+});
+});
+
+</script>
+</head>
+<body>
+
+<div data-role="page" id="halaman1">
+<div data-role="header" data-theme="b">
+<h1>WISATA JAWA TIMUR</h1>
+</div>
+<div data-role="content" data-position="fixed" data-theme="a">
+<div data-role="navbar">
+<ul><li><a href="#halaman2" data-icon="plus">Pesan Tiket</a></li>
+    <li><a href="#halaman3" data-icon="search">Lihat Data</a></li></ul>
+    <li><a href="index3.php" data-icon="star">Grafik</a></li></ul>
+    <li><a href="index.html" data-icon="star">Kembali ke Halaman Utama</a></li>
+</ul>
+</div>
+<div class="container">
+<p style="text-align: center; font-weight: bold;
+font-size: 20px;">Selamat datang di Kumpulan Wisata Jawa Timur <br>
+Untuk memesan tiket wisata, silahkan klik tombol "Pesan Tiket."<br>
+Untuk melihat data yang tersimpan, silahkan klik "Lihat Data." <br>
+Untuk melihat grafik, silahkan klik "Grafik."<br>
+Untuk kembali ke halaman utama, silahkan klik "Kembali ke Halaman Utama."
+<br></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</div>
+<div data-role="footer" data-theme="b">
+<h4>2021 WISATA JAWA TIMUR</h4>
+</div>
+</div>
+
+<div data-role="page" id="halaman2">
+<div data-role="header">
+<h1>WISATA JAWA TIMUR</h1>
+</div>
+<div data-role="content">
+<h2>Form Pemesanan Tiket</h2>
+<p>*Disarankan untuk memesan tiket sesuai dengan halaman website masing-masing</p>
+<form method="post" id="myform" action="add.php">
+<table cellpadding="12" width="80%">
+
+<tr>
+<td><label for="name">Nama</label></td>
+<td><input type="text" name="name" id="name" value=""></td>
+</tr>
+<tr>
+<td><label for="email">E-mail</label></td>
+<td><input type="text" name="email" id="email" value=""></td>
+</tr>
+<tr>
+<td><label for="phone">No. Telepon</label></td>
+<td><input type="text" name="phone" id="phone" value=""></td>
+</tr>
+
+<tr>
+<td style="vertical-align:top;padding-top:20px">
+<legend> Jumlah Tiket </legend></td>
+<td>
+<label>
+<input type="radio" name="tiket"id="tiket" value="1 Pax">1 Pax</label>
+<label>
+<input type="radio" name="tiket"id="tiket" value="2 Pax">2 Pax</label>
+<label>
+<input type="radio" name="tiket"id="tiket" value="3 Pax">3 Pax</label>
+<label>
+<input type="radio" name="tiket"id="tiket" value="4 Pax">4 Pax</label>
+<label>
+<input type="radio" name="tiket"id="tiket" value="5 Pax">5 Pax</label></td>
+</tr>
+
+<tr>
+<td style="vertical-align:top;padding-top:20px">
+<legend> Metode Pembayaran </legend></td>
+<td>
+<label>
+    <input type="radio" name="pay"id="pay" value="OVO">OVO </label>
+<label>
+    <input type="radio" name="pay"id="pay" value="DANA">DANA </label>
+<label>
+    <input type="radio" name="pay"id="pay" value="LINK AJA">LINK AJA </label>
+<label>
+    <input type="radio" name="pay"id="pay" value="MANDIRI TRANSFER">MANDIRI TRANSFER</label>
+<label>
+    <input type="radio" name="pay" id="pay" value="BCA TRANSFER">BCA TRANSFER</label>
+<label>
+    <input type="radio" name="pay" id="pay" value="BRI TRANSFER">BRI TRANSFER</label>
+<label>
+    <input type="radio" name="pay" id="pay" value="BNI TRANSFER">BNI TRANSFER</label></td>
+</tr>
+
+<tr>
+    <td style="vertical-align:top;padding-top:20px">
+    <legend> Tempat Wisata </legend></td>
+    <td>
+    <label>
+    <input type="radio" name="wisata"id="wisata" value="Jatim Park 1">Jatim Park 1</label>
+    <label>
+    <input type="radio" name="wisata"id="wisata" value="Jatim Park 2">Jatim Park 2</label>
+    <label>
+    <input type="radio" name="wisata"id="wisata" value="Jatim Park 3">Jatim Park 3</label>
+    <label>
+    <input type="radio" name="wisata"id="wisata" value="Eco Green Park">Eco Green Park</label>
+    <label>
+    <input type="radio" name="wisata"id="wisata" value="Taman Safari Park">Taman Safari Park</label>
+    <label>
+    <input type="radio" name="wisata"id="wisata" value="Batu Flower Garden">Batu Flower Garden</label></td>
+</tr>
+
+<tr>
+<td>
+<a href="#" id="kirimdata" data-role="button" data-inline="true" data-theme="b">Pesan Tiket Sekarang</a>
+<a href="#halaman1" id="kembali" data-role="button" data-inline="true" data-theme="b">Kembali</a>
+
+</tr>
+</table>
+</form>
+
+<div id="pesan"></div>
+</div>
+<div data-theme="b" data-role="footer">
+<h3>2021 WISATA JAWA TIMUR</h3>
+</div>
+</div>
+<div data-role="page" id="halaman3">
+<div data-role="header">
+<h1>WISATA JAWA TIMUR</h1>
+</div>
+<div data-role="content">
+<h2>Data Pemesan Tiket Wisata Jawa Timur</h2>
+<a href="#" id="ambildata" data-role="button" data-inline="true" data-theme="b">Lihat Data</a>
+<a href="#halaman1" id="kembali" data-role="button" data-inline="true" data-theme="b">Kembali</a>
+<div id="pesan1"></div>
+</div>
+<div data-theme="b" data-role="footer">
+<h3>2021 WISATA JAWA TIMUR</h3>
+</div>
+</div>
+</body>
+</html>

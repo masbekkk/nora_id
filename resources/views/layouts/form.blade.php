@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>GenBI PENS Official Presensi</title>
+	<title>Nora.ID</title>
 	<link rel="icon" href="{{asset('img/pp.jpg')}}" />
 	<meta charset="UTF-8">
   	<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -56,13 +56,15 @@
  <div class="main-sidebar bg-white">
     <aside id="sidebar-wrapper bg-white">
         <div class="sidebar-brand bg-white">
-            <a href="/"><text>GenBI PENS</text></a>
+            <a href="/"><text>Nora.ID</text></a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm bg-white">
-            <a href="/"><text>BI</text></a>
+            <a href="/"><text>NID</text></a>
         </div>
         <ul class="sidebar-menu bg-white">
-            <li><a class="bg-white" href="/user/profile"><i class="fas fa-address-card bg-white" ></i> <span id="hmm">Edit Profil</span></a></li>
+            <li><a class="bg-white" href="/user/profile"><i class="fas fa-home" ></i> <span id="hmm">Dashboard</span></a></li>
+            <li><a class="bg-white" href="/user/profile"><i class="fas fa-file"></i> <span id="hmm">Input Notulensi</span></a></li>
+            <li><a class="bg-white" href="/user/profile"><i class="fas fa-sign-out-alt"></i> <span id="hmm">Logout</span></a></li>
         </ul>
 
     </aside>

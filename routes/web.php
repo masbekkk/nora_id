@@ -28,7 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/annisa', function () {
     return view('input-notulensi');
-})->name('/');
+})->name('/annisa');
 
 Route::get('/denas', function () {
     return view('denas');
@@ -37,3 +37,7 @@ Route::get('/denas', function () {
 Route::get('/abdill', function () {
     return view('abdill');
 })->name('/abdill');
+
+Route::get('/input', function () {
+    return view('input');
+})->name('/input');

@@ -141,11 +141,14 @@
                               <input type="text" class="form-control" id="recipient-name">
                         </div>
                       </div>
-                      <div class="mb-3">
+                      {{-- <div class="mb-3"> --}}
+                        <div class="row g-2">
                         <div class="col-md">
                             <label for="formFile" class="col-form-label">Upload File Notulensi</label>
                             <input type="file" class="form-control" id="recipient-name">
                         </div>
+                        </div>
+                        
                         <!-- <div class="col-md">
                             <label for="recipient-name" class="col-form-label">Tanggal Rapat:</label>
                               <input type="text" class="form-control" id="recipient-name">

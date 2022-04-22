@@ -8,6 +8,9 @@
   .percent { position:absolute; display:inline-block; left:50%; color: #040608;}
 </style>
 
+<!-- Table Style -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+
 @endsection
 
 @section('content')
@@ -24,12 +27,12 @@
 			<div class="card card-danger bg-light">
 				<div class="card-header">
 					{{-- <h1>Presensi</h1> --}}
-          <form class="form-inline mr-auto">
+          {{-- <form class="form-inline mr-auto">
             <div class="search-element">
               <input class="form-control" type="search" placeholder="Search" aria-label="Search">
               <button class="btn" type="submit"><i class="fas fa-search"></i></button>
             </div>
-          </form>
+          </form> --}}
 					<div class="ml-auto w-0">
 					<label class="switch">
 						<input type="checkbox" class="primary" id="darkSwitch">
@@ -39,8 +42,8 @@
 				</div>
                 <div class="card-body pb-0">
                     {{-- @if($sudah == 1) --}}
-                    <div class="table-responsive">
-                      <div id="table-1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped dataTable no-footer" id="table-1" role="grid" aria-describedby="table-1_info">
+                    <div class="table-responsive table-light bg-light">
+                      <table class="table table-striped" id="table-1">
                         <thead>                                 
                           <tr role="row">
                             <th class="text-center sorting_asc" tabindex="0" aria-controls="table-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
@@ -83,8 +86,8 @@
                             </td>
                             <td>Senin, 30 November 2021</td>
                             <td>
-                              <i class="fa-solid fa-edit"></i>
-                              <i class="fa-solid fa-delete"></i>
+                              <i class="fas fa-edit"></i>
+                              <i class="fas fa-delete"></i>
                             </td>
                         </tr>
                         <tr role="row" class="odd">
@@ -100,8 +103,8 @@
                           </td>
                           <td>Senin, 30 November 2021</td>
                           <td>
-                            <i class="fa-solid fa-edit"></i>
-                            <i class="fa-solid fa-delete"></i>
+                            <i class="fas fa-edit"></i>
+                            <i class="fas fa-delete"></i>
                           </td>
                       </tr>
                       <tr role="row" class="odd">
@@ -117,8 +120,8 @@
                         </td>
                         <td>Senin, 30 November 2021</td>
                         <td>
-                          <i class="fa-solid fa-edit"></i>
-                          <i class="fa-solid fa-delete"></i>
+                          <i class="fas fa-edit"></i>
+                          <i class="fas fa-delete"></i>
                         </td>
                     </tr>
                     <tr role="row" class="odd">
@@ -134,18 +137,20 @@
                       </td>
                       <td>Senin, 30 November 2021</td>
                       <td>
-                        <i class="fa-solid fa-edit"></i>
-                        <i class="fa-solid fa-delete"></i>
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-delete"></i>
                       </td>
                   </tr>
       
                           <tr role="row" class="even">
                             
                           </tr></tbody>
-                      </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="table-1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="table-1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="table-1_previous"><a href="#" aria-controls="table-1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="table-1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="table-1_next"><a href="#" aria-controls="table-1" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                      </table>
+                    </div>
+                  {{-- </div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="table-1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="table-1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="table-1_previous"><a href="#" aria-controls="table-1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="table-1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="table-1_next"><a href="#" aria-controls="table-1" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div> --}}
                     </div>
                 </div><br>
-                <div class="card-footer bg-secondary"></div>
+                {{-- <div class="card-footer bg-secondary"></div> --}}
                 </div>
             </form>
 
@@ -187,5 +192,12 @@
       });
    });
 
+  </script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#table-1').DataTable();
+    })
   </script>
 @endsection

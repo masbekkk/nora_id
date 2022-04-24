@@ -1,10 +1,10 @@
 <div class="main-sidebar bg-white">
 	<aside id="sidebar-wrapper bg-white">
 		<div class="sidebar-brand bg-white">
-			<a href="/">Nora.ID</a>
+			<a href="/"><img src="{{ asset('img/nora-full-sidebar-header.png') }}" alt="Nora.ID" class="sidebar-title"></a>
 		</div>
 		<div class="sidebar-brand sidebar-brand-sm bg-white">
-			<a href="/">NID</a>
+			<a href="/"><img src="{{ asset('img/nora-small-sidebar-header.png') }}" alt="NID" class="sidebar-title"></a>
 		</div>
 		<ul class="sidebar-menu bg-white">
 			<li><a class="bg-white" href="/user/profile"><i class="fas fa-home" ></i> <span id="hmm">Dashboard</span></a></li>

@@ -6,13 +6,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="{{ asset('js/stisla.js') }}"></script>
 
-<!-- JS Libraies Dark Mode-->
-<script src="{{ asset('/js/dark-mode-switch.min.js') }}"></script>
-
-<!-- Template JS File -->
-<script src="{{ asset('/js/scripts.js') }}"></script>
-<script src="{{ asset('/js/custom.js') }}"></script>
-
 <!-- Template Animation AOS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -29,6 +22,9 @@
     });
 </script>
 
+<!-- JS Libraies Dark Mode-->
+<script src="{{ asset('/js/dark-mode-switch.min.js') }}"></script>
+
 <!-- Template JS File -->
-<script src="{{ asset('js/scripts.js') }}"></script>
-<script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('/js/scripts.js') }}"></script>
+<script src="{{ asset('/js/custom.js') }}"></script>

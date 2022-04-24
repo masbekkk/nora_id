@@ -1,16 +1,14 @@
 @extends('layouts.form')
 
 @section('style')
+	<style>
+		.progress { position:relative; width:100%; }
+		.bar { background-color: #00ff00; width:0%; height:20px; }
+		.percent { position:absolute; display:inline-block; left:50%; color: #040608;}
+	</style>
 
-<style>
-  .progress { position:relative; width:100%; }
-  .bar { background-color: #00ff00; width:0%; height:20px; }
-  .percent { position:absolute; display:inline-block; left:50%; color: #040608;}
-</style>
-
-<!-- Table Style -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
-
+	<!-- Table Style -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
 @endsection
 
 @section('content')
@@ -29,20 +27,20 @@
 	<form action="/presensi/submit/" method="POST" enctype="multipart/form-data">
 		@csrf
 		<div class="card card-danger bg-light">
-			<div class="card-header">
-          		{{-- <form class="form-inline mr-auto">
+			{{-- <div class="card-header">
+          		<form class="form-inline mr-auto">
             		<div class="search-element">
 						<input class="form-control" type="search" placeholder="Search" aria-label="Search">
 						<button class="btn" type="submit"><i class="fas fa-search"></i></button>
 					</div>
-				</form> --}}
+				</form>
 				<div class="ml-auto w-0">
 					<label class="switch">
 						<input type="checkbox" class="primary" id="darkSwitch">
 						<span class="slider round" data-checked="fas fa-moon"></span>
 					</label>
 				</div>
-			</div>
+			</div> --}}
             <div class="card-body pb-0">
 				<div class="table-responsive">
 					<div id="table-1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
@@ -104,10 +102,8 @@
 												<i class="fa-solid fa-delete"></i>
 											</td>
 										</tr>
-      
-										<tr role="row" class="even">
-											
-										</tr>
+										{{-- <tr role="row" class="even">
+										</tr> --}}
 									</tbody>
                       			</table>
 							</div>
@@ -139,7 +135,7 @@
         </div>
     </form>
 	{{-- End Content Table Section --}}
- @endsection
+@endsection
 
 @section('script')
 	<script type="text/javascript">

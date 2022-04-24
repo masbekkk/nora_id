@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="footer-left">
-        Made With ♥ by <a href="https://www.linkedin.com/in/mohammad-subkhan/"><text>Mohammad Subkhan</text></a> <a href="https://www.instagram.com/berkahbekhan.inc/"><text>@berkahbekhan.inc</text></a>
+        Copyright &copy; 2022 Kelompok A2. All rights reserved.
     </div>
     <div class="footer-right">
-        GenBI PENS 2021
+        v1.0.0
     </div>
 </footer>

@@ -1,11 +1,16 @@
 @extends('layouts.form')
 
 @section('style')
-	<style>
-		.progress { position:relative; width:100%; }
-		.bar { background-color: #00ff00; width:0%; height:20px; }
-		.percent { position:absolute; display:inline-block; left:50%; color: #040608;}
-	</style>
+
+<style>
+  .progress { position:relative; width:100%; }
+  .bar { background-color: #00ff00; width:0%; height:20px; }
+  .percent { position:absolute; display:inline-block; left:50%; color: #040608;}
+</style>
+
+<!-- Table Style -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+
 @endsection
 
 @section('content')
@@ -25,12 +30,12 @@
 		@csrf
 		<div class="card card-danger bg-light">
 			<div class="card-header">
-          		<form class="form-inline mr-auto">
+          		{{-- <form class="form-inline mr-auto">
             		<div class="search-element">
 						<input class="form-control" type="search" placeholder="Search" aria-label="Search">
 						<button class="btn" type="submit"><i class="fas fa-search"></i></button>
 					</div>
-				</form>
+				</form> --}}
 				<div class="ml-auto w-0">
 					<label class="switch">
 						<input type="checkbox" class="primary" id="darkSwitch">
@@ -107,7 +112,7 @@
                       			</table>
 							</div>
 						</div>
-						<div class="row">
+						{{-- <div class="row">
 							<div class="col-sm-12 col-md-5">
 								<div class="dataTables_info" id="table-1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div>
 							</div>
@@ -126,7 +131,7 @@
 									</ul>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 					</div>
                 </div>
             </div>
@@ -169,5 +174,12 @@
 				});
 			});
 		});
+	</script>
+	<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+	<script>
+	  $(document).ready(function() {
+		$('#table-1').DataTable();
+	  })
 	</script>
 @endsection

@@ -2986,3 +2986,25 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 	height: 45%;
 	width: auto;
 }
+
+.sidebar-menu > .active > .nav-link::before  {
+	content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 4px;
+    background-color: #6777ef;
+}
+
+/* .sidebar-menu > li:not(.active) > .nav-link::before  {
+	content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 4px;
+    background-color: white;
+} */

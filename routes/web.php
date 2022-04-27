@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 })->name('/');
 Route::get('/test', [App\Http\Controllers\TestController::class, 'index'])->name('test');
 Route::get('/test-dashboard', [App\Http\Controllers\TestController::class, 'show'])->name('test-dashboard');
@@ -27,17 +27,17 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/annisa', function () {
-    return view('input-notulensi');
+	return view('input-notulensi');
 })->name('/annisa');
 
-Route::get('/denas', function () {
-    return view('denas');
-})->name('/denas');
+Route::get('/dashboard', function () {
+	return view('dashboard');
+})->name('/dashboard');
 
 Route::get('/abdill', function () {
-    return view('abdill');
+	return view('abdill');
 })->name('/abdill');
 
 Route::get('/input', function () {
-    return view('input');
+	return view('input');
 })->name('/input');

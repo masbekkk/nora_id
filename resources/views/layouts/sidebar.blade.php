@@ -1,15 +1,16 @@
-<div class="main-sidebar bg-white">
-	<aside id="sidebar-wrapper bg-white">
-		<div class="sidebar-brand bg-white">
+<div class="main-sidebar">
+	<aside id="sidebar-wrapper">
+		<div class="sidebar-brand my-3">
 			<a href="/"><img src="{{ asset('img/nora-full-sidebar-header.png') }}" alt="Nora.ID" class="sidebar-title"></a>
 		</div>
-		<div class="sidebar-brand sidebar-brand-sm bg-white">
+		<div class="sidebar-brand sidebar-brand-sm">
 			<a href="/"><img src="{{ asset('img/nora-small-sidebar-header.png') }}" alt="NID" class="sidebar-title"></a>
 		</div>
-		<ul class="sidebar-menu bg-white">
-			<li><a class="bg-white" href="/user/profile"><i class="fas fa-home" ></i> <span id="hmm">Dashboard</span></a></li>
-			<li><a class="bg-white" href="/user/profile"><i class="fas fa-file"></i> <span id="hmm">Input Notulensi</span></a></li>
-			<li><a class="bg-white" href="/user/profile"><i class="fas fa-sign-out-alt"></i> <span id="hmm">Logout</span></a></li>
+		<ul class="sidebar-menu">
+			<li class="menu-header">Main Menu</li>
+			<li class="active"><a class="nav-link" href="#"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+			<li><a class="nav-link" href="#"><i class="fas fa-file-arrow-up"></i> <span>Input Notulensi</span></a></li>
+			<li><a class="nav-link" href="#"><i class="fas fa-file-arrow-down"></i> <span>Export</span></a></li>
 		</ul>
 	</aside>
 </div>

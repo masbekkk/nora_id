@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Nora.ID</title>
-	<link rel="icon" href="{{asset('img/pp.jpg')}}" />
+	<link rel="icon" href="{{ asset('img/nora-small-sidebar-header.png') }}" />
 	<meta charset="UTF-8">
   	<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
 

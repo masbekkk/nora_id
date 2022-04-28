@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	return view('welcome');
 })->name('/');
+Route::get('/live', function () {
+	return view('live');
+})->name('live');
 Route::get('/test', [App\Http\Controllers\TestController::class, 'index'])->name('test');
 Route::get('/test-dashboard', [App\Http\Controllers\TestController::class, 'show'])->name('test-dashboard');
 Route::get('/coba', [App\Http\Controllers\TestController::class, 'coba'])->name('test');

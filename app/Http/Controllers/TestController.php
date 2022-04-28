@@ -62,14 +62,15 @@ class TestController extends Controller
         $anu = explode(',',$data->users_id);
         // dd(count($anu));
         // $array[] =  $anu;
-        foreach($anu as $a){
-            $emel = User::find($a);
-            Notification::route('mail' , $emel->email) //Sending mail to subscriber
-            ->notify(new NewNotulensiNotify($emel->name));
-            $result[] = $emel->name;
-            // $result[] = $a;
-        }
+        // foreach($anu as $a){
+        //     $emel = User::find($a);
+        //     Notification::route('mail' , $emel->email) //Sending mail to subscriber
+        //     ->notify(new NewNotulensiNotify($emel->name));
+        //     $result[] = $emel->name;
+        //     // $result[] = $a;
+        // }
         $data->users_id = implode(',', $result);
+        $data->notulensi = $request->notulensi;
         $data->save();
         // $batas = count($anu);
         // dd($batas);

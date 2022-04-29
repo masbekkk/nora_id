@@ -14,20 +14,15 @@
 <script src="https://kit.fontawesome.com/2c457213e9.js" crossorigin="anonymous"></script>
 
 {{-- Template Animation AOS --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script> --}}
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
     AOS.init();
 </script>
 
 {{-- JS Libraies Summernote --}}
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-<script type="text/javascript">
-    $('#summernote').summernote({
-        height: 400
-    });
-</script>
+{{-- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet"> --}}
+{{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script> --}}
 
 {{-- JS Libraies Dark Mode --}}
 <script src="{{ asset('/js/dark-mode-switch.min.js') }}"></script>

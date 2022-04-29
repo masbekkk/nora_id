@@ -130,6 +130,10 @@
 								<input type="text" class="form-control" id="detail">
 							</div>
 						</div>
+						<br>
+						<div class="alert alert-warning" role="alert">
+							<b> File Notulensi jika tidak menulis notulensi secara langsung</b>
+						</div>
 						<div class="row">
 							<div class="col-md">
 								<label for="notulensi" class="col-form-label">Unggah File Notulensi</label>

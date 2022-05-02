@@ -1,292 +1,351 @@
-@extends('layouts.nora')
+@extends('layouts.form')
+
+@section('style')
+	<style>
+		.progress { position:relative; width:100%; }
+		.bar { background-color: #00ff00; width:0%; height:20px; }
+		.percent { position:absolute; display:inline-block; left:50%; color: #040608;}
+	</style>
+
+	<!-- Table Style -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+@endsection
 
 @section('content')
-
-{{-- <div class="main-sidebar"> 
-    <!-- sidebar wrapper -->
-    <aside id="sidebar-wrapper">
-      <!-- sidebar brand -->
-      <div class="sidebar-brand">
-        <a href="index.html">Noraid</a>
-      </div>
-      <!-- sidebar menu -->
-      <ul class="sidebar-menu">
-        <!-- menu header -->
-        <li class="menu-header">Menu</li>
-        <!-- menu item -->
-        <li class="active">
-          <a href="index.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
-        </li>
-        <li class="active">
-            <a href="index.html"><i class="fas fa-file"></i><span>Input Notulensi</span></a>
-        </li>
-        <li class="active">
-            <a href="index.html"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
-        </li>
-      </ul>
-    </aside>
-</div> --}}
-
-<div id="app">
-    <div class="main-wrapper">
-      <div class="navbar-bg"></div>
-      <nav class="navbar navbar-expand-lg main-navbar">
-        <form class="form-inline mr-auto">
-          <ul class="navbar-nav mr-3">
-            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
-          </ul>
-        </form>
-        <ul class="navbar-nav navbar-right">
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
-            <div class="dropdown-menu dropdown-list dropdown-menu-right">
-              <div class="dropdown-header">Notifications
-                <div class="float-right">
-                  <a href="#">Mark All As Read</a>
-                </div>
-              </div>
-              <div class="dropdown-list-content">
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <img alt="image" src="../dist/img/avatar/avatar-1.png" class="rounded-circle dropdown-item-img">
-                  <div class="dropdown-item-desc">
-                    <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
-                    <div class="time">10 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <img alt="image" src="../dist/img/avatar/avatar-2.png" class="rounded-circle dropdown-item-img">
-                  <div class="dropdown-item-desc">
-                    <b>Ujang Maman</b> has moved task <b>Fix bug footer</b> to <b>Progress</b>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item dropdown-item-unread">
-                  <img alt="image" src="../dist/img/avatar/avatar-3.png" class="rounded-circle dropdown-item-img">
-                  <div class="dropdown-item-desc">
-                    <b>Agung Ardiansyah</b> has moved task <b>Fix bug sidebar</b> to <b>Done</b>
-                    <div class="time">12 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <img alt="image" src="../dist/img/avatar/avatar-4.png" class="rounded-circle dropdown-item-img">
-                  <div class="dropdown-item-desc">
-                    <b>Ardian Rahardiansyah</b> has moved task <b>Fix bug navbar</b> to <b>Done</b>
-                    <div class="time">16 Hours Ago</div>
-                  </div>
-                </a>
-                <a href="#" class="dropdown-item">
-                  <img alt="image" src="../dist/img/avatar/avatar-5.png" class="rounded-circle dropdown-item-img">
-                  <div class="dropdown-item-desc">
-                    <b>Alfa Zulkarnain</b> has moved task <b>Add logo</b> to <b>Done</b>
-                    <div class="time">Yesterday</div>
-                  </div>
-                </a>
-              </div>
-              <div class="dropdown-footer text-center">
-                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-              </div>
-            </div>
-          </li>
-          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="../dist/img/avatar/avatar-1.png" width="30" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
-            <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Logged in 5 min ago</div>
-              <a href="features-profile.html" class="dropdown-item has-icon">
-                <i class="far fa-user"></i> Profile
-              </a>
-              <a href="features-activities.html" class="dropdown-item has-icon">
-                <i class="fas fa-bolt"></i> Activities
-              </a>
-              <a href="features-settings.html" class="dropdown-item has-icon">
-                <i class="fas fa-cog"></i> Settings
-              </a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item has-icon text-danger">
-                <i class="fas fa-sign-out-alt"></i> Logout
-              </a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-      <div class="main-sidebar">
-        <aside id="sidebar-wrapper">
-          <div class="sidebar-brand">
-            <a href="index.html">Nora.id</a>
-          </div>
-          <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
-          </div>
-          <ul class="sidebar-menu">
-            <li class="menu-header">Menu</li>
-            <li class="active">
-                <a href="index.html"><i class="fas fa-home"></i><span>Dashboard</span></a>
-              </li>
-              <li class="active">
-                  <a href="index.html"><i class="fas fa-file"></i><span>Input Notulensi</span></a>
-              </li>
-              <li class="active">
-                  <a href="index.html"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
-              </li>
-            
-          </ul>
-          <div class="p-3 mt-4 mb-4 hide-sidebar-mini">
-            <a href="documentation.html" class="btn btn-primary btn-lg btn-icon-split btn-block">
-              <i class="far fa-question-circle"></i> <div>Documentation</div>
-            </a>
-          </div>
-        </aside>
-      </div>
-
-      <!-- Main Content -->
-      <div class="main-content">
-        <section class="section">
-          <div class="section-header">
-            <h1>List Notulensi</h1>
-            <div class="section-header-breadcrumb">
-                <a href="#" class="btn btn-primary btn-lg btn-icon-split btn-block">
-                    <i class="fa-regular fa-file-alt"></i><div>Tambah Notulensi</div>
-                </a>
-            </div>
-          </div>
-
-          <form class="form-inline mr-auto">
-            <div class="search-element">
-              <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-              <br>
-            </div>
-          </form>
-
-          <br>
-          {{-- card --}}  
-          <div class="section-body">
-            <div class="card">
-              {{-- <div class="card-header">
-                <h4>Example Card</h4>
-              </div> --}}
-              
-              <div class="table-responsive">
-                <div id="table-1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12"><table class="table table-striped dataTable no-footer" id="table-1" role="grid" aria-describedby="table-1_info">
-                  <thead>                                 
-                    <tr role="row">
-                      <th class="text-center sorting_asc" tabindex="0" aria-controls="table-1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
-                        #
-                      : activate to sort column descending" style="width: 18.6771px;">
-                        No.
-                      </th>
-                      <th class="sorting" tabindex="0" aria-controls="table-1" rowspan="1" colspan="1" aria-label="Task Name: activate to sort column ascending" style="width: 132.542px;">
-                        Nomor Undangan
-                      </th>
-                      <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Progress" style="width: 132.542px;">
-                        Agenda
-                      </th>
-                      <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Members" style="width: 200px;">
-                        Pimpinan
-                      </th>
-                      <th class="sorting" tabindex="0" aria-controls="table-1" rowspan="1" colspan="1" aria-label="Due Date: activate to sort column ascending" style="width: 150px;">
-                        Hari, Tanggal
-                      </th>
-                      <th class="sorting" tabindex="0" aria-controls="table-1" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 63.1875px;">
-                        Action
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>                                 
-                    
-                    
-                    
-                    
-                  <tr role="row" class="odd">
-                      <td class="sorting_1">
-                        1
-                      </td>
-                      <td>6970/PL14/TU/2021</td>
-                      <td class="align-middle">
-                        Rapat Perubahan Kurikulum
-                      </td>
-                      <td>
-                        Ali Ridho Barakbah, S. Kom., Ph.D.
-                      </td>
-                      <td>Senin, 30 November 2021</td>
-                      <td>
-                        <i class="fa-solid fa-edit"></i>
-                        <i class="fa-solid fa-delete"></i>
-                      </td>
-                  </tr>
-                  <tr role="row" class="odd">
-                    <td class="sorting_1">
-                      2
-                    </td>
-                    <td>6970/PL14/TU/2021</td>
-                    <td class="align-middle">
-                      Rapat Perubahan Kurikulum
-                    </td>
-                    <td>
-                      Ali Ridho Barakbah, S. Kom., Ph.D.
-                    </td>
-                    <td>Senin, 30 November 2021</td>
-                    <td>
-                      <i class="fa-solid fa-edit"></i>
-                      <i class="fa-solid fa-delete"></i>
-                    </td>
-                </tr>
-                <tr role="row" class="odd">
-                  <td class="sorting_1">
-                    3
-                  </td>
-                  <td>6970/PL14/TU/2021</td>
-                  <td class="align-middle">
-                    Rapat Perubahan Kurikulum
-                  </td>
-                  <td>
-                    Ali Ridho Barakbah, S. Kom., Ph.D.
-                  </td>
-                  <td>Senin, 30 November 2021</td>
-                  <td>
-                    <i class="fa-solid fa-edit"></i>
-                    <i class="fa-solid fa-delete"></i>
-                  </td>
-              </tr>
-              <tr role="row" class="odd">
-                <td class="sorting_1">
-                  4
-                </td>
-                <td>6970/PL14/TU/2021</td>
-                <td class="align-middle">
-                  Rapat Perubahan Kurikulum
-                </td>
-                <td>
-                  Ali Ridho Barakbah, S. Kom., Ph.D.
-                </td>
-                <td>Senin, 30 November 2021</td>
-                <td>
-                  <i class="fa-solid fa-edit"></i>
-                  <i class="fa-solid fa-delete"></i>
-                </td>
-            </tr>
-
-                    <tr role="row" class="even">
-                      
-                    </tr></tbody>
-                </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="table-1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="table-1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="table-1_previous"><a href="#" aria-controls="table-1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="table-1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="table-1_next"><a href="#" aria-controls="table-1" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
-              </div>
-
-              <div class="card-footer bg-whitesmoke">
-                This is card footer
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <footer class="main-footer">
-        <div class="footer-left">
-          Copyright &copy; 2022 Kelompok A2. All rights reserved.
-        </div>
-        <div class="footer-right">
-          2.3.0
-        </div>
-      </footer>
+	{{-- Header Section --}}
+   	<div class="section-header bg-white">
+        <h1>List Notulensi</h1>
+		<div class="section-header-breadcrumb transparent">
+			{{-- <a href="documentation.html" class="btn btn-primary btn-lg btn-icon-split btn-block">
+				<div><i class="fas fa-plus"></i>Tambah Notulensi</div>
+			</a> --}}
+		</div>
     </div>
-  </div>
+	{{-- End Header Section --}}
+
+	{{-- Content Table Section --}}
+	<div class="section-body">
+		<form action="/presensi/submit/" method="POST" enctype="multipart/form-data">
+			@csrf
+			<div class="card card-danger bg-light">
+				{{-- <div class="card-header">
+					<form class="form-inline mr-auto">
+						<div class="search-element">
+							<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+							<button class="btn" type="submit"><i class="fas fa-search"></i></button>
+						</div>
+					</form>
+					<div class="ml-auto w-0">
+						<label class="switch">
+							<input type="checkbox" class="primary" id="darkSwitch">
+							<span class="slider round" data-checked="fas fa-moon"></span>
+						</label>
+					</div>
+				</div> --}}
+				<div class="card-body pb-2">
+					<div class="table-responsive">
+						<table class="table table-striped w-100" id="table-1">
+							<thead>                  
+								<tr role="row">
+									<th class="text-center" style="width: 25px;">No.</th>
+									<th class="">Nomor Undangan</th>
+									<th class="">Agenda</th>
+									<th class="">Pimpinan</th>
+									<th class="">Hari, Tanggal</th>
+									<th class="" style="width: 100px;">Aksi</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr role="row" class="odd">
+									<td class="sorting_1 align-middle text-center">1</	td>
+									<td class="align-middle">6970/PL14/TU/2021</td>
+									<td class="align-middle">Rapat Perubahan Kurikulum</td>
+									<td class="align-middle">Ali Ridho Barakbah, S. Kom., Ph.D.</td>
+									<td class="align-middle">Senin, 30 November 2021</td>
+									<td class="d-flex justify-content-center">
+										<div class="row w-100">
+											<div class="col-12 d-flex justify-content-between">
+												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-circle-info"></i></a>
+												<a class="btn btn-info btn-sm text-white w-50 ml-1" title="Delete"><i class="fa-solid fa-file-arrow-down"></i></a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">2</td>
+									<td>6970/PL14/TU/2021</td>
+									<td class="align-middle">Rapat Perubahan Kurikulum</td>
+									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
+									<td>Senin, 30 November 2021</td>
+									<td class="d-flex justify-content-center">
+										<div class="row w-100">
+											<div class="col-12 d-flex justify-content-between">
+												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-circle-info"></i></a>
+												<a class="btn btn-info btn-sm text-white w-50 ml-1" title="Delete"><i class="fa-solid fa-file-arrow-down"></i></a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">3</td>
+									<td>6970/PL14/TU/2021</td>
+									<td class="align-middle">Rapat Manajemen</td>
+									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
+									<td>Senin, 30 November 2021</td>
+									<td class="d-flex justify-content-center">
+										<div class="row w-100">
+											<div class="col-12 d-flex justify-content-between">
+												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-circle-info"></i></a>
+												<a class="btn btn-info btn-sm text-white w-50 ml-1" title="Delete"><i class="fa-solid fa-file-arrow-down"></i></a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr role="row" class="odd">
+									<td class="sorting_1">4</td>
+									<td>6970/PL14/TU/2021</td>
+									<td class="align-middle">Rapat Perubahan Kurikulum</td>
+									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
+									<td>Senin, 30 November 2021</td>
+									<td class="d-flex justify-content-center">
+										<div class="row w-100">
+											<div class="col-12 d-flex justify-content-between">
+												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-circle-info"></i></a>
+												<a class="btn btn-info btn-sm text-white w-50 ml-1" title="Delete"><i class="fa-solid fa-file-arrow-down"></i></a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								{{-- <tr role="row" class="even">
+								</tr> --}}
+							</tbody>
+						</table>
+						{{-- <div class="row">
+							<div class="col-sm-12 col-md-5">
+								<div class="dataTables_info" id="table-1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div>
+							</div>
+							<div class="col-sm-12 col-md-7">
+								<div class="dataTables_paginate paging_simple_numbers" id="table-1_paginate">
+									<ul class="pagination">
+										<li class="paginate_button page-item previous disabled" id="table-1_previous">
+											<a href="#" aria-controls="table-1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+										</li>
+										<li class="paginate_button page-item active">
+											<a href="#" aria-controls="table-1" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+										</li>
+										<li class="paginate_button page-item next disabled" id="table-1_next">
+											<a href="#" aria-controls="table-1" data-dt-idx="2" tabindex="0" class="page-link">Next</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div> --}}
+					</div>
+				</div>
+				<br>
+			</div>
+		</form>
+	</div>
+	{{-- End Content Table Section --}}
+@endsection
+
+@section('script')
+
+	<!-- Modal Detail Notulensi -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Detail Rapat</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+          <table>
+            <tr>
+              <td>
+                Nomor Undangan
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                6970/PL14/TU/2021 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Agenda
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                Rapat Perubahan Kurikulum
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Pimpinan Rapat
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                Ali Ridho Barakbah, S. Kom., Ph.D. 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Tanggal Rapat
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                Senin, 30 November 2021
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Waktu Rapat
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                13.00 - 15.00 WIB
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Ruang/Lokasi
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                Pasca Sarjana
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Jenis Agenda
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                Offline
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Notulen Rapat
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                Shinta
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Peserta Rapat
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                ...
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Total Peserta Rapat
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                10
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Detail Rapat
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                ...
+              </td>
+            </tr>
+            <tr>
+              <td>
+                File Dokumentasi
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                ...
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Notulensi Rapat
+              </td>
+              <td>
+                : 
+              </td>
+              <td>
+                ...
+              </td>
+            </tr>
+          </table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+					<button type="button" class="btn btn-primary">Lanjut</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var SITEURL = "{{URL('/')}}";
+		$(function() {
+			$(document).ready(function() {
+				var bar = $('.bar');
+				var percent = $('.percent');
+				$('form').ajaxForm({
+					beforeSend: function() {
+						var percentVal = '0%';
+						bar.width(percentVal)
+						percent.html(percentVal);
+					},
+					uploadProgress: function(event, position, total, percentComplete) {
+						var percentVal = percentComplete + '%';
+						bar.width(percentVal)
+						percent.html(percentVal);
+					},
+					complete: function(xhr) {
+						alert('File Has Been Uploaded Successfully');
+						window.location.href = SITEURL +"/";
+					}
+				});
+			});
+		});
+	</script>
+	<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#table-1').DataTable();
+		})
+	</script>
 @endsection

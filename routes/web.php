@@ -44,3 +44,7 @@ Route::get('/abdill', function () {
 Route::get('/input', function () {
 	return view('input');
 })->name('/input');
+
+Route::get('/login', function () {
+	return view('login');
+})->name('/login');

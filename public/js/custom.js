@@ -6,3 +6,7 @@
  */
 
 "use strict";
+
+$(".oEbutn").click(function() {
+    $(this).closest("form").attr("action", "/store/notulensi/2");       
+});

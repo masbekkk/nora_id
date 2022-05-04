@@ -102,7 +102,6 @@ class TestController extends Controller
         $data->save();
      
         return "oke";
-
-        
+  
     }
 }

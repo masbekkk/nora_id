@@ -67,8 +67,8 @@
   <script type="text/javascript">
     tinymce.init({
       selector: '#area',
-      width: 600,
-      height: 300,
+      // width: 600,
+      // height: 300,
       plugins: [
         'autosave', 'export pagebreak', 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
         'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
@@ -78,7 +78,7 @@
         'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
         'forecolor backcolor emoticons | help',
       menu: {
-        favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
+        favs: { title: 'Agenda Rapat: {{$data->agenda}}', items: 'code visualaid | searchreplace | emoticons' }
       },
       menubar: 'favs file edit view insert format tools table help',
       content_css: 'css/content.css',
@@ -90,7 +90,12 @@
 </head>
 
 <body>
-  <textarea id="area"></textarea>
+  <form action="{{route('store.live.notulensi', ['id' => $data->id])}}" method="POST" enctype="multipart/form-data">
+    @csrf
+    {{method_field('PUT')}}
+    <textarea id="area" name="notulensi_live"></textarea>
+    <button type="submit" class="btn btn-primary btn-lg">Simpan Notulensi</button>
+  </form>
   
 </body>
 </html>

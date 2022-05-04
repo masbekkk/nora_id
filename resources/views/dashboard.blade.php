@@ -17,7 +17,7 @@
         <h1>Daftar Notulensi</h1>
 		<div class="section-header-breadcrumb transparent">
 			{{-- hanya untuk dipage sekretaris --}}
-			<a href="/input" class="btn btn-primary btn-lg btn-icon-split btn-block">
+			<a href="{{route('create.notulensi')}}" class="btn btn-primary btn-lg btn-icon-split btn-block">
 				<div><i class="fas fa-plus"></i>Tambah Notulensi</div>
 			</a>
 			{{-- untuk dosen dan pegawai tidak ada button ini --}}
@@ -91,27 +91,7 @@
 
 							</tbody>
 						</table>
-						{{-- <div class="row">
-							<div class="col-sm-12 col-md-5">
-								<div class="dataTables_info" id="table-1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div>
-							</div>
-							<div class="col-sm-12 col-md-7">
-								<div class="dataTables_paginate paging_simple_numbers" id="table-1_paginate">
-									<ul class="pagination">
-										<li class="paginate_button page-item previous disabled" id="table-1_previous">
-											<a href="#" aria-controls="table-1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-										</li>
-										<li class="paginate_button page-item active">
-											<a href="#" aria-controls="table-1" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-										</li>
-										<li class="paginate_button page-item next disabled" id="table-1_next">
-											<a href="#" aria-controls="table-1" data-dt-idx="2" tabindex="0" class="page-link">Next</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div> --}}
-					</div>
+						
 				</div>
 				<br>
 			</div>

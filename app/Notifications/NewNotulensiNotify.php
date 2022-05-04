@@ -17,9 +17,12 @@ class NewNotulensiNotify extends Notification
      * @return void
      */
     protected $nama;
-    public function __construct($nama)
+    protected $files;
+    public function __construct($nama, $files)
     {
         $this->nama = $nama;
+        $this->files = $files;
+
     }
 
     /**
@@ -46,7 +49,7 @@ class NewNotulensiNotify extends Notification
         ->greeting('Hello, ini ntar nama acaranya' )
         ->line('Notulensi Acara Telah Dikirim!')
         ->line('Silahkan Bisa dilihat ya! ') //Send with post title
-        ->action('Klik untuk Melihat File' , url(route('/'))) //Send with post url
+        ->action('Klik untuk Melihat File' , url($this->files)) //Send with post url
         ->line('Thank you for support us!');
     }
 

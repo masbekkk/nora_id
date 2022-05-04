@@ -25,7 +25,7 @@
 	<div class="section-body">
 		<h2 class="section-title">Masukan Data Notulensi</h2>
 		<p class="section-lead">Pastikan untuk memasukan sesuatu yang wadidaw</p>
-		<form action="#" method="POST" enctype="multipart/form-data">
+		<form action="{{route('store.notulensi', ['value' => 1])}}" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="card card-danger bg-light">
 				{{-- <div class="card-header">
@@ -73,6 +73,10 @@
 									@endforeach
 								</select>
 							</div>
+							<div class="col-md">
+								<label for="detail" class="col-form-label">Detail Rapat</label>
+								<textarea class="form-control" id="detail" name="detail_rapat"></textarea>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
@@ -84,10 +88,7 @@
 									@endforeach
 								</select>
 							</div>
-							<div class="col-md">
-								<label for="peserta" class="col-form-label">Peserta Rapat</label>
-								<input type="file" class="form-control" id="peserta" name="peserta_rapat">
-							</div>
+							
 						</div>
 						<div class="row">
 							<div class="col-md">
@@ -99,16 +100,28 @@
 								<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">>
 									{{-- <option selected>Cari</option> --}}
 									@foreach($pegawai as $a)
-									<option value="{{$a->name}}">{{$a->name}}</option>
+									<option value="{{$a->id}}">{{$a->name}}</option>
 									@endforeach
 								</select>
 							</div>
 						</div>
+						<br>
+						<div class="alert alert-warning" role="alert">
+							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b>
+						</div>
 						<div class="row">
 							
 							<div class="col-md">
-								<label for="detail" class="col-form-label">Detail Rapat</label>
-								<textarea class="form-control" id="detail" name="detail_rapat"></textarea>
+								<label for="peserta" class="col-form-label">Peserta Rapat</label>
+								<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
+							</div>
+							<div class="col-md">
+								<label for="detail" class="col-form-label">Peserta Rapat</label>
+								<input type="text" class="form-control" id="detail" name="peserta_rapat">
+							</div>
+							<div class="col-md">
+								<label for="detail" class="col-form-label">Jumlah Peserta Rapat</label>
+								<input type="number" class="form-control" id="detail" name="jml_peserta_rapat">
 							</div>
 						</div>
 						<br>
@@ -131,7 +144,7 @@
 								<label for="summernote" class="col-form-label">Tulis Notulensi</label>
 								<br>
 								{{-- <textarea id="area"></textarea> --}}
-								<a href="/live" class="btn btn-warning btn-lg"><i class="fas fa-file-pen"></i> Tulis Notulensi</a>
+								<button type="submit" class="btn btn-warning btn-lg oEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 							</div>
 						</div> 
 						
@@ -140,7 +153,7 @@
 				<br>
 				<div class="card-footer text-right bg-secondary">
 					{{-- <button type="button" class="btn btn-danger">Close</button> --}}
-					<button type="button" class="btn btn-primary">Simpan</button>
+					<button type="submit" class="btn btn-primary">Simpan</button>
 				</div>
 			</div>
 		</form>

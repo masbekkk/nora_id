@@ -38,6 +38,13 @@ Route::get('/abdill', function () {
 	return view('abdill');
 })->name('/abdill');
 
+Route::get('/input', function () {
+	return view('input');
+})->name('/input');
+
+Route::get('/login', function () {
+	return view('login');
+})->name('/login');
 Route::get('/create-notulensi', [App\Http\Controllers\NotulensiController::class, 'create'])->name('create.notulensi');
 Route::post('/store/notulensi/{value}', [App\Http\Controllers\NotulensiController::class, 'store'])->name('store.notulensi');
 Route::get('/live/{id}', [App\Http\Controllers\NotulensiController::class, 'live'])->name('live.notulensi');

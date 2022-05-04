@@ -8,6 +8,7 @@ use App\Models\Test;
 use App\Notifications\NewNotulensiNotify;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\Notifiable;
+use Dompdf\Dompdf;
 
 class TestController extends Controller
 {
@@ -58,30 +59,49 @@ class TestController extends Controller
     {
         $data = new Test();
         $data->users_id = implode(',', $request->users);
-        $data->save();
         $anu = explode(',',$data->users_id);
-        // dd(count($anu));
-        // $array[] =  $anu;
-        // foreach($anu as $a){
-        //     $emel = User::find($a);
-        //     Notification::route('mail' , $emel->email) //Sending mail to subscriber
-        //     ->notify(new NewNotulensiNotify($emel->name));
-        //     $result[] = $emel->name;
-        //     // $result[] = $a;
-        // }
+        //--fix-----
+        foreach($anu as $a){
+            $emel = User::find($a);
+            // Notification::route('mail' , $emel->email) //Sending mail to subscriber
+            // ->notify(new NewNotulensiNotify($emel->name));
+            $result[] = $emel->name;
+        }
         $data->users_id = implode(',', $result);
         $data->notulensi = $request->notulensi;
+        $file = $request->file('peserta');
+        $path = 'files';
+        $string = rand(22,5033);
+        if ($file != null) {
+            $fileName = $string .'___datapeserta_rapat ' .$request->agenda. '.'.$file->getClientOriginalExtension();
+            $file->move($path, $fileName);
+            $lokasi = $path . '/' . $fileName;
+        }
+        $csvFile = fopen($lokasi, 'r');
+        $isHeader = true;
+        $jml = 1;
+        while(($obj = fgetcsv($csvFile, 1000, ',')) !== FALSE) {
+            if(!$isHeader) {
+                $peserta[] = $obj[1];
+                $jml++;
+            }
+            $isHeader = false;
+        }
+        fclose($csvFile);
+       
+        $data->peserta = implode(',', $peserta);
+        $data->total_peserta = $jml;
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($request->notulensi);
+        $dompdf->render();
+        $Pdf = $dompdf->output();
+        $lokasi = 'files/rapat__' . $request->agenda . '__notulensi.pdf';
+        file_put_contents($lokasi, $Pdf);
+      
+        $data->notulensi = $lokasi;
         $data->save();
-        // $batas = count($anu);
-        // dd($batas);
-        // for($i = 0; $i<=$batas; $i++){
-        //    $emel = User::where('id', $i+1)->first();
-        // //    dd($emel->email);
-        //    $result[] = $emel->email;
-        // }
-        
+     
         return "oke";
-        // return $result;
 
         
     }

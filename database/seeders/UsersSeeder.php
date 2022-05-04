@@ -16,29 +16,34 @@ class UsersSeeder extends Seeder
     {
         \App\Models\User::insert(array(
             array(
-                'name' => "user1",
+                'name' => "sekretaris1",
                 'email' => "annisaarsylia@gmail.com",
-                'password' => Hash::make('password')
+                'password' => Hash::make('password'),
+                'role_id' => 2,
             ),
             array(
-                'name' => "user2",
+                'name' => "sekretaris2",
                 'email' => "abdillahromadhon512@gmail.com",
-                'password' => Hash::make('password')
+                'password' => Hash::make('password'),
+                'role_id' => 2,
             ),
             array(
-                'name' => "user3",
+                'name' => "pegawai1",
                 'email' => "rohmantesting83@gmail.com",
-                'password' => Hash::make('password')
+                'password' => Hash::make('password'),
+                'role_id' => 3,
             ),
             array(
-                'name' => "user4",
+                'name' => "pegawai2",
                 'email' => "igadwilestari0@gmail.com",
-                'password' => Hash::make('password')
+                'password' => Hash::make('password'),
+                'role_id' => 3,
             ),
             array(
-                'name' => "user5",
+                'name' => "pegawai3",
                 'email' => "subkhanpinter22@gmail.com",
-                'password' => Hash::make('password')
+                'password' => Hash::make('password'),
+                'role_id' => 3,
             ),
         )
         );

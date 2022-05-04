@@ -9,7 +9,7 @@
     };
 </script> --}}
 
-<html lang="en">
+{{-- <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Summernote with Bootstrap 4</title>
@@ -25,8 +25,8 @@
   <body>
     <textarea id="summernote" class="yes" value="ok"></textarea>
     <button onclick="localStorage.removeItem('summernote');summernote.value=''">Clear</button>
-    <script>
-      // $('#summernote').summernote({
+    <script> --}}
+      {{-- // $('#summernote').summernote({
       //   placeholder: 'Hello Bootstrap 4',
       //   tabsize: 2,
       //   height: 100,
@@ -58,4 +58,39 @@
       // };
     </script>
   </body>
+</html> --}}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tiny.cloud/1/kiparj1384q5s2j5owfutdsordqqp6lq4q2flaj8nj6u79z2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  <script type="text/javascript">
+    tinymce.init({
+      selector: '#area',
+      width: 600,
+      height: 300,
+      plugins: [
+        'autosave', 'export pagebreak', 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+        'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+        'media', 'table', 'emoticons', 'template', 'help'
+      ],
+      toolbar: 'restoredraft | export | undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+        'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+        'forecolor backcolor emoticons | help',
+      menu: {
+        favs: { title: 'My Favorites', items: 'code visualaid | searchreplace | emoticons' }
+      },
+      menubar: 'favs file edit view insert format tools table help',
+      content_css: 'css/content.css',
+      autosave_restore_when_empty: true,
+      autosave_ask_before_unload: false
+    });
+ 
+  </script>
+</head>
+
+<body>
+  <textarea id="area"></textarea>
+  
+</body>
 </html>

@@ -33,14 +33,10 @@ Route::get('/annisa', function () {
 	return view('input-notulensi');
 })->name('/annisa');
 
-Route::get('/dashboard', function () {
-	return view('dashboard');
-})->name('/dashboard');
+Route::get('/dashboard', [App\Http\Controllers\NotulensiController::class, 'dashboard'])->name('dashboard.notulensi');
 
 Route::get('/abdill', function () {
 	return view('abdill');
 })->name('/abdill');
 
-Route::get('/input', function () {
-	return view('input');
-})->name('/input');
+Route::get('/input', [App\Http\Controllers\NotulensiController::class, 'create'])->name('create.notulensi');

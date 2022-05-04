@@ -1,12 +1,12 @@
 @extends('layouts.form')
 
 @section('style')
-	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 	<style>
 		.progress { position:relative; width:100%; }
 		.bar { background-color: #00ff00; width:0%; height:20px; }
 		.percent { position:absolute; display:inline-block; left:50%; color: #040608;}
 	</style>
+	    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -41,116 +41,100 @@
 						<div class="row">
 							<div class="col-md">
 								<label for="nomer" class="col-form-label">Nomer Undangan</label>
-								<input type="text" class="form-control" id="nomer">
+								<input type="text" class="form-control" id="nomer" name="no_undangan">
 							</div>
 							<div class="col-md">
 								<label for="tanggal" class="col-form-label">Tanggal Rapat</label>
-								<input type="date" class="form-control" id="tanggal">
+								<input type="date" class="form-control" id="tanggal" name="tgl">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
 								<label for="lokasi" class="col-form-label">Ruang/Lokasi</label>
-								<select class="form-control" id="lokasi">
-									<option selected>Cari</option>
-									<option>Audtorium</option>
-									<option>Baak</option>
-									<option>Pasca</option>
+								<select class="form-control select2" id="lokasi" name="lokasi">
+									{{-- <option selected>Cari</option> --}}
+									@foreach($lokasi as $a)
+										<option value="{{$a->nama}}">{{$a->nama}}</option>
+									@endforeach
 								</select>         
 							</div>
 							<div class="col-md">
 								<label for="waktu" class="col-form-label">Waktu Rapat</label>
-								<input type="time" class="form-control" id="waktu">
+								<input type="time" class="form-control" id="waktu" name="waktu">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
 								<label for="pemimpin" class="col-form-label">Pemimpin Rapat</label>
-								<select class="form-control" id="pemimpin">
-									<option selected>Cari</option>
-									<option value="1">Andhik Ampuh</option>
-									<option value="2">Desy Intan</option>
-									<option value="3">Umi Sa'adah</option>
-									<option value="4">Nailussa`ada</option>
-									<option value="5">Iwan Syarif</option>
-									<option value="6">Idris Winarno</option>
-								</select>
-							</div>
-							<div class="col-md">
-								<label for="notulen" class="col-form-label">Notulen Rapat</label>
-								<select class="form-control" id="notulen">
-									<option selected>Cari</option>
-									<option value="1">Annisa Arsylia</option>
-									<option value="2">Madani Sofi</option>
-									<option value="3">Tsania Ursila</option>
-									<option value="4">Salwa Fathiyatus</option>
-									<option value="5">Lisa Hidayatus</option>
-									<option value="6">Iga Dwi Lestari</option>
+								<select class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
+									{{-- <option selected>Cari</option> --}}
+									@foreach($pegawai as $a)
+										<option value="{{$a->id}}">{{$a->name}}</option>
+									@endforeach
 								</select>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
-								<label for="jenis-agenda" class="col-form-label">Jenis Agenda</label>
-								<select class="form-control" id="jenis-agenda">
-									<option selected>Cari</option>
-									<option value="online">Online</option>
-									<option value="offline">Offline</option>
+								<label for="jenis-agenda" class="col-form-label">Jenis Rapat</label>
+								<select class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
+									{{-- <option selected>Cari</option> --}}
+									@foreach($jenis_rapat as $a)
+									<option value="{{$a->id}}">{{$a->nama}}</option>
+									@endforeach
 								</select>
 							</div>
 							<div class="col-md">
 								<label for="peserta" class="col-form-label">Peserta Rapat</label>
-								<input type="file" class="form-control" id="peserta">
+								<input type="file" class="form-control" id="peserta" name="peserta_rapat">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
-								<label for="agenda" class="col-form-label">Agenda</label>
-								<input type="text" class="form-control" id="agenda">
+								<label for="agenda" class="col-form-label">Jumlah Agenda</label>
+								<input type="number" class="form-control" id="agenda" name="jml_agenda">
 							</div>
 							<div class="col-md">
-								<label for="total-peserta" class="col-form-label">Total Peserta Rapat</label>
-								<select class="form-control" id="total-peserta">
-									<option selected>Cari</option>
-									<option value="1">5</option>
-									<option value="2">10</option>
-									<option value="3">15</option>
-									<option value="4">20</option>
-									<option value="5">25</option>
+								<label for="total-peserta" class="col-form-label">Tamu Rapat</label>
+								<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">>
+									{{-- <option selected>Cari</option> --}}
+									@foreach($pegawai as $a)
+									<option value="{{$a->name}}">{{$a->name}}</option>
+									@endforeach
 								</select>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md">
-								<label for="dokumentasi" class="col-form-label">File Dokumentasi</label>
-								<input type="file" class="form-control" id="dokumentasi">
-							</div>
+							
 							<div class="col-md">
 								<label for="detail" class="col-form-label">Detail Rapat</label>
-								<input type="text" class="form-control" id="detail">
+								<textarea class="form-control" id="detail" name="detail_rapat"></textarea>
 							</div>
 						</div>
 						<br>
 						<div class="alert alert-warning" role="alert">
-							<b> File Notulensi jika tidak menulis notulensi secara langsung</b>
+							<b> Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
 						</div>
 						<div class="row">
+							<div class="col-md">
+								<label for="notulensi" class="col-form-label">Agenda</label>
+								<input type="text" class="form-control" id="notulensi" name="agenda">
+							</div>
 							<div class="col-md">
 								<label for="notulensi" class="col-form-label">Unggah File Notulensi</label>
-								<input type="file" class="form-control" id="notulensi">
+								<input type="file" class="form-control" id="notulensi" name="file_notulensi">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
+								<br>
 								<label for="summernote" class="col-form-label">Tulis Notulensi</label>
-								<textarea id="summernote" name="editordata"></textarea>
+								<br>
+								{{-- <textarea id="area"></textarea> --}}
+								<a href="/live" class="btn btn-warning btn-lg"><i class="fas fa-file-pen"></i> Tulis Notulensi</a>
 							</div>
 						</div> 
-						<!-- <div class="col-md">
-								<label for="recipient-name" class="col-form-label">Tanggal Rapat:</label>
-								<input type="text" class="form-control" id="recipient-name">
-							</div>
-						</div> -->
+						
 					</form>
 				</div>
 				<br>
@@ -165,13 +149,7 @@
 @endsection
 
 @section('script')
-	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-	<script type="text/javascript">
-		$('#summernote').summernote({
-			placeholder: 'Notulensi Rapat...',
-			height: 400
-		});
-	</script>
+
     <script type="text/javascript">
 		imgInp.onchange = evt => {
 			const [file] = imgInp.files
@@ -203,6 +181,12 @@
 					}
 				});
 			});
+		});
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<script>
+		 $(document).ready(function() {
+			$('.select2').select2();
 		});
 	</script>
 @endsection

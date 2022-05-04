@@ -17,9 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	return view('welcome');
 })->name('/');
-Route::get('/live', function () {
-	return view('live');
-})->name('live');
+
+
 Route::get('/test', [App\Http\Controllers\TestController::class, 'index'])->name('test');
 Route::get('/test-dashboard', [App\Http\Controllers\TestController::class, 'show'])->name('test-dashboard');
 Route::get('/coba', [App\Http\Controllers\TestController::class, 'coba'])->name('test');
@@ -33,9 +32,7 @@ Route::get('/annisa', function () {
 	return view('input-notulensi');
 })->name('/annisa');
 
-Route::get('/dashboard', function () {
-	return view('dashboard');
-})->name('/dashboard');
+Route::get('/dashboard', [App\Http\Controllers\NotulensiController::class, 'dashboard'])->name('dashboard.notulensi');
 
 Route::get('/abdill', function () {
 	return view('abdill');
@@ -48,3 +45,7 @@ Route::get('/input', function () {
 Route::get('/login', function () {
 	return view('login');
 })->name('/login');
+Route::get('/create-notulensi', [App\Http\Controllers\NotulensiController::class, 'create'])->name('create.notulensi');
+Route::post('/store/notulensi/{value}', [App\Http\Controllers\NotulensiController::class, 'store'])->name('store.notulensi');
+Route::get('/live/{id}', [App\Http\Controllers\NotulensiController::class, 'live'])->name('live.notulensi');
+Route::put('/store/live/{id}', [App\Http\Controllers\NotulensiController::class, 'storeLive'])->name('store.live.notulensi');

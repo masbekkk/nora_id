@@ -21,7 +21,7 @@
 			<div class="main-content">
 				<section class="section" style="min-height: 531px;">
 					{{-- @include('layouts.adminMessage') --}}
-					{{-- @include('sweetalert::alert') --}}
+					@include('sweetalert::alert')
 					@yield('content')
 				</section>
 			</div>

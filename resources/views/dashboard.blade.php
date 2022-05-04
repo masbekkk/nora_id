@@ -17,7 +17,7 @@
         <h1>Daftar Notulensi</h1>
 		<div class="section-header-breadcrumb transparent">
 			{{-- hanya untuk dipage sekretaris --}}
-			<a href="documentation.html" class="btn btn-primary btn-lg btn-icon-split btn-block">
+			<a href="{{route('create.notulensi')}}" class="btn btn-primary btn-lg btn-icon-split btn-block">
 				<div><i class="fas fa-plus"></i>Tambah Notulensi</div>
 			</a>
 			{{-- untuk dosen dan pegawai tidak ada button ini --}}
@@ -27,8 +27,6 @@
 
 	{{-- Content Table Section --}}
 	<div class="section-body">
-		<form action="/presensi/submit/" method="POST" enctype="multipart/form-data">
-			@csrf
 			<div class="card card-danger bg-light">
 				{{-- <div class="card-header">
 					<form class="form-inline mr-auto">
@@ -58,13 +56,15 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($data as $a)
 								<tr role="row" class="odd">
-									<td class="sorting_1 align-middle text-center">1</	td>
-									<td class="align-middle">6970/PL14/TU/2021</td>
-									<td class="align-middle">Rapat Perubahan Kurikulum</td>
-									<td class="align-middle">Ali Ridho Barakbah, S. Kom., Ph.D.</td>
-									<td class="align-middle">Senin, 30 November 2021</td>
+									<td class="sorting_1 align-middle text-center">1</td>
+									<td class="align-middle">{{$a->no_undangan}}</td>
+									<td class="align-middle">{{$a->agenda}}</td>
+									<td class="align-middle">{{$a->pemimpin->name}}</td>
+									<td class="align-middle">{{date('d M Y', strtotime($a->tgl))}}</td>
 									{{-- action untuk sekretaris --}}
+									@if(Auth::user()->role_id == 2 || Auth::user()->role_id == 1)
 									<td class="d-flex justify-content-center">
 										<div class="row w-100">
 											<div class="col-12 d-flex justify-content-between">
@@ -76,14 +76,7 @@
 											</div>
 										</div>
 									</td>
-								</tr>
-								<tr role="row" class="odd">
-									<td class="sorting_1">2</td>
-									<td>6970/PL14/TU/2021</td>
-									<td class="align-middle">Rapat Perubahan Kurikulum</td>
-									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
-									<td>Senin, 30 November 2021</td>
-									{{-- action Untuk Pegawai dosen --}}
+									@elseif(Auth::user()->role_id == 3)
 									<td class="d-flex justify-content-center">
 										<div class="row w-100">
 											<div class="col-12 d-flex justify-content-between">
@@ -92,72 +85,16 @@
 											</div>
 										</div>
 									</td>
+									@endif
 								</tr>
-								<tr role="row" class="odd">
-									<td class="sorting_1">3</td>
-									<td>6970/PL14/TU/2021</td>
-									<td class="align-middle">Rapat Perubahan Kurikulum</td>
-									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
-									<td>Senin, 30 November 2021</td>
-									<td class="d-flex justify-content-center">
-										<div class="row w-100">
-											<div class="col-12 d-flex justify-content-between">
-												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="Edit"><i class="fas fa-edit"></i></a>
-												<a class="btn btn-danger btn-sm text-white w-50 ml-1" title="Delete"><i class="fas fa-trash"></i></a>
-											</div>
-											<div class="col-12 d-flex justify-content-center mt-2">
-												<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-"></i>&nbsp;Detail</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr role="row" class="odd">
-									<td class="sorting_1">4</td>
-									<td>6970/PL14/TU/2021</td>
-									<td class="align-middle">Rapat Perubahan Kurikulum</td>
-									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
-									<td>Senin, 30 November 2021</td>
-									<td class="d-flex justify-content-center">
-										<div class="row w-100">
-											<div class="col-12 d-flex justify-content-between">
-												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="Edit"><i class="fas fa-edit"></i></a>
-												<a class="btn btn-danger btn-sm text-white w-50 ml-1" title="Delete"><i class="fas fa-trash"></i></a>
-											</div>
-											<div class="col-12 d-flex justify-content-center mt-2">
-												<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-"></i>&nbsp;Detail</a>
-											</div>
-										</div>
-									</td>
-								</tr>
-								{{-- <tr role="row" class="even">
-								</tr> --}}
+								@endforeach
+
 							</tbody>
 						</table>
-						{{-- <div class="row">
-							<div class="col-sm-12 col-md-5">
-								<div class="dataTables_info" id="table-1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div>
-							</div>
-							<div class="col-sm-12 col-md-7">
-								<div class="dataTables_paginate paging_simple_numbers" id="table-1_paginate">
-									<ul class="pagination">
-										<li class="paginate_button page-item previous disabled" id="table-1_previous">
-											<a href="#" aria-controls="table-1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-										</li>
-										<li class="paginate_button page-item active">
-											<a href="#" aria-controls="table-1" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-										</li>
-										<li class="paginate_button page-item next disabled" id="table-1_next">
-											<a href="#" aria-controls="table-1" data-dt-idx="2" tabindex="0" class="page-link">Next</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div> --}}
-					</div>
+						
 				</div>
 				<br>
 			</div>
-		</form>
 	</div>
 	{{-- End Content Table Section --}}
 @endsection

@@ -45,3 +45,5 @@ Route::post('/store/notulensi/{value}', [App\Http\Controllers\NotulensiControlle
 Route::get('/live/{id}', [App\Http\Controllers\NotulensiController::class, 'live'])->name('live.notulensi');
 Route::put('/store/live/{id}', [App\Http\Controllers\NotulensiController::class, 'storeLive'])->name('store.live.notulensi');
 Route::get('/download-notulensi/{id}', [App\Http\Controllers\NotulensiController::class, 'download'])->name('download.notulensi');
+Route::get('/edit-notulensi/{id}', [App\Http\Controllers\NotulensiController::class, 'edit'])->name('edit.notulensi');
+Route::get('/delete-notulensi/{id}', [App\Http\Controllers\NotulensiController::class, 'delete'])->name('delete.notulensi');

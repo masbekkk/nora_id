@@ -30,7 +30,7 @@ class NotulensiController extends Controller
         view()->share([
             'data' => $data
         ]);
-        return view('dashboard');
+        return view('notulensi.dashboard');
     }
 
     public function create()
@@ -44,7 +44,7 @@ class NotulensiController extends Controller
                 'pegawai' => $pegawai,
                 'jenis_rapat' => $jenis_rapat
             ]);
-            return view('input');
+            return view('notulensi.input');
         }else return redirect()->back()->with('errors','Kamu Tidak punya Akses!');
     }
 
@@ -154,7 +154,7 @@ class NotulensiController extends Controller
             'data' => $data
         ]);
 
-        return view('live');
+        return view('notulensi.live');
 
     }
 
@@ -201,5 +201,23 @@ class NotulensiController extends Controller
             $filename = substr($data->file_notulensi,11);
             return Response::download($file, $filename, $headers);
         }else return redirect()->back()->with('warning','Mohon maaf file notulensi tidak ditemukan!');
+    }
+
+    public function edit($id)
+    {
+        if(Auth::user()->role_id == 2){
+            $data = Notulensi::findorFail($id);
+            $lokasi = LokasiRapat::all();
+            $pegawai = User::where('role_id', 3)->where('email', '!=', 'pegawai@nora.id')->get();
+            $jenis_rapat = JenisRapat::all();
+            view()->share([
+                'lokasi' => $lokasi,
+                'pegawai' => $pegawai,
+                'jenis_rapat' => $jenis_rapat,
+                'data' => $data
+            ]);
+            return view('notulensi.edit');
+        }else return redirect()->back()->with('errors','Kamu Tidak punya Akses!');
+        
     }
 }

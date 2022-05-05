@@ -90,10 +90,8 @@
 									@endif
 								</tr>
 								@endforeach
-
 							</tbody>
 						</table>
-						
 				</div>
 				<br>
 			</div>
@@ -116,37 +114,19 @@
 				<div class="modal-body">
 					<table>
 						<tr>
-						  <td>
-							Nomor Undangan
-						  </td>
-						  <td>
-							: 
-						  </td>
-						  <td>
-							6970/PL14/TU/2021 
-						  </td>
+							<td>Nomor Undangan</td>
+							<td>: </td>
+							<td>6970/PL14/TU/2021</td>
 						</tr>
 						<tr>
-						  <td>
-							Agenda
-						  </td>
-						  <td>
-							: 
-						  </td>
-						  <td>
-							Rapat Perubahan Kurikulum
-						  </td>
+							<td>Agenda</td>
+							<td>: </td>
+							<td>Rapat Perubahan Kurikulum</td>
 						</tr>
 						<tr>
-						  <td>
-							Pimpinan Rapat
-						  </td>
-						  <td>
-							: 
-						  </td>
-						  <td>
-							Ali Ridho Barakbah, S. Kom., Ph.D. 
-						  </td>
+							<td>Pimpinan Rapat</td>
+							<td>: </td>
+							<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
 						</tr>
 						<tr>
 						  <td>

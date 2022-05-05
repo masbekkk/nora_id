@@ -74,7 +74,7 @@
 												<a class="btn btn-danger btn-sm text-white w-50 ml-1" title="Delete"><i class="fas fa-trash"></i></a>
 											</div>
 											<div class="col-12 d-flex justify-content-center mt-2">
-												<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-"></i>&nbsp;Detail</a>
+												<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#exampleModal{{$a->id}}"><i class="fas fa-"></i>&nbsp;Detail</a>
 											</div>
 										</div>
 									</td>
@@ -82,29 +82,15 @@
 									<td class="d-flex justify-content-center">
 										<div class="row w-100">
 											<div class="col-12 d-flex justify-content-between">
-												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-circle-info"></i></a>
+												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal{{$a->id}}"><i class="fa-solid fa-circle-info"></i></a>
 												<a class="btn btn-info btn-sm text-white w-50 ml-1" href="{{route('download.notulensi', ['id' => $a->id])}}"><i class="fa-solid fa-file-arrow-down"></i></a>
 											</div>
 										</div>
 									</td>
 									@endif
 								</tr>
-								@endforeach
-
-							</tbody>
-						</table>
-						
-				</div>
-				<br>
-			</div>
-	</div>
-	{{-- End Content Table Section --}}
-@endsection
-
-@section('script')
-
-	<!-- Modal Detail Notulensi -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<!-- Modal Detail Notulensi -->
+	<div class="modal fade" id="exampleModal{{$a->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -123,7 +109,7 @@
 							: 
 						  </td>
 						  <td>
-							6970/PL14/TU/2021 
+							{{$a->no_undangan}}
 						  </td>
 						</tr>
 						<tr>
@@ -134,7 +120,7 @@
 							: 
 						  </td>
 						  <td>
-							Rapat Perubahan Kurikulum
+							{{$a->agenda}}
 						  </td>
 						</tr>
 						<tr>
@@ -145,7 +131,7 @@
 							: 
 						  </td>
 						  <td>
-							Ali Ridho Barakbah, S. Kom., Ph.D. 
+							{{$a->pemimpin->name}}
 						  </td>
 						</tr>
 						<tr>
@@ -156,7 +142,7 @@
 							: 
 						  </td>
 						  <td>
-							Senin, 30 November 2021
+							{{date('d M Y', strtotime($a->tgl))}}
 						  </td>
 						</tr>
 						<tr>
@@ -167,7 +153,7 @@
 							: 
 						  </td>
 						  <td>
-							13.00 - 15.00 WIB
+							{{$a->waktu}}
 						  </td>
 						</tr>
 						<tr>
@@ -178,18 +164,18 @@
 							: 
 						  </td>
 						  <td>
-							Pasca Sarjana
+							{{$a->lokasi}}
 						  </td>
 						</tr>
 						<tr>
 						  <td>
-							Jenis Agenda
+							Jenis Rapat
 						  </td>
 						  <td>
 							: 
 						  </td>
 						  <td>
-							Offline
+							{{$a->jenis->nama}}
 						  </td>
 						</tr>
 						<tr>
@@ -222,7 +208,7 @@
 							: 
 						  </td>
 						  <td>
-							10
+							{{$a->total_peserta}}
 						  </td>
 						</tr>
 						<tr>
@@ -233,7 +219,7 @@
 							: 
 						  </td>
 						  <td>
-							...
+							{{$a->detail_rapat}}
 						  </td>
 						</tr>
 						<tr>
@@ -244,10 +230,10 @@
 							: 
 						  </td>
 						  <td>
-							...
+							<a href="{{route('download.notulensi', ['id' => $a->id])}}">Download File</a>
 						  </td>
 						</tr>
-						<tr>
+						{{-- <tr>
 						  <td>
 							Notulensi Rapat
 						  </td>
@@ -257,7 +243,7 @@
 						  <td>
 							...
 						  </td>
-						</tr>
+						</tr> --}}
 					  </table>
 				</div>
 				<div class="modal-footer">
@@ -268,6 +254,21 @@
 		</div>
 	</div>
 
+								@endforeach
+
+							</tbody>
+						</table>
+						
+				</div>
+				<br>
+			</div>
+	</div>
+	{{-- End Content Table Section --}}
+@endsection
+
+@section('script')
+
+	
 	<script type="text/javascript">
 		var SITEURL = "{{URL('/')}}";
 		$(function() {

@@ -19,7 +19,7 @@
         'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
         'forecolor backcolor emoticons | help',
       menu: {
-        favs: { title: 'Agenda Rapat: ', items: 'code visualaid | searchreplace | emoticons' }
+        favs: { title: 'Agenda Rapat: {{$data->agenda}}', items: 'code visualaid | searchreplace | emoticons' }
       },
       menubar: 'favs file edit view insert format tools table help',
       content_css: 'css/content.css',
@@ -35,7 +35,7 @@
   @section('content')
   <div class="section-header bg-white">
     <h1>Live Notulensi Acara 
-      {{-- {{$data->agenda}} --}}
+      {{$data->agenda}}
     </h1>
     <div class="section-header-breadcrumb transparent">
       {{-- hanya untuk dipage sekretaris --}}

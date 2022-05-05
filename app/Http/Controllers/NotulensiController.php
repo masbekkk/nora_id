@@ -37,7 +37,7 @@ class NotulensiController extends Controller
     {
         if(Auth::user()->role_id == 2){
             $lokasi = LokasiRapat::all();
-            $pegawai = User::where('role_id', 3)->get();
+            $pegawai = User::where('role_id', 3)->where('email', '!=', 'pegawai@nora.id')->get();
             $jenis_rapat = JenisRapat::all();
             view()->share([
                 'lokasi' => $lokasi,

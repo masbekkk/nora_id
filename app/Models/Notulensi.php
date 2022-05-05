@@ -13,4 +13,9 @@ class Notulensi extends Model
     {
         return $this->belongsTo(User::class, 'id_pemimpin_rapat');
     }
+
+    public function jenis()
+    {
+        return $this->belongsTo(JenisRapat::class, 'id_jenis_rapat');
+    }
 }

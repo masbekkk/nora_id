@@ -14,7 +14,7 @@ class AddRoleTousers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role_id');
+            $table->integer('role_id')->default(3);
         });
     }
 

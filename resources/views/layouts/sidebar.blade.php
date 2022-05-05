@@ -1,10 +1,10 @@
 <div class="main-sidebar">
 	<aside id="sidebar-wrapper">
 		<div class="sidebar-brand my-3">
-			<a href="/"><img src="{{ asset('img/nora-full-sidebar-header.png') }}" alt="Nora.ID" class="sidebar-title"></a>
+			<a href="/"><img src="{{ asset('img/noraid-logo.png') }}" alt="Nora.ID" class="sidebar-title"></a>
 		</div>
 		<div class="sidebar-brand sidebar-brand-sm">
-			<a href="/"><img src="{{ asset('img/nora-small-sidebar-header.png') }}" alt="NID" class="sidebar-title"></a>
+			<a href="/"><img src="{{ asset('img/noraid-logo-sm.png') }}" alt="NID" class="sidebar-title"></a>
 		</div>
 		<ul class="sidebar-menu">
 			<li class="menu-header">Menu Utama</li>

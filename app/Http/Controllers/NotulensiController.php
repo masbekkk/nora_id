@@ -42,7 +42,9 @@ class NotulensiController extends Controller
                 'jenis_rapat' => $jenis_rapat
             ]);
             return view('input');
-        }else return redirect()->back()->with('error', 'Kamu tidak punya akses!');
+        }else return redirect()->back()->with('errors','Kamu Tidak punya Akses!');
+        //  Alert::error('Error Title', 'Error Message');
+        // redirect()->back()->with('errors', 'Kamu tidak punya akses!');
     }
 
     public function store($value, Request $request)

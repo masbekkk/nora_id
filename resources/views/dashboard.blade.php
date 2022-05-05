@@ -16,17 +16,19 @@
    	<div class="section-header bg-white">
         <h1>Daftar Notulensi</h1>
 		<div class="section-header-breadcrumb transparent">
-			<a href="documentation.html" class="btn btn-primary btn-lg btn-icon-split btn-block">
-				<div><i class="fas fa-plus"></i>Tambah Notulensi</div>
-			</a>
+			{{-- hanya untuk dipage sekretaris --}}
+			@if(Auth::user()->role_id == 2)
+				<a href="{{route('create.notulensi')}}" class="btn btn-primary btn-lg btn-icon-split btn-block">
+					<div><i class="fas fa-plus"></i>Tambah Notulensi</div>
+				</a>
+			@endif
+			{{-- untuk dosen dan pegawai tidak ada button ini --}}
 		</div>
     </div>
 	{{-- End Header Section --}}
 
 	{{-- Content Table Section --}}
 	<div class="section-body">
-		<form action="/presensi/submit/" method="POST" enctype="multipart/form-data">
-			@csrf
 			<div class="card card-danger bg-light">
 				{{-- <div class="card-header">
 					<form class="form-inline mr-auto">
@@ -56,12 +58,15 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($data as $a)
 								<tr role="row" class="odd">
-									<td class="sorting_1 align-middle text-center">1</	td>
-									<td class="align-middle">6970/PL14/TU/2021</td>
-									<td class="align-middle">Rapat Perubahan Kurikulum</td>
-									<td class="align-middle">Ali Ridho Barakbah, S. Kom., Ph.D.</td>
-									<td class="align-middle">Senin, 30 November 2021</td>
+									<td class="sorting_1 align-middle text-center">1</td>
+									<td class="align-middle">{{$a->no_undangan}}</td>
+									<td class="align-middle">{{$a->agenda}}</td>
+									<td class="align-middle">{{$a->pemimpin->name}}</td>
+									<td class="align-middle">{{date('d M Y', strtotime($a->tgl))}}</td>
+									{{-- action untuk sekretaris --}}
+									@if(Auth::user()->role_id == 2 || Auth::user()->role_id == 1)
 									<td class="d-flex justify-content-center">
 										<div class="row w-100">
 											<div class="col-12 d-flex justify-content-between">
@@ -73,69 +78,25 @@
 											</div>
 										</div>
 									</td>
-								</tr>
-								<tr role="row" class="odd">
-									<td class="sorting_1">2</td>
-									<td>6970/PL14/TU/2021</td>
-									<td class="align-middle">Rapat Perubahan Kurikulum</td>
-									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
-									<td>Senin, 30 November 2021</td>
-									<td>
-										<i class="fa-solid fa-edit"></i>
-										<i class="fa-solid fa-delete"></i>
+									@elseif(Auth::user()->role_id == 3)
+									<td class="d-flex justify-content-center">
+										<div class="row w-100">
+											<div class="col-12 d-flex justify-content-between">
+												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-circle-info"></i></a>
+												<a class="btn btn-info btn-sm text-white w-50 ml-1" href="{{route('download.notulensi', ['id' => $a->id])}}"><i class="fa-solid fa-file-arrow-down"></i></a>
+											</div>
+										</div>
 									</td>
+									@endif
 								</tr>
-								<tr role="row" class="odd">
-									<td class="sorting_1">3</td>
-									<td>6970/PL14/TU/2021</td>
-									<td class="align-middle">Rapat Perubahan Kurikulum</td>
-									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
-									<td>Senin, 30 November 2021</td>
-									<td>
-										<i class="fa-solid fa-edit"></i>
-										<i class="fa-solid fa-delete"></i>
-									</td>
-								</tr>
-								<tr role="row" class="odd">
-									<td class="sorting_1">4</td>
-									<td>6970/PL14/TU/2021</td>
-									<td class="align-middle">Rapat Perubahan Kurikulum</td>
-									<td>Ali Ridho Barakbah, S. Kom., Ph.D.</td>
-									<td>Senin, 30 November 2021</td>
-									<td>
-										<i class="fa-solid fa-edit"></i>
-										<i class="fa-solid fa-delete"></i>
-									</td>
-								</tr>
-								{{-- <tr role="row" class="even">
-								</tr> --}}
+								@endforeach
+
 							</tbody>
 						</table>
-						{{-- <div class="row">
-							<div class="col-sm-12 col-md-5">
-								<div class="dataTables_info" id="table-1_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div>
-							</div>
-							<div class="col-sm-12 col-md-7">
-								<div class="dataTables_paginate paging_simple_numbers" id="table-1_paginate">
-									<ul class="pagination">
-										<li class="paginate_button page-item previous disabled" id="table-1_previous">
-											<a href="#" aria-controls="table-1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-										</li>
-										<li class="paginate_button page-item active">
-											<a href="#" aria-controls="table-1" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-										</li>
-										<li class="paginate_button page-item next disabled" id="table-1_next">
-											<a href="#" aria-controls="table-1" data-dt-idx="2" tabindex="0" class="page-link">Next</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div> --}}
-					</div>
+						
 				</div>
 				<br>
 			</div>
-		</form>
 	</div>
 	{{-- End Content Table Section --}}
 @endsection
@@ -153,11 +114,155 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					...
+					<table>
+						<tr>
+						  <td>
+							Nomor Undangan
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							6970/PL14/TU/2021 
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Agenda
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							Rapat Perubahan Kurikulum
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Pimpinan Rapat
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							Ali Ridho Barakbah, S. Kom., Ph.D. 
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Tanggal Rapat
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							Senin, 30 November 2021
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Waktu Rapat
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							13.00 - 15.00 WIB
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Ruang/Lokasi
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							Pasca Sarjana
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Jenis Agenda
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							Offline
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Notulen Rapat
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							Shinta
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Peserta Rapat
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							...
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Total Peserta Rapat
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							10
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Detail Rapat
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							...
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							File Dokumentasi
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							...
+						  </td>
+						</tr>
+						<tr>
+						  <td>
+							Notulensi Rapat
+						  </td>
+						  <td>
+							: 
+						  </td>
+						  <td>
+							...
+						  </td>
+						</tr>
+					  </table>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+					<button type="button" class="btn btn-primary">Lanjut</button>
 				</div>
 			</div>
 		</div>

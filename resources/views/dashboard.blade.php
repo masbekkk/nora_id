@@ -89,7 +89,43 @@
 									</td>
 									@endif
 								</tr>
+
 								<!-- Modal Detail Notulensi -->
+									<div class="modal fade" id="exampleModal{{$a->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
+										<div class="modal-dialog bg-white">
+										<div class="modal-content bg-white">
+										<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Detail Notulensi</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									
+										</button>
+										</div>
+										<div class="modal-body">
+											<strong>No. ISBN : </strong>
+											<br>
+											<p>{{$a->no_isbn}}</p>
+											<strong>Kategori : </strong>
+											<br>
+											<p>{{$a->kategori}}</p>
+											<strong>Pengarang : </strong>
+											<br>
+											<p>{{$a->pengarang}}</p>
+											<strong>Penerbit : </strong>
+											<br>
+											<p>{{$a->penerbit}}</p>
+											<strong>Tahun Terbit : </strong>
+											<br>
+											<p>{{$a->tahun_terbit}}</p>
+
+											</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										{{-- <a href="/user/profile/edit" class="btn btn-primary">Edit Profil</a> --}}
+										</div>
+										</div>
+										</div>
+									</div>
+								{{-- <!-- Modal Detail Notulensi -->
 	<div class="modal fade" id="exampleModal{{$a->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -233,17 +269,7 @@
 							<a href="{{route('download.notulensi', ['id' => $a->id])}}">Download File</a>
 						  </td>
 						</tr>
-						{{-- <tr>
-						  <td>
-							Notulensi Rapat
-						  </td>
-						  <td>
-							: 
-						  </td>
-						  <td>
-							...
-						  </td>
-						</tr> --}}
+						
 					  </table>
 				</div>
 				<div class="modal-footer">
@@ -252,7 +278,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 
 								@endforeach
 

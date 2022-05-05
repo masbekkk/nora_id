@@ -18,4 +18,9 @@ class Notulensi extends Model
     {
         return $this->belongsTo(JenisRapat::class, 'id_jenis_rapat');
     }
+
+    public function notulen()
+    {
+        return $this->belongsTo(User::class, 'notulen_id');
+    }
 }

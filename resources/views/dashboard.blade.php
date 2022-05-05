@@ -186,7 +186,7 @@
 							: 
 						  </td>
 						  <td>
-							Shinta
+							{{$a->notulen->name}}
 						  </td>
 						</tr>
 						<tr>

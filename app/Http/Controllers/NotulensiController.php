@@ -73,6 +73,7 @@ class NotulensiController extends Controller
         $data->jml_agenda = $request->jml_agenda;
         $data->detail_rapat = $request->detail_rapat;
         $data->agenda = $request->agenda;
+        $data->notulen_id = Auth::user()->id;
 
         if($request->peserta_rapat == NULL && $request->jml_peserta_rapat == NULL){
             $file = $request->file('file_peserta_rapat');

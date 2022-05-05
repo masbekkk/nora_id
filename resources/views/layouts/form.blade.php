@@ -13,15 +13,17 @@
 </head>
 <body>
 	<div id="app">
+		
 		<div class="main-wrapper">
 			@include('layouts.nav')
 			@include('layouts.sidebar')
-
+			@include('sweetalert::alert')
+			
 			{{-- Page Content --}}
 			<div class="main-content">
 				<section class="section" style="min-height: 531px;">
 					{{-- @include('layouts.adminMessage') --}}
-					@include('sweetalert::alert')
+					
 					@yield('content')
 				</section>
 			</div>
@@ -30,7 +32,9 @@
 			@include('layouts.footer')
 			{{-- @include('modals.edit') --}}
 		</div>
+		
 	</div>
+	
 </body>
 
 @include('layouts.script')

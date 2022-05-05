@@ -32,7 +32,7 @@ class NotulensiController extends Controller
 
     public function create()
     {
-        if(Auth::user()->role_id != 2){
+        if(Auth::user()->role_id == 2){
             $lokasi = LokasiRapat::all();
             $pegawai = User::where('role_id', 3)->get();
             $jenis_rapat = JenisRapat::all();
@@ -42,7 +42,7 @@ class NotulensiController extends Controller
                 'jenis_rapat' => $jenis_rapat
             ]);
             return view('input');
-        }else return redirect()->back()->with('errors', 'Kamu tidak punya akses!');
+        }else return redirect()->back()->with('error', 'Kamu tidak punya akses!');
     }
 
     public function store($value, Request $request)

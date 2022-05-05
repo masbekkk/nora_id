@@ -17,9 +17,11 @@
         <h1>Daftar Notulensi</h1>
 		<div class="section-header-breadcrumb transparent">
 			{{-- hanya untuk dipage sekretaris --}}
-			<a href="{{route('create.notulensi')}}" class="btn btn-primary btn-lg btn-icon-split btn-block">
-				<div><i class="fas fa-plus"></i>Tambah Notulensi</div>
-			</a>
+			@if(Auth::user()->role_id == 2)
+				<a href="{{route('create.notulensi')}}" class="btn btn-primary btn-lg btn-icon-split btn-block">
+					<div><i class="fas fa-plus"></i>Tambah Notulensi</div>
+				</a>
+			@endif
 			{{-- untuk dosen dan pegawai tidak ada button ini --}}
 		</div>
     </div>
@@ -81,7 +83,7 @@
 										<div class="row w-100">
 											<div class="col-12 d-flex justify-content-between">
 												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal"><i class="fa-solid fa-circle-info"></i></a>
-												<a class="btn btn-info btn-sm text-white w-50 ml-1" title="Delete"><i class="fa-solid fa-file-arrow-down"></i></a>
+												<a class="btn btn-info btn-sm text-white w-50 ml-1" href="{{route('download.notulensi', ['id' => $a->id])}}"><i class="fa-solid fa-file-arrow-down"></i></a>
 											</div>
 										</div>
 									</td>

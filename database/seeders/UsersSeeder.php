@@ -51,6 +51,24 @@ class UsersSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'role_id' => 3,
             ),
+            array(
+                'name' => "admin",
+                'email' => "admin@nora.id",
+                'password' => Hash::make('password'),
+                'role_id' => 1,
+            ),
+            array(
+                'name' => "pegawai/dosen",
+                'email' => "pegawai@nora.id",
+                'password' => Hash::make('password'),
+                'role_id' => 3,
+            ),
+            array(
+                'name' => "sekretaris",
+                'email' => "sekretaris@nora.id",
+                'password' => Hash::make('password'),
+                'role_id' => 2,
+            ),
         )
         );
     }

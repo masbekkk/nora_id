@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Response;
 use App\Models\Notulensi;
 use App\Models\LokasiRapat;
 use App\Models\JenisRapat;
@@ -13,6 +15,7 @@ use Illuminate\Notifications\Notifiable;
 use Dompdf\Dompdf;
 Use Alert;
 Use Auth;
+Use File;
 
 class NotulensiController extends Controller
 {
@@ -43,8 +46,6 @@ class NotulensiController extends Controller
             ]);
             return view('input');
         }else return redirect()->back()->with('errors','Kamu Tidak punya Akses!');
-        //  Alert::error('Error Title', 'Error Message');
-        // redirect()->back()->with('errors', 'Kamu tidak punya akses!');
     }
 
     public function store($value, Request $request)
@@ -169,6 +170,7 @@ class NotulensiController extends Controller
         $Pdf = $dompdf->output();
         $lokasi = 'notulensis/rapat__' . $data->agenda . '__notulensi.pdf';
         file_put_contents($lokasi, $Pdf);
+        $data->live_notulensi = $request->notulensi_live;
       
         $data->file_notulensi = $lokasi;
         $anu = explode(',', $data->tamu);
@@ -184,5 +186,19 @@ class NotulensiController extends Controller
      
         return redirect()->route('dashboard.notulensi')
             ->with('toast_success', 'Data Live Notulensi Berhasil ditambahkan!');
+    }
+
+    public function download($id)
+    {
+        $data = Notulensi::find($id);
+        //PDF file is stored under project/public/download/info.pdf
+        $file= public_path(). "/". $data->file_notulensi;
+        if(File::exists($file)){
+            $headers = array(
+                    'Content-Type: application/pdf',
+                    );
+            $filename = substr($data->file_notulensi,11);
+            return Response::download($file, $filename, $headers);
+        }else return redirect()->back()->with('warning','Mohon maaf file notulensi tidak ditemukan!');
     }
 }

@@ -42,6 +42,6 @@ Route::get('/live', function () {
 
 Route::get('/create-notulensi', [App\Http\Controllers\NotulensiController::class, 'create'])->name('create.notulensi');
 Route::post('/store/notulensi/{value}', [App\Http\Controllers\NotulensiController::class, 'store'])->name('store.notulensi');
-// Route::get('/live/{id}', [App\Http\Controllers\NotulensiController::class, 'live'])->name('live.notulensi');
+Route::get('/live/{id}', [App\Http\Controllers\NotulensiController::class, 'live'])->name('live.notulensi');
 Route::put('/store/live/{id}', [App\Http\Controllers\NotulensiController::class, 'storeLive'])->name('store.live.notulensi');
 Route::get('/download-notulensi/{id}', [App\Http\Controllers\NotulensiController::class, 'download'])->name('download.notulensi');

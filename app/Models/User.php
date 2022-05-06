@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Notulensi::class, 'id');
     }
+
+    public function tulis()
+    {
+        return $this->hasMany(Notulensi::class, 'id');
+    }
 }

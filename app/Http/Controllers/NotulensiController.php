@@ -26,11 +26,11 @@ class NotulensiController extends Controller
 
 	public function dashboard()
 	{
-		$data = Notulensi::with(['pemimpin', 'jenis'])->get();
+		$data = Notulensi::with(['pemimpin', 'jenis', 'notulen'])->orderBy('created_at', 'desc')->get();
 		view()->share([
 			'data' => $data
 		]);
-		return view('dashboard');
+		return view('notulensi.dashboard');
 	}
 
 	public function create()
@@ -44,7 +44,7 @@ class NotulensiController extends Controller
 				'pegawai' => $pegawai,
 				'jenis_rapat' => $jenis_rapat
 			]);
-			return view('input');
+			return view('notulensi.input');
 		} else return redirect()->back()->with('errors', 'Kamu Tidak punya Akses!');
 	}
 
@@ -73,6 +73,7 @@ class NotulensiController extends Controller
 		$data->jml_agenda = $request->jml_agenda;
 		$data->detail_rapat = $request->detail_rapat;
 		$data->agenda = $request->agenda;
+		$data->notulen_id = Auth::user()->id;
 
 		if ($request->peserta_rapat == NULL && $request->jml_peserta_rapat == NULL) {
 			$file = $request->file('file_peserta_rapat');
@@ -151,7 +152,7 @@ class NotulensiController extends Controller
 			'data' => $data
 		]);
 
-		return view('live');
+		return view('notulensi.live');
 	}
 
 	public function storeLive($id, Request $request)
@@ -197,5 +198,22 @@ class NotulensiController extends Controller
 			$filename = substr($data->file_notulensi, 11);
 			return Response::download($file, $filename, $headers);
 		} else return redirect()->back()->with('warning', 'Mohon maaf file notulensi tidak ditemukan!');
+	}
+
+	public function edit($id)
+	{
+		if (Auth::user()->role_id == 2) {
+			$data = Notulensi::findorFail($id);
+			$lokasi = LokasiRapat::all();
+			$pegawai = User::where('role_id', 3)->where('email', '!=', 'pegawai@nora.id')->get();
+			$jenis_rapat = JenisRapat::all();
+			view()->share([
+				'lokasi' => $lokasi,
+				'pegawai' => $pegawai,
+				'jenis_rapat' => $jenis_rapat,
+				'data' => $data
+			]);
+			return view('notulensi.edit');
+		} else return redirect()->back()->with('errors', 'Kamu Tidak punya Akses!');
 	}
 }

@@ -7,15 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Notulensi extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    public function pemimpin()
-    {
-        return $this->belongsTo(User::class, 'id_pemimpin_rapat');
-    }
+	protected $dates = ['tgl'];
 
-    public function jenis()
-    {
-        return $this->belongsTo(JenisRapat::class, 'id_jenis_rapat');
-    }
+	public function pemimpin()
+	{
+		return $this->belongsTo(User::class, 'id_pemimpin_rapat');
+	}
+
+	public function jenis()
+	{
+		return $this->belongsTo(JenisRapat::class, 'id_jenis_rapat');
+	}
+
+	public function notulen()
+	{
+		return $this->belongsTo(User::class, 'notulen_id');
+	}
 }

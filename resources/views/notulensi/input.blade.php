@@ -28,29 +28,21 @@
 		<form action="{{route('store.notulensi', ['value' => 1])}}" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="card card-danger bg-light">
-				{{-- <div class="card-header">
-					<div class="ml-auto w-0">
-						<label class="switch">
-							<input type="checkbox" class="primary" id="darkSwitch">
-							<span class="slider round" data-checked="fas fa-moon"></span>
-						</label>
-					</div>
-				</div> --}}
 				<div class="card-body pb-0">
 					<form>
 						<div class="row">
 							<div class="col-md">
-								<label for="nomer" class="col-form-label">Nomer Undangan</label>
+								<label for="nomer" class="col-form-label">Nomer Undangan <b class="text-danger">*</b></label>
 								<input type="text" class="form-control" id="nomer" name="no_undangan">
 							</div>
 							<div class="col-md">
-								<label for="tanggal" class="col-form-label">Tanggal Rapat</label>
+								<label for="tanggal" class="col-form-label">Tanggal Rapat <b class="text-danger">*</b></label>
 								<input type="date" class="form-control" id="tanggal" name="tgl">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
-								<label for="lokasi" class="col-form-label">Ruang/Lokasi</label>
+								<label for="lokasi" class="col-form-label">Ruang/Lokasi <b class="text-danger">*</b></label>
 								<select class="form-control select2" id="lokasi" name="lokasi">
 									{{-- <option selected>Cari</option> --}}
 									@foreach($lokasi as $a)
@@ -59,13 +51,13 @@
 								</select>         
 							</div>
 							<div class="col-md">
-								<label for="waktu" class="col-form-label">Waktu Rapat</label>
+								<label for="waktu" class="col-form-label">Waktu Rapat <b class="text-danger">*</b></label>
 								<input type="time" class="form-control" id="waktu" name="waktu">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
-								<label for="pemimpin" class="col-form-label">Pemimpin Rapat</label>
+								<label for="pemimpin" class="col-form-label">Pemimpin Rapat <b class="text-danger">*</b></label>
 								<select class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
 									{{-- <option selected>Cari</option> --}}
 									@foreach($pegawai as $a)
@@ -74,13 +66,13 @@
 								</select>
 							</div>
 							<div class="col-md">
-								<label for="detail" class="col-form-label">Detail Rapat</label>
+								<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">*</b></label>
 								<textarea class="form-control" id="detail" name="detail_rapat"></textarea>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
-								<label for="jenis-agenda" class="col-form-label">Jenis Rapat</label>
+								<label for="jenis-agenda" class="col-form-label">Jenis Rapat <b class="text-danger">*</b></label>
 								<select class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
 									{{-- <option selected>Cari</option> --}}
 									@foreach($jenis_rapat as $a)
@@ -88,15 +80,18 @@
 									@endforeach
 								</select>
 							</div>
-							
+							<div class="col-md">
+								<label for="notulensi" class="col-form-label">Agenda <b class="text-danger">*</b></label>
+								<input type="text" class="form-control" id="notulensi" name="agenda">
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
-								<label for="agenda" class="col-form-label">Jumlah Agenda</label>
+								<label for="agenda" class="col-form-label">Jumlah Agenda <b class="text-danger">*</b></label>
 								<input type="number" class="form-control" id="agenda" name="jml_agenda">
 							</div>
 							<div class="col-md">
-								<label for="total-peserta" class="col-form-label">Tamu Rapat</label>
+								<label for="total-peserta" class="col-form-label">Tamu Rapat <b class="text-danger">*</b></label>
 								<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">>
 									{{-- <option selected>Cari</option> --}}
 									@foreach($pegawai as $a)
@@ -106,17 +101,17 @@
 							</div>
 						</div>
 						<br>
-						<div class="alert alert-warning" role="alert">
+						<div class="alert alert-danger" role="alert">
 							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b>
 						</div>
 						<div class="row">
 							
 							<div class="col-md">
-								<label for="peserta" class="col-form-label">Peserta Rapat</label>
+								<label for="peserta" class="col-form-label">File Peserta Rapat (.csv)</label>
 								<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
 							</div>
 							<div class="col-md">
-								<label for="detail" class="col-form-label">Peserta Rapat</label>
+								<label for="detail" class="col-form-label">Email Peserta Rapat</label>
 								<input type="text" class="form-control" id="detail" name="peserta_rapat">
 							</div>
 							<div class="col-md">
@@ -125,22 +120,18 @@
 							</div>
 						</div>
 						<br>
-						<div class="alert alert-warning" role="alert">
+						<div class="alert alert-danger" role="alert">
 							<b> Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
 						</div>
 						<div class="row">
-							<div class="col-md">
-								<label for="notulensi" class="col-form-label">Agenda</label>
-								<input type="text" class="form-control" id="notulensi" name="agenda">
-							</div>
+							
 							<div class="col-md">
 								<label for="notulensi" class="col-form-label">Unggah File Notulensi</label>
 								<input type="file" class="form-control" id="notulensi" name="file_notulensi">
 							</div>
-						</div>
-						<div class="row">
+						
 							<div class="col-md">
-								<br>
+							
 								<label for="summernote" class="col-form-label">Tulis Notulensi</label>
 								<br>
 								{{-- <textarea id="area"></textarea> --}}
@@ -153,7 +144,7 @@
 				<br>
 				<div class="card-footer text-right bg-secondary">
 					{{-- <button type="button" class="btn btn-danger">Close</button> --}}
-					<button type="submit" class="btn btn-primary">Simpan</button>
+					<button type="submit" class="btn btn-primary btn-lg">Simpan</button>
 				</div>
 			</div>
 		</form>

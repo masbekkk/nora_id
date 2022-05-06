@@ -12,82 +12,88 @@
 @endsection
 
 @section('modal')
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="NotulensiDetailModal" tabindex="-1" role="dialog" aria-labelledby="NotulensiDetailModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="NotulensiDetailModalLabel">Detail Notulensi</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					<table>
+					<table class="table w-100 table-sm table-borderless">
 						<tr>
 							<td>Nomor Undangan</td>
-							<td>: </td>
+							<td style="width:1%">:</td>
 							<td id="mdata-no-undangan"></td>
 						</tr>
 						<tr>
-							<td>Agenda</td>
-							<td>: </td>
-							<td id="mdata-agenda"></td>
-						</tr>
-						<tr>
-							<td>Pimpinan Rapat</td>
-							<td>: </td>
-							<td id="mdata-pemimpin"></td>
+							<td>Jenis Rapat</td>
+							<td style="width:1%">:</td>
+							<td id="mdata-jenis-rapat"></td>
 						</tr>
 						<tr>
 							<td>Tanggal Rapat</td>
-							<td>: </td>
+							<td style="width:1%">:</td>
 							<td id="mdata-tgl"></td>
 						</tr>
 						<tr>
 							<td>Waktu Rapat</td>
-							<td>: </td>
+							<td style="width:1%">:</td>
 							<td id="mdata-waktu"></td>
 						</tr>
 						<tr>
-							<td>Ruang/Lokasi</td>
-							<td>: </td>
+							<td>Ruang / Lokasi Rapat</td>
+							<td style="width:1%">:</td>
 							<td id="mdata-lokasi"></td>
 						</tr>
 						<tr>
-							<td>Jenis Rapat</td>
-							<td>: </td>
-							<td id="mdata-jenis-rapat"></td>
+							<td>Pimpinan Rapat</td>
+							<td style="width:1%">:</td>
+							<td id="mdata-pemimpin"></td>
+						</tr>
+						<tr>
+							<td>Agenda</td>
+							<td style="width:1%">:</td>
+							<td id="mdata-agenda"></td>
+						</tr>
+						<tr>
+							<td>Jumlah Agenda</td>
+							<td style="width:1%">:</td>
+							<td id="mdata-jml-agenda"></td>
+						</tr>
+						<tr>
+							<td>Tamu Rapat</td>
+							<td style="width:1%">:</td>
+							<td id="mdata-tamu"></td>
 						</tr>
 						<tr>
 							<td>Notulen Rapat</td>
-							<td>: </td>
-							<td id="mdata-notulen">Shinta</td>
+							<td style="width:1%">:</td>
+							<td id="mdata-notulen"></td>
 						</tr>
 						<tr>
 							<td>Peserta Rapat</td>
-							<td>: </td>
+							<td style="width:1%">:</td>
 							<td id="mdata-peserta-rapat"></td>
 						</tr>
 						<tr>
 							<td>Total Peserta Rapat</td>
-							<td>: </td>
+							<td style="width:1%">:</td>
 							<td id="mdata-total-peserta"></td>
 						</tr>
 						<tr>
 							<td>Detail Rapat</td>
-							<td>: </td>
+							<td style="width:1%">:</td>
 							<td id="mdata-detail-rapat"></td>
 						</tr>
 						<tr>
 							<td>File Dokumentasi</td>
-							<td>: </td>
+							<td style="width:1%">:</td>
 							<td id="mdata-file-notulensi"><a href="{{ route('download.notulensi', ['id' => '1']) }}">Download File</a></td>
 						</tr>
 					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>
@@ -122,7 +128,7 @@
 								<th class="">Nomor Undangan</th>
 								<th class="">Agenda</th>
 								<th class="">Pimpinan</th>
-								<th class="">Hari, Tanggal</th>
+								<th class="">Tanggal Rapat</th>
 								<th class="" style="width: 100px;">Aksi</th>
 							</tr>
 						</thead>
@@ -133,7 +139,7 @@
 								<td class="align-middle">{{ $a->no_undangan }}</td>
 								<td class="align-middle">{{ $a->agenda }}</td>
 								<td class="align-middle">{{ $a->pemimpin->name }}</td>
-								<td class="align-middle">{{ date('d M Y', strtotime($a->tgl)) }}</td>
+								<td class="align-middle">{{ $a->tgl->format('d F Y') }}</td>
 								
 								{{-- Action untuk sekretaris --}}
 								@if(Auth::user()->role_id == 2 || Auth::user()->role_id == 1)
@@ -144,7 +150,23 @@
 											<a class="btn btn-danger btn-sm text-white w-50 ml-1" title="Delete"><i class="fas fa-trash"></i></a>
 										</div>
 										<div class="col-12 d-flex justify-content-center mt-2">
-											<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#exampleModal" data-whatever="{{ $a->id }}"><i class="fas fa-"></i><i class="fa-solid fa-circle-info"></i>&nbsp;Detail</a>
+											<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#NotulensiDetailModal"
+											data-no-undangan="{{ $a->no_undangan }}"
+											data-tgl="{{ $a->tgl->format('d F Y') }}"
+											data-lokasi="{{ $a->lokasi }}"
+											data-waktu="{{ $a->waktu }}"
+											data-pemimpin="{{ $a->pemimpin->name }}"
+											data-jenis="{{ $a->jenis->nama }}"
+											data-jml-agenda="{{ $a->jml_agenda }}"
+											data-tamu="{{ $a->tamu }}"
+											data-detail="{{ $a->detail_rapat }}"
+											data-file="{{ route('download.notulensi', $a->id) }}"
+											data-agenda="{{ $a->agenda }}"
+											data-peserta="{{ $a->peserta_rapat }}"
+											data-total-peserta="{{ $a->total_peserta }}"
+											data-notulen="{{ $a->notulen->name }}">
+												&nbsp;Detail
+											</a>
 										</div>
 									</div>
 								</td>
@@ -161,87 +183,6 @@
 								</td>
 								@endif
 							</tr>
-							{{-- <!-- Modal Detail Notulensi -->
-							<div class="modal fade" id="exampleModal{{$a->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="false">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body">
-											<table>
-												<tr>
-													<td>Nomor Undangan</td>
-													<td>: </td>
-													<td>{{$a->no_undangan}}</td>
-												</tr>
-												<tr>
-													<td>Agenda</td>
-													<td>: </td>
-													<td>{{$a->agenda}}</td>
-												</tr>
-												<tr>
-													<td>Pimpinan Rapat</td>
-													<td>: </td>
-													<td>{{$a->pemimpin->name}}</td>
-												</tr>
-												<tr>
-													<td>Tanggal Rapat</td>
-													<td>: </td>
-													<td>{{date('d M Y', strtotime($a->tgl))}}</td>
-												</tr>
-												<tr>
-													<td>Waktu Rapat</td>
-													<td>: </td>
-													<td>{{$a->waktu}}</td>
-												</tr>
-												<tr>
-													<td>Ruang/Lokasi</td>
-													<td>: </td>
-													<td>{{$a->lokasi}}</td>
-												</tr>
-												<tr>
-													<td>Jenis Rapat</td>
-													<td>: </td>
-													<td>{{$a->jenis->nama}}</td>
-												</tr>
-												<tr>
-													<td>Notulen Rapat</td>
-													<td>: </td>
-													<td>Shinta</td>
-												</tr>
-												<tr>
-													<td>Peserta Rapat</td>
-													<td>: </td>
-													<td>...</td>
-												</tr>
-												<tr>
-													<td>Total Peserta Rapat</td>
-													<td>: </td>
-													<td>{{$a->total_peserta}}</td>
-												</tr>
-												<tr>
-													<td>Detail Rapat</td>
-													<td>: </td>
-													<td>{{$a->detail_rapat}}</td>
-												</tr>
-												<tr>
-													<td>File Dokumentasi</td>
-													<td>: </td>
-													<td><a href="{{route('download.notulensi', ['id' => $a->id])}}">Download File</a></td>
-												</tr>
-											</table>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
-											<button type="button" class="btn btn-primary">Lanjut</button>
-										</div>
-									</div>
-								</div>
-							</div> --}}
 							@endforeach
 						</tbody>
 					</table>
@@ -283,25 +224,41 @@
 	<script>
 		$(document).ready(function() {
 			$('#table-1').DataTable();
-			$('#exampleModal').on('show.bs.modal', function (event) {
-				var button = $(event.relatedTarget); // Button that triggered the modal
-				var recipient = button.data('whatever'); // Extract info from data-* attributes
+			$('#NotulensiDetailModal').on('show.bs.modal', function (event) {
+				const button = $(event.relatedTarget); // Button that triggered the modal
 				
-				// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-				// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-				var modal = $(this);
-				modal.find('#tr-1').text('test');
-				modal.find('#tr-2').text('test');
-				modal.find('#tr-3').text('test');
-				modal.find('#tr-4').text('test');
-				modal.find('#tr-5').text('test');
-				modal.find('#tr-6').text('test');
-				modal.find('#tr-7').text('test');
-				modal.find('#tr-9').text('test');
-				modal.find('#tr-10').text('test');
-				modal.find('#tr-11').text('test');
-				modal.find('#tr-12').text('test');
-				// modal.find('.modal-body input').val(recipient);
+				const no_undangan = button.data('no-undangan'),
+				tgl = button.data('tgl'),
+				lokasi = button.data('lokasi'),
+				waktu = button.data('waktu'),
+				pemimpin = button.data('pemimpin'),
+				jenis = button.data('jenis'),
+				jml_agenda = button.data('jml-agenda'),
+				tamu = button.data('tamu'),
+				detail = button.data('detail'),
+				file = button.data('file'),
+				agenda = button.data('agenda'),
+				peserta = button.data('peserta'),
+				total_peserta = button.data('total-peserta'),
+				notulen = button.data('notulen');
+				
+				var modal = $(this)
+				modal.find('#mdata-no-undangan').text(no_undangan);
+				modal.find('#mdata-tgl').text(tgl);
+				modal.find('#mdata-lokasi').text(lokasi);
+				modal.find('#mdata-waktu').text(waktu);
+				modal.find('#mdata-pemimpin').text(pemimpin);
+				modal.find('#mdata-jenis-rapat').text(jenis);
+
+				modal.find('#mdata-jml-agenda').text(jml_agenda);
+				modal.find('#mdata-tamu').text(tamu);
+				modal.find('#mdata-tamu').text(tamu);
+				modal.find('#mdata-detail-rapat').text(detail);
+				modal.find('#mdata-file-notulensi').find('a').attr('href', file);
+				modal.find('#mdata-agenda').text(agenda);
+				modal.find('#mdata-peserta-rapat').text(peserta);
+				modal.find('#mdata-total-peserta').text(total_peserta);
+				modal.find('#mdata-notulen').text(notulen);
 			});
 		});
 	</script>

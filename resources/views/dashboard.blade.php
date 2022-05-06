@@ -26,62 +26,62 @@
 						<tr>
 							<td>Nomor Undangan</td>
 							<td>: </td>
-							<td id="tr-1"></td>
+							<td id="mdata-no-undangan"></td>
 						</tr>
 						<tr>
 							<td>Agenda</td>
 							<td>: </td>
-							<td id="tr-2"></td>
+							<td id="mdata-agenda"></td>
 						</tr>
 						<tr>
 							<td>Pimpinan Rapat</td>
 							<td>: </td>
-							<td id="tr-3"></td>
+							<td id="mdata-pemimpin"></td>
 						</tr>
 						<tr>
 							<td>Tanggal Rapat</td>
 							<td>: </td>
-							<td id="tr-4"></td>
+							<td id="mdata-tgl"></td>
 						</tr>
 						<tr>
 							<td>Waktu Rapat</td>
 							<td>: </td>
-							<td id="tr-5"></td>
+							<td id="mdata-waktu"></td>
 						</tr>
 						<tr>
 							<td>Ruang/Lokasi</td>
 							<td>: </td>
-							<td id="tr-6"></td>
+							<td id="mdata-lokasi"></td>
 						</tr>
 						<tr>
 							<td>Jenis Rapat</td>
 							<td>: </td>
-							<td id="tr-7"></td>
+							<td id="mdata-jenis-rapat"></td>
 						</tr>
 						<tr>
 							<td>Notulen Rapat</td>
 							<td>: </td>
-							<td id="tr-8">Shinta</td>
+							<td id="mdata-notulen">Shinta</td>
 						</tr>
 						<tr>
 							<td>Peserta Rapat</td>
 							<td>: </td>
-							<td id="tr-9">...</td>
+							<td id="mdata-peserta-rapat"></td>
 						</tr>
 						<tr>
 							<td>Total Peserta Rapat</td>
 							<td>: </td>
-							<td id="tr-10"></td>
+							<td id="mdata-total-peserta"></td>
 						</tr>
 						<tr>
 							<td>Detail Rapat</td>
 							<td>: </td>
-							<td id="tr-11"></td>
+							<td id="mdata-detail-rapat"></td>
 						</tr>
 						<tr>
 							<td>File Dokumentasi</td>
 							<td>: </td>
-							<td id="tr-12"><a href="{{ route('download.notulensi', ['id' => '1']) }}">Download File</a></td>
+							<td id="mdata-file-notulensi"><a href="{{ route('download.notulensi', ['id' => '1']) }}">Download File</a></td>
 						</tr>
 					</table>
 				</div>
@@ -144,7 +144,7 @@
 											<a class="btn btn-danger btn-sm text-white w-50 ml-1" title="Delete"><i class="fas fa-trash"></i></a>
 										</div>
 										<div class="col-12 d-flex justify-content-center mt-2">
-											<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#exampleModal" data-whatever="{{ $a->id }}"><i class="fas fa-"></i>&nbsp;Detail</a>
+											<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#exampleModal" data-whatever="{{ $a->id }}"><i class="fas fa-"></i><i class="fa-solid fa-circle-info"></i>&nbsp;Detail</a>
 										</div>
 									</div>
 								</td>
@@ -155,7 +155,7 @@
 									<div class="row w-100">
 										<div class="col-12 d-flex justify-content-between">
 											<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal{{$a->id}}"><i class="fa-solid fa-circle-info"></i></a>
-											<a class="btn btn-info btn-sm text-white w-50 ml-1" href="{{route('download.notulensi', ['id' => $a->id])}}"><i class="fa-solid fa-file-arrow-down"></i></a>
+											<a class="btn btn-info btn-sm text-white w-50 ml-1" href="{{ route('download.notulensi', ['id' => $a->id]) }}"><i class="fa-solid fa-file-arrow-down"></i></a>
 										</div>
 									</div>
 								</td>

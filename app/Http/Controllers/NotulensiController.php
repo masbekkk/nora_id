@@ -327,13 +327,14 @@ class NotulensiController extends Controller
         // }
         
         if($value == 1){
-            if($request->file_notulensi == NULL)
-                return redirect()->route('create.notulensi')->with('errors', 'Kamu belum upload file Notulensi!');
-            else {
+            // if($request->file_notulensi == NULL)
+            //     return redirect()->route('create.notulensi')->with('errors', 'Kamu belum upload file Notulensi!');
+            // else {
                 $file = $request->file('file_notulensi');
                 $path = 'notulensis';
                 $string = rand(22,5033);
                 if ($file != null) {
+                    if(File::exists($data->file_notulensi)) File::delete($data->file_notulensi);
                     $fileName = $string .'___data_notulensi_rapat ' .$request->agenda. '__.'.$file->getClientOriginalExtension();
                     $file->move($path, $fileName);
                     $data->file_notulensi = $path . '/' . $fileName;
@@ -342,7 +343,7 @@ class NotulensiController extends Controller
                     foreach($anu as $a){
                         $emel = User::find($a);
                         Notification::route('mail' , $emel->email) //Sending mail to subscriber
-                        ->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi));
+                        ->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
                         $result[] = $emel->name;
                     }
                     $data->tamu = implode(',', $result);
@@ -351,13 +352,13 @@ class NotulensiController extends Controller
                 foreach($arr as $a){
                     // $emel = User::find($a);
                     Notification::route('mail' , $a) //Sending mail to subscriber
-                    ->notify(new NewNotulensiNotify('Peserta Rapat', $data->file_notulensi));
+                    ->notify(new NewNotulensiNotify('Peserta Rapat', $data->file_notulensi, $data->agenda));
                     // $result[] = $emel->name;
                 }
                 $data->save();
                 return redirect()->route('dashboard.notulensi')
                     ->with('toast_success', 'Data Notulensi Berhasil diupdate!');
-            }
+            // }
         }elseif($value == 2){
             // $temp = $data;
            

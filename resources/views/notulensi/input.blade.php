@@ -115,11 +115,11 @@
 						<div class="row">
 							
 							<div class="col-md">
-								<label for="peserta" class="col-form-label">Peserta Rapat</label>
+								<label for="peserta" class="col-form-label">File Peserta Rapat (.csv)</label>
 								<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
 							</div>
 							<div class="col-md">
-								<label for="detail" class="col-form-label">Peserta Rapat</label>
+								<label for="detail" class="col-form-label">Email Peserta Rapat</label>
 								<input type="text" class="form-control" id="detail" name="peserta_rapat">
 							</div>
 							<div class="col-md">
@@ -137,10 +137,9 @@
 								<label for="notulensi" class="col-form-label">Unggah File Notulensi</label>
 								<input type="file" class="form-control" id="notulensi" name="file_notulensi">
 							</div>
-						</div>
-						<div class="row">
+						
 							<div class="col-md">
-								<br>
+							
 								<label for="summernote" class="col-form-label">Tulis Notulensi</label>
 								<br>
 								{{-- <textarea id="area"></textarea> --}}

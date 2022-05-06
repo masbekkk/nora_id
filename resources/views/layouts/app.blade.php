@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', config('app.name'))</title>
-    <link rel="icon" href="{{ asset('/img/pp.jpg') }}" />
+    <link rel="icon" href="{{ asset('img/noraid-logo-sm.png') }}" />
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

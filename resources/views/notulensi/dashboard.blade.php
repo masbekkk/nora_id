@@ -89,7 +89,7 @@
 							<td id="mdata-detail-rapat"></td>
 						</tr>
 						<tr>
-							<td>File Dokumentasi</td>
+							<td>File Notulensi</td>
 							<td style="width:1%">:</td>
 							<td id="mdata-file-notulensi"><a href="{{ route('download.notulensi', ['id' => '1']) }}">Download File</a></td>
 						</tr>
@@ -176,7 +176,24 @@
 								<td class="d-flex justify-content-center">
 									<div class="row w-100">
 										<div class="col-12 d-flex justify-content-between">
-											<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal{{$a->id}}"><i class="fa-solid fa-circle-info"></i></a>
+											{{-- <a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal{{$a->id}}"><i class="fa-solid fa-circle-info"></i></a> --}}
+											<a class="btn btn-primary w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#NotulensiDetailModal"
+											data-no-undangan="{{ $a->no_undangan }}"
+											data-tgl="{{ $a->tgl->format('d F Y') }}"
+											data-lokasi="{{ $a->lokasi }}"
+											data-waktu="{{ $a->waktu }}"
+											data-pemimpin="{{ $a->pemimpin->name }}"
+											data-jenis="{{ $a->jenis->nama }}"
+											data-jml-agenda="{{ $a->jml_agenda }}"
+											data-tamu="{{ $a->tamu }}"
+											data-detail="{{ $a->detail_rapat }}"
+											data-file="{{ route('download.notulensi', $a->id) }}"
+											data-agenda="{{ $a->agenda }}"
+											data-peserta="{{ $a->peserta_rapat }}"
+											data-total-peserta="{{ $a->total_peserta }}"
+											data-notulen="{{ $a->notulen->name }}">
+												&nbsp;<i class="fa-solid fa-circle-info"></i>
+											</a>
 											<a class="btn btn-info btn-sm text-white w-50 ml-1" href="{{ route('download.notulensi', ['id' => $a->id]) }}"><i class="fa-solid fa-file-arrow-down"></i></a>
 										</div>
 									</div>

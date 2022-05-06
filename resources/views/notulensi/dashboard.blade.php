@@ -71,7 +71,7 @@
 										<div class="row w-100">
 											<div class="col-12 d-flex justify-content-between">
 												<a class="btn btn-primary btn-sm text-white w-50 mr-1" href="{{route('edit.notulensi', ['id' => $a->id])}}" title="Edit"><i class="fas fa-edit"></i></a>
-												<a class="btn btn-danger btn-sm text-white w-50 ml-1" href="{{route('delete.notulensi', ['id' => $a->id])}}" title="Delete"><i class="fas fa-trash"></i></a>
+												<a class="btn btn-danger btn-sm text-white w-50 ml-1" onclick="return confirm('Yakin ingin menghapus data?');" href="{{route('delete.notulensi', ['id' => $a->id])}}" title="Delete"><i class="fas fa-trash"></i></a>
 											</div>
 											<div class="col-12 d-flex justify-content-center mt-2">
 												<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#exampleModal{{$a->id}}"><i class="fas fa-"></i>&nbsp;Detail</a>
@@ -83,7 +83,7 @@
 										<div class="row w-100">
 											<div class="col-12 d-flex justify-content-between">
 												<a class="btn btn-primary btn-sm text-white w-50 mr-1" title="detail" data-toggle="modal" data-target="#exampleModal{{$a->id}}"><i class="fa-solid fa-circle-info"></i></a>
-												<a class="btn btn-info btn-sm text-white w-50 ml-1" href="{{route('download.notulensi', ['id' => $a->id])}}"><i class="fa-solid fa-file-arrow-down"></i></a>
+												<a class="btn btn-info btn-sm text-white w-50 ml-1" onclick="return confirm('Yakin ingin mendownload File?');" href="{{route('download.notulensi', ['id' => $a->id])}}"><i class="fa-solid fa-file-arrow-down"></i></a>
 											</div>
 										</div>
 									</td>

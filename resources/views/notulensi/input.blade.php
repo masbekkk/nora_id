@@ -61,7 +61,11 @@
 								<select class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
 									{{-- <option selected>Cari</option> --}}
 									@foreach($pegawai as $a)
-										<option value="{{$a->id}}">{{$a->name}}</option>
+										@if(old('id_pemimpin_rapat')==$a->id)
+											<option value= {{ $a->id }} selected>{{ $a->name }}</option>
+										@else
+											<option value= {{ $a->id }} >{{ $a->name }}</option>
+										@endif
 									@endforeach
 								</select>
 							</div>
@@ -76,7 +80,12 @@
 								<select class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
 									{{-- <option selected>Cari</option> --}}
 									@foreach($jenis_rapat as $a)
-									<option value="{{$a->id}}">{{$a->nama}}</option>
+									@if(old('id_jenis_rapat')==$a->id)
+											<option value= {{ $a->id }} selected>{{ $a->nama }}</option>
+										@else
+											<option value= {{ $a->id }} >{{ $a->nama }}</option>
+										@endif
+									{{-- <option value="{{$a->id}}">{{$a->nama}}</option> --}}
 									@endforeach
 								</select>
 							</div>
@@ -95,7 +104,7 @@
 								<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">>
 									{{-- <option selected>Cari</option> --}}
 									@foreach($pegawai as $a)
-										<option value="{{$a->id}}">{{$a->name}}</option>
+										{{-- <option value="{{$a->id}}">{{$a->name}}</option> --}}
 									@endforeach
 								</select>
 							</div>

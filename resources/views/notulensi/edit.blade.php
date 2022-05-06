@@ -23,10 +23,11 @@
 	
 	{{-- Content Form Section --}}
 	<div class="section-body">
-		<h2 class="section-title">Masukan Data Notulensi</h2>
+		<h2 class="section-title">Edit Data Notulensi</h2>
 		<p class="section-lead">Pastikan untuk memasukan sesuatu yang wadidaw</p>
-		<form action="{{route('store.notulensi', ['value' => 1])}}" method="POST" enctype="multipart/form-data">
+		<form action="{{route('update.notulensi', ['value' => 1, 'id' => $data->id])}}" method="POST" enctype="multipart/form-data">
 			@csrf
+			{{method_field('PUT')}}
 			<div class="card card-danger bg-light">
 				{{-- <div class="card-header">
 					<div class="ml-auto w-0">
@@ -79,7 +80,7 @@
 							</div>
 							<div class="col-md">
 								<label for="detail" class="col-form-label">Detail Rapat</label>
-								<textarea class="form-control" id="detail" name="detail_rapat" value="{{$data->detail_rapat}}">{{$a->detail_rapat}}</textarea>
+								<textarea class="form-control" id="detail" name="detail_rapat" value="{{$data->detail_rapat}}">{{$data->detail_rapat}}</textarea>
 							</div>
 						</div>
 						<div class="row">
@@ -88,11 +89,18 @@
 								<select class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
 									{{-- <option selected>Cari</option> --}}
 									@foreach($jenis_rapat as $a)
+									@if($data->id_jenis_rapat == $a->id)
+									<option selected value="{{$a->id}}">{{$a->nama}}</option>
+									@else
 									<option value="{{$a->id}}">{{$a->nama}}</option>
+									@endif
 									@endforeach
 								</select>
 							</div>
-							
+							<div class="col-md">
+								<label for="notulensi" class="col-form-label">Agenda</label>
+								<input type="text" class="form-control" id="notulensi" name="agenda" value="{{$data->agenda}}">
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
@@ -101,8 +109,8 @@
 							</div>
 							<div class="col-md">
 								<label for="total-peserta" class="col-form-label">Tamu Rapat</label>
-								<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">
-									{{-- <option selected>Cari</option> --}}
+								<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple" value="{{$data->tamu}}">
+									<option selected value="{{$data->tamu}}">{{$data->tamu}}</option>
 									@foreach($pegawai as $a)
 									<option value="{{$a->id}}">{{$a->name}}</option>
 									@endforeach
@@ -110,7 +118,7 @@
 							</div>
 						</div>
 						<br>
-						<div class="alert alert-warning" role="alert">
+						<div class="alert alert-danger" role="alert">
 							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b>
 						</div>
 						<div class="row">
@@ -125,29 +133,24 @@
 							</div>
 							<div class="col-md">
 								<label for="detail" class="col-form-label">Jumlah Peserta Rapat</label>
-								<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{$data->jml_peserta_rapat}}">
+								<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{$data->total_peserta}}">
 							</div>
 						</div>
 						<br>
-						<div class="alert alert-warning" role="alert">
+						<div class="alert alert-info" role="alert">
+							<strong> Notulensi Sebelumnya: </strong> <a href="{{route('download.notulensi', ['id'=> $a->id])}}" class="alert-link"><u>Download File</u></a>. 
+							<strong>Abaikan Upload File/ Tulis Notulensi jika tidak ingin mengubahnya</strong>
+						</div>
+						<div class="alert alert-danger" role="alert">
 							<b> Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
 						</div>
 						<div class="row">
 							<div class="col-md">
-								<label for="notulensi" class="col-form-label">Agenda</label>
-								<input type="text" class="form-control" id="notulensi" name="agenda" value="{{$data->agenda}}">
-							</div>
-							<div class="col-md">
 								<label for="notulensi" class="col-form-label">Unggah File Notulensi</label>
-								<input type="file" class="form-control" id="notulensi" name="file_notulensi">
+								<input type="file" class="form-control" id="notulensi" name="file_notulensi" value="{{$data->file_notulensi}}">
 							</div>
-						</div>
-						<div class="row">
 							<div class="col-md">
-								<br>
-								<label for="summernote" class="col-form-label">Tulis Notulensi</label>
-								<br>
-								{{-- <textarea id="area"></textarea> --}}
+								<label for="summernote" class="col-form-label">Tulis Notulensi</label><br>
 								<button type="submit" class="btn btn-warning btn-lg oEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 							</div>
 						</div> 

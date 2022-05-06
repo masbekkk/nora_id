@@ -88,7 +88,10 @@
 									@endforeach
 								</select>
 							</div>
-							
+							<div class="col-md">
+								<label for="notulensi" class="col-form-label">Agenda</label>
+								<input type="text" class="form-control" id="notulensi" name="agenda">
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-md">
@@ -106,7 +109,7 @@
 							</div>
 						</div>
 						<br>
-						<div class="alert alert-warning" role="alert">
+						<div class="alert alert-danger" role="alert">
 							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b>
 						</div>
 						<div class="row">
@@ -125,14 +128,11 @@
 							</div>
 						</div>
 						<br>
-						<div class="alert alert-warning" role="alert">
+						<div class="alert alert-danger" role="alert">
 							<b> Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
 						</div>
 						<div class="row">
-							<div class="col-md">
-								<label for="notulensi" class="col-form-label">Agenda</label>
-								<input type="text" class="form-control" id="notulensi" name="agenda">
-							</div>
+							
 							<div class="col-md">
 								<label for="notulensi" class="col-form-label">Unggah File Notulensi</label>
 								<input type="file" class="form-control" id="notulensi" name="file_notulensi">
@@ -153,7 +153,7 @@
 				<br>
 				<div class="card-footer text-right bg-secondary">
 					{{-- <button type="button" class="btn btn-danger">Close</button> --}}
-					<button type="submit" class="btn btn-primary">Simpan</button>
+					<button type="submit" class="btn btn-primary btn-lg">Simpan</button>
 				</div>
 			</div>
 		</form>

@@ -58,7 +58,7 @@ class NotulensiController extends Controller
             'id_pemimpin_rapat' => 'required',
             'id_jenis_rapat' => 'required',
             'jml_agenda' => 'required',
-            'tamu' => 'required',
+            // 'tamu' => 'required',
             'detail_rapat' => 'required',
             'agenda' => 'required',
             // 'peserta_rapat' => 'required'
@@ -85,19 +85,21 @@ class NotulensiController extends Controller
                 $lokasi = $path . '/' . $fileName;
             }else return redirect()->route('create.notulensi')->with('errors', 'Kamu belum upload file Peserta Rapat!');
             $csvFile = fopen($lokasi, 'r');
-            $isHeader = true;
-            $jml = 1;
+            $isHeader = false;
+            $jml = 0;
             while(($obj = fgetcsv($csvFile, 1000, ',')) !== FALSE) {
                 if(!$isHeader) {
                     $peserta[] = $obj[1];
+                    $email[] = $obj[2];
                     $jml++;
                 }
                 $isHeader = false;
             }
             fclose($csvFile);
-        
-            $data->peserta_rapat = implode(',', $peserta);
+            
+            $data->peserta_rapat = implode(',', $email);
             $data->total_peserta = $jml;
+            
         }else{
             $data->peserta_rapat = $request->peserta_rapat;
             $data->total_peserta = $request->jml_peserta_rapat;
@@ -171,7 +173,7 @@ class NotulensiController extends Controller
         $Pdf = $dompdf->output();
         $lokasi = 'notulensis/rapat__' . $data->agenda . '__notulensi.pdf';
         file_put_contents($lokasi, $Pdf);
-        $data->live_notulensi = $request->notulensi_live;
+        $data->notulensi_live = $request->notulensi_live;
       
         $data->file_notulensi = $lokasi;
         $anu = explode(',', $data->tamu);
@@ -183,6 +185,14 @@ class NotulensiController extends Controller
             $result[] = $emel->name;
         }
         $data->tamu = implode(',', $result);
+
+        $arr = explode(',', $data->peserta_rapat);
+        foreach($arr as $a){
+            // $emel = User::find($a);
+            Notification::route('mail' , $a) //Sending mail to subscriber
+            ->notify(new NewNotulensiNotify('Peserta Rapat', $data->file_notulensi));
+            // $result[] = $emel->name;
+        }
         $data->save();
      
         return redirect()->route('dashboard.notulensi')

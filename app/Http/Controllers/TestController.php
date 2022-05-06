@@ -69,28 +69,30 @@ class TestController extends Controller
         }
         $data->users_id = implode(',', $result);
         $data->notulensi = $request->notulensi;
-        $file = $request->file('peserta');
-        $path = 'files';
-        $string = rand(22,5033);
-        if ($file != null) {
-            $fileName = $string .'___datapeserta_rapat ' .$request->agenda. '.'.$file->getClientOriginalExtension();
-            $file->move($path, $fileName);
-            $lokasi = $path . '/' . $fileName;
-        }
-        $csvFile = fopen($lokasi, 'r');
-        $isHeader = true;
-        $jml = 1;
-        while(($obj = fgetcsv($csvFile, 1000, ',')) !== FALSE) {
-            if(!$isHeader) {
-                $peserta[] = $obj[1];
-                $jml++;
-            }
-            $isHeader = false;
-        }
-        fclose($csvFile);
-       
-        $data->peserta = implode(',', $peserta);
-        $data->total_peserta = $jml;
+        // $file = $request->file('peserta');
+        // $path = 'files';
+        // $string = rand(22,5033);
+        // if ($file != null) {
+        //     $fileName = $string .'___datapeserta_rapat ' .$request->agenda. '.'.$file->getClientOriginalExtension();
+        //     $file->move($path, $fileName);
+        //     $lokasi = $path . '/' . $fileName;
+        // }
+        // $csvFile = fopen($lokasi, 'r');
+        // $isHeader = false;
+        // $jml = 0;
+        // while(($obj = fgetcsv($csvFile, 1000, ',')) !== FALSE) {
+        //     if(!$isHeader) {
+        //         $peserta[] = $obj[1];
+        //         $email[] = $obj[2];
+        //         $jml++;
+        //     }
+        //     $isHeader = false;
+        // }
+        // fclose($csvFile);
+        // dd($peserta);
+        $data->peserta = $request->email_peserta;
+        // $data->total_peserta = $jml;
+        $data->total_peserta = 2;
         $dompdf = new Dompdf();
         $dompdf->loadHtml($request->notulensi);
         $dompdf->render();
@@ -99,6 +101,13 @@ class TestController extends Controller
         file_put_contents($lokasi, $Pdf);
       
         $data->notulensi = $lokasi;
+        $arr = explode(',', $data->peserta);
+        foreach($arr as $a){
+            // $emel = User::find($a);
+            Notification::route('mail' , $a) //Sending mail to subscriber
+            ->notify(new NewNotulensiNotify('Peserta Rapat', $data->notulensi));
+            // $result[] = $emel->name;
+        }
         $data->save();
      
         return "oke";

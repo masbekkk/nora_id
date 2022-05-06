@@ -112,6 +112,7 @@
 						<div class="alert alert-danger" role="alert">
 							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b><br>
 							<small>Format csv harus data index ke 2 berisi email, contoh: 1,budi, budi@gmail.com</small>
+							<p> Contoh File format .csv yang benar <u><a target="blank" href="files/Book1.csv">Download File</a></u></p>
 						</div>
 						<div class="row">
 							

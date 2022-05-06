@@ -18,10 +18,12 @@ class NewNotulensiNotify extends Notification
      */
     protected $nama;
     protected $files;
-    public function __construct($nama, $files)
+    protected $agenda;
+    public function __construct($nama, $files, $agenda)
     {
         $this->nama = $nama;
         $this->files = $files;
+        $this->agenda = $agenda;
 
     }
 
@@ -45,11 +47,12 @@ class NewNotulensiNotify extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-        ->subject('Hey Romusha PENS ' .$this->nama. ', Notulensi dari acara yang kamu ikuti sudah ada!')
-        ->greeting('Hello, ini ntar nama acaranya' )
-        ->line('Notulensi Acara Telah Dikirim!')
-        ->line('Silahkan Bisa dilihat ya! ') //Send with post title
-        ->action('Klik untuk Melihat File' , url($this->files)) //Send with post url
+        ->subject($this->nama. 
+        ', Notulensi dari acara yang kamu ikuti sudah ada!')
+        ->greeting('Notulensi Rapat ' . $this->agenda . ' Telah dikirim')
+        // ->line('Notulensi Acara Telah Dikirim!')
+        ->line('Lihat hasil Notulensi dengan klik Button dibawah ini!') //Send with post title
+        ->action('Klik untuk Download File' , url($this->files)) //Send with post url
         ->line('Thank you for support us!');
     }
 

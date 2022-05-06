@@ -102,12 +102,15 @@
 						</div>
 						<br>
 						<div class="alert alert-danger" role="alert">
-							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b>
+							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b><br>
+							<small>Format csv harus data index ke 2 berisi email, contoh: 1,budi, budi@gmail.com</small>
+							<p> Contoh File format .csv yang benar <u><a target="blank" href="files/Book1.csv">Download File</a></u></p>
 						</div>
 						<div class="row">
 							
 							<div class="col-md">
-								<label for="peserta" class="col-form-label">File Peserta Rapat (.csv)</label>
+								<label for="peserta" class="col-form-label">File Peserta Rapat (.csv)</label><br>
+								
 								<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
 							</div>
 							<div class="col-md">

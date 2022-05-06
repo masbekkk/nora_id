@@ -119,7 +119,9 @@
 						</div>
 						<br>
 						<div class="alert alert-danger" role="alert">
-							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b>
+							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b><br>
+							<small>Format csv harus data index ke 2 berisi email, contoh: 1,budi, budi@gmail.com</small>
+							<p> Contoh File format .csv yang benar <u><a target="blank" href="files/Book1.csv">Download File</a></u></p>
 						</div>
 						<div class="row">
 							
@@ -147,11 +149,11 @@
 						<div class="row">
 							<div class="col-md">
 								<label for="notulensi" class="col-form-label">Unggah File Notulensi</label>
-								<input type="file" class="form-control" id="notulensi" name="file_notulensi" value="{{$data->file_notulensi}}">
+								<input type="file" class="form-control" id="notulensi" name="file_notulensi">
 							</div>
 							<div class="col-md">
 								<label for="summernote" class="col-form-label">Tulis Notulensi</label><br>
-								<button type="submit" class="btn btn-warning btn-lg oEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
+								<button type="submit" class="btn btn-warning btn-lg eEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 							</div>
 						</div> 
 						
@@ -207,6 +209,9 @@
 	<script>
 		 $(document).ready(function() {
 			$('.select2').select2();
+		});
+		$(".eEbutn").click(function() {
+			$(this).closest("form").attr("action", "/update-notulensi/2/{{$data->id}}");       
 		});
 	</script>
 @endsection

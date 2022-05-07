@@ -106,7 +106,7 @@
         <h1>Daftar Notulensi</h1>
 		<div class="section-header-breadcrumb transparent">
 			{{-- hanya untuk dipage sekretaris --}}
-			@if(Auth::user()->role_id == 2)
+			@if(Auth::user()->role_id == 2 || Auth::user()->role_id == 1)
 				<a href="{{route('create.notulensi')}}" class="btn btn-primary btn-lg btn-icon-split btn-block">
 					<div><i class="fas fa-plus"></i>Tambah Notulensi</div>
 				</a>

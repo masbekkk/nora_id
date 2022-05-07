@@ -104,7 +104,7 @@
 								<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">>
 									{{-- <option selected>Cari</option> --}}
 									@foreach($pegawai as $a)
-										{{-- <option value="{{$a->id}}">{{$a->name}}</option> --}}
+										<option value="{{$a->id}}">{{$a->name}}</option>
 									@endforeach
 								</select>
 							</div>

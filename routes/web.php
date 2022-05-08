@@ -56,7 +56,7 @@ Route::post('/store/jenis-rapat', [App\Http\Controllers\JenisRapatController::cl
 Route::put('/update/jenis-rapat/{id}', [App\Http\Controllers\JenisRapatController::class, 'update'])->name('update.jenis.rapat');
 Route::get('/delete/jenis-rapat/{id}', [App\Http\Controllers\JenisRapatController::class, 'delete'])->name('delete.jenis.rapat');
 
-Route::get('/lokasi-rapat', [App\Http\Controllers\lokasiRapatController::class, 'index'])->name('lokasi.rapat');
+Route::get('/lokasi-rapat', [App\Http\Controllers\LokasiRapatController::class, 'index'])->name('lokasi.rapat');
 Route::post('/store/jenis-lokasi', [App\Http\Controllers\LokasiRapatController::class, 'store'])->name('store.lokasi.rapat');
 Route::put('/update/jenis-lokasi/{id}', [App\Http\Controllers\LokasiRapatController::class, 'update'])->name('update.lokasi.rapat');
 Route::get('/delete/jenis-lokasi/{id}', [App\Http\Controllers\LokasiRapatController::class, 'delete'])->name('delete.lokasi.rapat');

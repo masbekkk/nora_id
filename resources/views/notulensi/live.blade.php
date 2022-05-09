@@ -19,7 +19,7 @@
         'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
         'forecolor backcolor emoticons | help',
       menu: {
-        favs: { title: 'Agenda Rapat: ', items: 'code visualaid | searchreplace | emoticons' }
+        favs: { title: 'Agenda Rapat: {{$data->agenda}}', items: 'code visualaid | searchreplace | emoticons' }
       },
       menubar: 'favs file edit view insert format tools table help',
       content_css: 'css/content.css',
@@ -35,18 +35,18 @@
   @section('content')
   <div class="section-header bg-white">
     <h1>Live Notulensi Acara 
-      {{-- {{$data->agenda}} --}}
+      {{$data->agenda}}
     </h1>
     <div class="section-header-breadcrumb transparent">
       {{-- hanya untuk dipage sekretaris --}}
-      @if(Auth::user()->role_id == 2)
+      {{-- @if(Auth::user()->role_id == 2)
         <a class="btn btn-warning btn-lg" 
-        {{-- href="{{route('store.live.notulensi', ['id' => $data->id])}}" --}}
+
             onclick="event.preventDefault();
                           document.getElementById('live-form').submit();">
             {{ __('Simpan Notulensi') }}
         </a>
-      @endif
+      @endif --}}
       {{-- untuk dosen dan pegawai tidak ada button ini --}}
     </div>
   </div>
@@ -55,7 +55,9 @@
   method="POST" enctype="multipart/form-data">
     @csrf
     {{method_field('PUT')}}
-    <textarea id="area" name="notulensi_live"></textarea>
+    <textarea id="area" name="notulensi_live" value="{{$data->notulensi_live}}">
+      {{$data->notulensi_live}}
+    </textarea>
     <br>
     <button type="submit" class="btn btn-warning btn-lg">Simpan Notulensi</button>
   </form>

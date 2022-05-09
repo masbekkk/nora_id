@@ -23,8 +23,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="exampleInputEmail1">Peserta Rapat</label>
-        <input type="file" name="peserta">
+        <label for="exampleInputEmail1">Email Peserta Rapat</label>
+        <input type="text" name="email_peserta">
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Notulensi</label>

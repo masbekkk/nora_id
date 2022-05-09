@@ -47,7 +47,17 @@ class User extends Authenticatable
         return $this->hasMany(Test::class, 'id');
     }
 
+    public function role()
+    {
+        return $this->belongsTo(RoleUser::class, 'role_id');
+    }
+
     public function pem()
+    {
+        return $this->hasMany(Notulensi::class, 'id');
+    }
+
+    public function tulis()
     {
         return $this->hasMany(Notulensi::class, 'id');
     }

@@ -205,7 +205,7 @@ class NotulensiController extends Controller
         }
         $data->save();
      
-        return redirect()->route('dashboard.notulensi')
+        return redirect()->route('edit.notulensi', ['id' => $data->id])
             ->with('toast_success', 'Data Live Notulensi Berhasil ditambahkan!');
     }
 

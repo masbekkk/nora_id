@@ -14,14 +14,14 @@
 @section('modal')
 	<div class="modal fade" id="NotulensiDetailModal" tabindex="-1" role="dialog" aria-labelledby="NotulensiDetailModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
-			<div class="modal-content">
+			<div class="modal-content pt-1">
 				<div class="modal-header">
-					<h5 class="modal-title" id="NotulensiDetailModalLabel">Detail Notulensi</h5>
+					<h5 class="modal-title text-dark font-weight-bold" id="NotulensiDetailModalLabel">Detail Notulensi</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body text-dark">
 					<table class="table w-100 table-sm table-borderless">
 						<tr>
 							<td>Nomor Undangan</td>
@@ -88,10 +88,10 @@
 							<td style="width:1%">:</td>
 							<td id="mdata-detail-rapat"></td>
 						</tr>
-						<tr>
+						<tr class="pt-2">
 							<td>File Notulensi</td>
-							<td style="width:1%">:</td>
-							<td id="mdata-file-notulensi"><a href="{{ route('download.notulensi', ['id' => '1']) }}">Download File</a></td>
+							<td style="width:1%" class="h-100 pt-2">:</td>
+							<td id="mdata-file-notulensi"><a class="btn btn-success h-100" href="{{ route('download.notulensi', ['id' => '1']) }}"><i class="fa-solid fa-file-arrow-down"></i> Download File</a></td>
 						</tr>
 					</table>
 				</div>
@@ -126,7 +126,7 @@
 							<tr role="row">
 								<th class="text-center" style="width: 25px;">No.</th>
 								<th class="">Nomor Undangan</th>
-								<th class="">Agenda</th>
+								<th class="">Jenis Rapat</th>
 								<th class="">Pimpinan</th>
 								<th class="">Tanggal Rapat</th>
 								<th class="" style="width: 100px;">Aksi</th>
@@ -137,7 +137,7 @@
 							<tr role="row" class="odd">
 								<td class="sorting_1 align-middle text-center">{{ ++$keys }}</td>
 								<td class="align-middle">{{ $a->no_undangan }}</td>
-								<td class="align-middle">{{ $a->agenda }}</td>
+								<td class="align-middle">{{ $a->jenis->nama }}</td>
 								<td class="align-middle">{{ $a->pemimpin->name }}</td>
 								<td class="align-middle">{{ $a->tgl->format('d F Y') }}</td>
 								
@@ -146,12 +146,12 @@
 								<td class="d-flex justify-content-center">
 									<div class="row w-100">
 										<div class="col-12 d-flex justify-content-between">
-											<a class="btn btn-primary btn-sm text-white w-50 mr-1" href="{{route('edit.notulensi', ['id' => $a->id])}}" title="Edit"><i class="fas fa-edit"></i></a>
-											<a class="btn btn-danger btn-sm text-white w-50 ml-1" href="{{route('delete.notulensi', ['id' => $a->id])}}" 
+											<a class="btn btn-primary btn-sm text-white w-50 mr-1" href="{{ route('edit.notulensi', ['id' => $a->id]) }}" title="Edit"><i class="fas fa-edit"></i></a>
+											<a class="btn btn-danger btn-sm text-white w-50 ml-1" href="{{ route('delete.notulensi', ['id' => $a->id]) }}" 
 												onclick="return confirm('Yakin ingin menghapus data?')" title="Delete"><i class="fas fa-trash"></i></a>
 										</div>
 										<div class="col-12 d-flex justify-content-center mt-2">
-											<a class="btn btn-info w-100 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#NotulensiDetailModal"
+											<a class="btn btn-info w-50 mr-1 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#NotulensiDetailModal"
 											data-no-undangan="{{ $a->no_undangan }}"
 											data-tgl="{{ $a->tgl->format('d F Y') }}"
 											data-lokasi="{{ $a->lokasi }}"
@@ -166,8 +166,9 @@
 											data-peserta="{{ $a->peserta_rapat }}"
 											data-total-peserta="{{ $a->total_peserta }}"
 											data-notulen="{{ $a->notulen->name }}">
-												&nbsp;Detail
+												<i class="fas fa-circle-info"></i>
 											</a>
+											<a class="btn btn-success w-50 ml-1 btn-sm text-white" href="{{ route('download.notulensi', $a->id) }}" title="Download"><i class="fas fa-file-arrow-down"></i></a>
 										</div>
 									</div>
 								</td>

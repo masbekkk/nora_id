@@ -27,7 +27,7 @@
 		<p class="section-lead">Pastikan untuk memasukan sesuatu yang wadidaw</p>
 		<form action="{{route('update.notulensi', ['value' => 1, 'id' => $data->id])}}" method="POST" enctype="multipart/form-data">
 			@csrf
-			{{method_field('PUT')}}
+			{{ method_field('PUT') }}
 			<div class="card card-danger bg-light">
 				{{-- <div class="card-header">
 					<div class="ml-auto w-0">
@@ -38,126 +38,127 @@
 					</div>
 				</div> --}}
 				<div class="card-body pb-0">
-					<form>
-						<div class="row">
-							<div class="col-md">
-								<label for="nomer" class="col-form-label">Nomer Undangan</label>
-								<input type="text" class="form-control" id="nomer" name="no_undangan" value="{{$data->no_undangan}}">
-							</div>
-							<div class="col-md">
-								<label for="tanggal" class="col-form-label">Tanggal Rapat</label>
-								<input type="date" class="form-control" id="tanggal" name="tgl" value="{{$data->tgl}}">
-							</div>
+					<div class="alert alert-info" role="alert">
+						<h5><b>Note</b></h5>
+						<p>Pastikan untuk mengisi <b class="h6 font-weight-bold">semua input</b> yang memiliki tanda <span class="text-danger h6">*</span></p>
+						<p>Pastikan untuk mengisi <b class="h6 font-weight-bold">salah satu dari input</b> yang memiliki tanda <span class="text-danger h6">**</span></p>
+					</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="nomer" class="col-form-label">Nomer Undangan <b class="text-danger">*</b></label>
+							<input type="text" class="form-control" id="nomer" name="no_undangan" value="{{$data->no_undangan}}">
 						</div>
-						<div class="row">
-							<div class="col-md">
-								<label for="lokasi" class="col-form-label">Ruang/Lokasi</label>
-								<select class="form-control select2" id="lokasi" name="lokasi">
-									{{-- <option selected>Cari</option> --}}
-									@foreach($lokasi as $a)
-										<option value="{{$a->nama}}">{{$a->nama}}</option>
-									@endforeach
-								</select>         
-							</div>
-							<div class="col-md">
-								<label for="waktu" class="col-form-label">Waktu Rapat</label>
-								<input type="time" class="form-control" id="waktu" name="waktu" value="{{$data->waktu}}">
-							</div>
+						<div class="col-md">
+							<label for="tanggal" class="col-form-label">Tanggal Rapat <b class="text-danger">*</b></label>
+							<input type="date" class="form-control" id="tanggal" name="tgl" value="{{$data->tgl}}">
 						</div>
-						<div class="row">
-							<div class="col-md">
-								<label for="pemimpin" class="col-form-label">Pemimpin Rapat</label>
-								<select class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
-									{{-- <option selected>Cari</option> --}}
-									@foreach($pegawai as $a)
-										@if($data->id_pemimpin_rapat == $a->id)
-										<option selected value="{{$a->id}}">{{$a->name}}</option>
-										@else
-										<option value="{{$a->id}}">{{$a->name}}</option>
-										@endif
-									@endforeach
-								</select>
-							</div>
-							<div class="col-md">
-								<label for="detail" class="col-form-label">Detail Rapat</label>
-								<textarea class="form-control" id="detail" name="detail_rapat" value="{{$data->detail_rapat}}">{{$data->detail_rapat}}</textarea>
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="lokasi" class="col-form-label">Ruang/Lokasi <b class="text-danger">*</b></label>
+							<select class="form-control select2" id="lokasi" name="lokasi">
+								{{-- <option selected>Cari</option> --}}
+								@foreach($lokasi as $a)
+									<option value="{{$a->nama}}">{{$a->nama}}</option>
+								@endforeach
+							</select>         
 						</div>
-						<div class="row">
-							<div class="col-md">
-								<label for="jenis-agenda" class="col-form-label">Jenis Rapat</label>
-								<select class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
-									{{-- <option selected>Cari</option> --}}
-									@foreach($jenis_rapat as $a)
-									@if($data->id_jenis_rapat == $a->id)
-									<option selected value="{{$a->id}}">{{$a->nama}}</option>
+						<div class="col-md">
+							<label for="waktu" class="col-form-label">Waktu Rapat <b class="text-danger">*</b></label>
+							<input type="time" class="form-control" id="waktu" name="waktu" value="{{$data->waktu}}">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="pemimpin" class="col-form-label">Pemimpin Rapat <b class="text-danger">*</b></label>
+							<select class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
+								{{-- <option selected>Cari</option> --}}
+								@foreach($pegawai as $a)
+									@if($data->id_pemimpin_rapat == $a->id)
+									<option selected value="{{$a->id}}">{{$a->name}}</option>
 									@else
-									<option value="{{$a->id}}">{{$a->nama}}</option>
-									@endif
-									@endforeach
-								</select>
-							</div>
-							<div class="col-md">
-								<label for="notulensi" class="col-form-label">Agenda</label>
-								<input type="text" class="form-control" id="notulensi" name="agenda" value="{{$data->agenda}}">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md">
-								<label for="agenda" class="col-form-label">Jumlah Agenda</label>
-								<input type="number" class="form-control" id="agenda" name="jml_agenda" value="{{$data->jml_agenda}}">
-							</div>
-							<div class="col-md">
-								<label for="total-peserta" class="col-form-label">Tamu Rapat</label>
-								<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple" value="{{$data->tamu}}">
-									<option selected value="{{$data->tamu}}">{{$data->tamu}}</option>
-									@foreach($pegawai as $a)
 									<option value="{{$a->id}}">{{$a->name}}</option>
-									@endforeach
-								</select>
-							</div>
+									@endif
+								@endforeach
+							</select>
 						</div>
-						<br>
-						<div class="alert alert-danger" role="alert">
-							<b> Masukkan File .csv peserta rapat, atau isi secara manual</b><br>
-							<small>Format csv harus data index ke 2 berisi email, contoh: 1,budi, budi@gmail.com</small>
-							<p> Contoh File format .csv yang benar <u><a target="blank" href="files/Book1.csv">Download File</a></u></p>
+						<div class="col-md">
+							<label for="jenis-agenda" class="col-form-label">Jenis Rapat <b class="text-danger">*</b></label>
+							<select class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
+								{{-- <option selected>Cari</option> --}}
+								@foreach($jenis_rapat as $a)
+								@if($data->id_jenis_rapat == $a->id)
+								<option selected value="{{$a->id}}">{{$a->nama}}</option>
+								@else
+								<option value="{{$a->id}}">{{$a->nama}}</option>
+								@endif
+								@endforeach
+							</select>
 						</div>
-						<div class="row">
-							
-							<div class="col-md">
-								<label for="peserta" class="col-form-label">Peserta Rapat</label>
-								<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
-							</div>
-							<div class="col-md">
-								<label for="detail" class="col-form-label">Peserta Rapat</label>
-								<input type="text" class="form-control" id="detail" name="peserta_rapat" value="{{$data->peserta_rapat}}">
-							</div>
-							<div class="col-md">
-								<label for="detail" class="col-form-label">Jumlah Peserta Rapat</label>
-								<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{$data->total_peserta}}">
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="total-peserta" class="col-form-label">Tamu Rapat <b class="text-danger">*</b></label>
+							<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple" value="{{$data->tamu}}">
+								<option selected value="{{$data->tamu}}">{{$data->tamu}}</option>
+								@foreach($pegawai as $a)
+								<option value="{{$a->id}}">{{$a->name}}</option>
+								@endforeach
+							</select>
 						</div>
-						<br>
-						<div class="alert alert-info" role="alert">
-							<strong> Notulensi Sebelumnya: </strong> <a href="{{route('download.notulensi', ['id'=> $a->id])}}" class="alert-link"><u>Download File</u></a>. 
-							<strong>Abaikan Upload File/ Tulis Notulensi jika tidak ingin mengubahnya</strong>
+						<div class="col-md">
+							<label for="detail" class="col-form-label">Detail Rapat</label>
+							<textarea class="form-control" id="detail" name="detail_rapat" value="{{$data->detail_rapat}}">{{$data->detail_rapat}}</textarea>
 						</div>
-						<div class="alert alert-danger" role="alert">
-							<b> Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
+					</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="agenda" class="col-form-label">Jumlah Agenda</label>
+							<input type="number" class="form-control" id="agenda" name="jml_agenda" value="{{$data->jml_agenda}}">
 						</div>
-						<div class="row">
-							<div class="col-md">
-								<label for="notulensi" class="col-form-label">Unggah File Notulensi</label>
-								<input type="file" class="form-control" id="notulensi" name="file_notulensi">
-							</div>
-							<div class="col-md">
-								<label for="summernote" class="col-form-label">Tulis Notulensi</label><br>
-								<button type="submit" class="btn btn-warning btn-lg eEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
-							</div>
-						</div> 
-						
-					</form>
+						<div class="col-md">
+							<label for="notulensi" class="col-form-label">Agenda</label>
+							<input type="text" class="form-control" id="notulensi" name="agenda" value="{{$data->agenda}}">
+						</div>
+					</div>
+					<br>
+					<div class="alert alert-danger" role="alert">
+						<b> Masukkan File .csv peserta rapat, atau isi secara manual</b><br>
+						<small>Format csv harus data index ke 2 berisi email, contoh: 1,budi, budi@gmail.com</small>
+						<p> Contoh File format .csv yang benar <u><a target="blank" href="files/Book1.csv">Download File</a></u></p>
+					</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="peserta" class="col-form-label">Peserta Rapat</label>
+							<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
+						</div>
+						<div class="col-md">
+							<label for="detail" class="col-form-label">Peserta Rapat</label>
+							<input type="text" class="form-control" id="detail" name="peserta_rapat" value="{{$data->peserta_rapat}}">
+						</div>
+						<div class="col-md">
+							<label for="detail" class="col-form-label">Jumlah Peserta Rapat</label>
+							<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{$data->total_peserta}}">
+						</div>
+					</div>
+					<br>
+					<div class="alert alert-info" role="alert">
+						<strong> Notulensi Sebelumnya: </strong> <a href="{{ route('download.notulensi', ['id'=> $a->id]) }}" class="alert-link"><u>Download File</u></a>. 
+						<strong>Abaikan Upload File/ Tulis Notulensi jika tidak ingin mengubahnya</strong>
+					</div>
+					<div class="alert alert-danger" role="alert">
+						<b> Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
+					</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="notulensi" class="col-form-label">Unggah File Notulensi <b class="text-danger">**</b></label>
+							<input type="file" class="form-control" id="notulensi" name="file_notulensi">
+						</div>
+						<div class="col-md">
+							<label for="summernote" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label><br>
+							<button type="submit" class="btn btn-warning btn-lg eEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
+						</div>
+					</div>
 				</div>
 				<br>
 				<div class="card-footer text-right bg-secondary">

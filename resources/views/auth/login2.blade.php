@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/Loginstyle.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(image/gedung.jpg);">
+	<body class="img js-fullheight" style="background-image: url(image/bg-login.png);">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -31,7 +31,7 @@
 								</p>
 							</div> --}}
 		      	</div>
-						<form method="POST" action="{{ route('login') }}" class="login-form">
+						<form action="#" class="login-form">
 		      		<div class="form-group">
 		      			<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-envelope"></span></div>
 		      			<input type="text" class="form-control rounded-left" placeholder="Email" required>

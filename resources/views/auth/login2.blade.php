@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="css/Loginstyle.css">
 
 	</head>
-	<body class="img js-fullheight" style="background-image: url(image/bg-login.png);">
+	<body class="img js-fullheight" style="background-image: url(image/gedung.png);">
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">

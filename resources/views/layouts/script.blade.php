@@ -15,9 +15,9 @@
 
 {{-- Template Animation AOS --}}
 {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script> --}}
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+{{-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script> --}}
 <script>
-    AOS.init();
+    // AOS.init();
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip()
 	})

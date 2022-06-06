@@ -7,6 +7,7 @@
 		.percent { position:absolute; display:inline-block; left:50%; color: #040608;}
 	</style>
 	    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -94,14 +95,14 @@
 							<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">
 								{{-- <option selected>Cari</option> --}}
 								@foreach($pegawai as $a)
-									<option value="{{$a->id}}">{{$a->name}}</option>
+									<option value="{{$a->name}}">{{$a->name}}</option>
 								@endforeach
 							</select>
 						</div>
-						<div class="col-md">
+						{{-- <div class="col-md">
 							<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">*</b></label>
 							<textarea class="form-control" id="detail" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
-						</div>
+						</div> --}}
 					</div>
 					<div class="row">
 						<div class="col-md">
@@ -150,7 +151,14 @@
 							<button type="submit" class="btn btn-warning btn-lg oEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 						</div>
 					</div> 
+				{{-- </div> --}}
+				<div class="row">
+					<div class="col-md">
+						<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">*</b></label><br>
+						<textarea class="form-control" id="area" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
+					</div>
 				</div>
+			</div>
 				<br>
 				<div class="card-footer text-right bg-secondary">
 					{{-- <button type="button" class="btn btn-danger">Close</button> --}}
@@ -205,4 +213,11 @@
 			});
 		});
 	</script>
+ <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+ <script>
+	$('#area').summernote({
+		height: 100,
+        dialogsInBody: true
+	});
+  </script>
 @endsection

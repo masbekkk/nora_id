@@ -50,7 +50,7 @@
 						</div>
 						<div class="col-md">
 							<label for="tanggal" class="col-form-label">Tanggal Rapat <b class="text-danger">*</b></label>
-							<input type="date" class="form-control" id="tanggal" name="tgl" value="{{$data->tgl}}">
+							<input type="date" class="form-control" id="tanggal" name="tgl" value={{$data->tgl}}>
 						</div>
 					</div>
 					<div class="row">
@@ -106,10 +106,10 @@
 								@endforeach
 							</select>
 						</div>
-						<div class="col-md">
+						{{-- <div class="col-md">
 							<label for="detail" class="col-form-label">Detail Rapat</label>
 							<textarea class="form-control" id="detail" name="detail_rapat" value="{{$data->detail_rapat}}">{{$data->detail_rapat}}</textarea>
-						</div>
+						</div> --}}
 					</div>
 					<div class="row">
 						<div class="col-md">
@@ -159,7 +159,16 @@
 							<button type="submit" class="btn btn-warning btn-lg eEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 						</div>
 					</div>
+									{{-- </div> --}}
+				<div class="row">
+					<div class="col-md">
+						<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">*</b></label><br>
+						<textarea class="form-control" id="area" name="detail_rapat" value="{{$data->detail_rapat}}">{{$data->detail_rapat}}</textarea>
+					</div>
 				</div>
+			</div>
+				</div>
+
 				<br>
 				<div class="card-footer text-right bg-secondary">
 					{{-- <button type="button" class="btn btn-danger">Close</button> --}}
@@ -215,4 +224,28 @@
 			$(this).closest("form").attr("action", "/update-notulensi/2/{{$data->id}}");       
 		});
 	</script>
+		  <script src="https://cdn.tiny.cloud/1/kiparj1384q5s2j5owfutdsordqqp6lq4q2flaj8nj6u79z2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+		  <script type="text/javascript">
+			tinymce.init({
+			  selector: '#area',
+			  // width: 600,
+			  // height: 300,
+			  plugins: [
+				'autosave', 'export pagebreak', 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+				'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+				'media', 'table', 'emoticons', 'template', 'help'
+			  ],
+			  toolbar: 'restoredraft | export | undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+				'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+				'forecolor backcolor emoticons | help',
+			  menu: {
+				favs: { title: 'Detail Rapat', items: 'code visualaid | searchreplace | emoticons' }
+			  },
+			  menubar: 'favs file edit view insert format tools table help',
+			  content_css: 'css/content.css',
+			  autosave_restore_when_empty: true,
+			  autosave_ask_before_unload: false
+			});
+		 
+		  </script>
 @endsection

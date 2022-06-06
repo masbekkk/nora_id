@@ -28,7 +28,7 @@ class NotulensiController extends Controller
 
 	public function dashboard()
 	{
-		$data = Notulensi::all();
+		$data = Notulensi::orderBy('id', 'DESC')->get();
 		view()->share([
 			'data' => $data
 		]);
@@ -59,10 +59,10 @@ class NotulensiController extends Controller
 			'waktu' => 'required',
 			'id_pemimpin_rapat' => 'required',
 			'id_jenis_rapat' => 'required',
-			'jml_agenda' => 'required',
+			// 'jml_agenda' => 'required',
 			// 'tamu' => 'required',
 			'detail_rapat' => 'required',
-			'agenda' => 'required',
+			// 'agenda' => 'required',
 			// 'peserta_rapat' => 'required'
 		]);
 
@@ -108,16 +108,16 @@ class NotulensiController extends Controller
 		}
 		if ($request->tamu != NULL) {
 			$data->tamu = implode(',', $request->tamu);
-			$anu = explode(',', $data->tamu);
+			$tamu = explode(',', $data->tamu);
 		} else $data->tamu = 'nulll';
 		//--fix-----
-		// foreach($anu as $a){
+		// foreach($tamu as $a){
 		//     $emel = User::find($a);
 		//     Notification::route('mail' , $emel->email) //Sending mail to subscriber
 		//     ->notify(new NewNotulensiNotify($emel->name));
 		//     $result[] = $emel->name;
 		// }
-
+		// dd($tamu);
 		if ($value == 1) {
 			if ($request->file_notulensi == NULL)
 				return redirect()->route('create.notulensi')->with('errors', 'Kamu belum upload file Notulensi!');
@@ -131,8 +131,9 @@ class NotulensiController extends Controller
 					$data->file_notulensi = $path . '/' . $fileName;
 				}
 				if ($request->tamu != NULL) {
-					foreach ($anu as $a) {
-						$emel = User::find($a);
+					foreach ($tamu as $a) {
+						$emel = User::where('name', $a)->first();
+						// dd($emel);
 						Notification::route('mail', $emel->email) //Sending mail to subscriber
 							->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
 						$result[] = $emel->name;
@@ -185,25 +186,25 @@ class NotulensiController extends Controller
 		$data->notulensi_live = $request->notulensi_live;
 
 		$data->file_notulensi = $lokasi;
-		if ($data->tamu != 'nulll') {
-			$anu = explode(',', $data->tamu);
-			// dd($anu);
-			foreach ($anu as $a) {
-				$emel = User::find($a);
-				Notification::route('mail', $emel->email) //Sending mail to subscriber
-					->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
-				$result[] = $emel->name;
-			}
-			$data->tamu = implode(',', $result);
-		}
+		// if ($data->tamu != 'nulll') {
+		// 	$anu = explode(',', $data->tamu);
+		// 	// dd($anu);
+		// 	foreach ($anu as $a) {
+		// 		$emel = User::find($a);
+		// 		Notification::route('mail', $emel->email) //Sending mail to subscriber
+		// 			->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
+		// 		$result[] = $emel->name;
+		// 	}
+		// 	$data->tamu = implode(',', $result);
+		// }
 
 		$arr = explode(',', $data->peserta_rapat);
-		foreach ($arr as $a) {
-			// $emel = User::find($a);
-			Notification::route('mail', $a) //Sending mail to subscriber
-				->notify(new NewNotulensiNotify('Peserta Rapat', $data->file_notulensi, $data->agenda));
-			// $result[] = $emel->name;
-		}
+		// foreach ($arr as $a) {
+		// 	// $emel = User::find($a);
+		// 	Notification::route('mail', $a) //Sending mail to subscriber
+		// 		->notify(new NewNotulensiNotify('Peserta Rapat', $data->file_notulensi, $data->agenda));
+		// 	// $result[] = $emel->name;
+		// }
 		$data->save();
 
 		return redirect()->route('edit.notulensi', ['id' => $data->id])
@@ -261,10 +262,10 @@ class NotulensiController extends Controller
 			'waktu' => 'required',
 			'id_pemimpin_rapat' => 'required',
 			'id_jenis_rapat' => 'required',
-			'jml_agenda' => 'required',
+			// 'jml_agenda' => 'required',
 			// 'tamu' => 'required',
 			'detail_rapat' => 'required',
-			'agenda' => 'required',
+			// 'agenda' => 'required',
 			// 'peserta_rapat' => 'required'
 		]);
 		$data = Notulensi::findorFail($id);
@@ -311,12 +312,13 @@ class NotulensiController extends Controller
 			$data->tamu = implode(',', $request->tamu);
 			$arr = explode(',', $data->tamu);
 			// dd($arr);
+			// $get_id[] = [];
 			foreach ($arr as $nama) {
 				$user = User::where('name', $nama)->first();
 				// dd($user->id);
 				$get_id[] = $user->id;
 			}
-			// dd($anu);
+			// dd($get_id);
 			$data->tamu = implode(',', $get_id);
 		} else $data->tamu = 'nulll';
 		//--fix-----
@@ -340,8 +342,19 @@ class NotulensiController extends Controller
 				$file->move($path, $fileName);
 				$data->file_notulensi = $path . '/' . $fileName;
 			}
+			// if ($data->tamu != 'nulll') {
+			// 	$anu = explode(',', $data->tamu);
+			// 	// dd($anu);
+			// 	foreach ($anu as $a) {
+			// 		$emel = User::find($a);
+			// 		Notification::route('mail', $emel->email) //Sending mail to subscriber
+			// 			->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
+			// 		$result[] = $emel->name;
+			// 	}
+			// 	$data->tamu = implode(',', $result);
+			// }
 			if ($request->tamu != NULL) {
-				foreach ($anu as $a) {
+				foreach ($get_id as $a) {
 					$emel = User::find($a);
 					Notification::route('mail', $emel->email) //Sending mail to subscriber
 						->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));

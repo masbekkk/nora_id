@@ -27,6 +27,12 @@
         <input type="text" name="email_peserta">
       </div>
       <div class="form-group">
+        <label for="exampleInputEmail1">tgl</label>
+        <input type="date" name="email_peserta" value="2022-07-23">
+        <input type="date" value="2013-01-08">
+
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Notulensi</label>
         <textarea id="area" name="notulensi"></textarea>
       </div>

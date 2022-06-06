@@ -33,9 +33,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/dashboard', [App\Http\Controllers\NotulensiController::class, 'dashboard'])->name('dashboard.notulensi');
 
 
-Route::get('/login2', function () {
-	return view('login');
-})->name('/login2');
+// Route::get('/login2', function () {
+// 	return view('login');
+// })->name('/login2');
 Route::get('/live', function () {
 	return view('live');
 });

@@ -118,7 +118,7 @@
 
 	{{-- Content Table Section --}}
 	<div class="section-body">
-		<div class="card card-danger bg-light">
+		<div class="card bg-transparent">
 			<div class="card-body pb-2">
 				<div class="table-responsive">
 					<table class="table table-striped w-100" id="table-1">
@@ -146,9 +146,13 @@
 								<td class="d-flex justify-content-center">
 									<div class="row w-100">
 										<div class="col-12 d-flex justify-content-between">
+											@if($a->notulen_id == Auth::user()->id)
 											<a class="btn btn-primary btn-sm text-white w-50 mr-1" href="{{ route('edit.notulensi', ['id' => $a->id]) }}" title="Edit"><i class="fas fa-edit"></i></a>
 											<a class="btn btn-danger btn-sm text-white w-50 ml-1" href="{{ route('delete.notulensi', ['id' => $a->id]) }}" 
 												onclick="return confirm('Yakin ingin menghapus data?')" title="Delete"><i class="fas fa-trash"></i></a>
+											@else 
+											{{-- <span class="badge badge-info">Kamu Tidak punya akses</span> --}}
+											@endif
 										</div>
 										<div class="col-12 d-flex justify-content-center mt-2">
 											<a class="btn btn-info w-50 mr-1 btn-sm text-white" title="Detail" data-toggle="modal" data-target="#NotulensiDetailModal"

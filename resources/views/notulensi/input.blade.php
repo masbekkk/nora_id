@@ -28,7 +28,7 @@
 		<p class="section-lead">Pastikan untuk memasukan sesuatu yang wadidaw</p>
 		<form action="{{ route('store.notulensi', ['value' => 1]) }}" method="POST" enctype="multipart/form-data">
 			@csrf
-			<div class="card card-danger bg-light">
+			<div class="card bg-transparent neumorph">
 				<div class="card-body pb-0">
 					<div class="alert alert-info" role="alert">
 						<h5><b>Note</b></h5>

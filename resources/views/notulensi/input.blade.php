@@ -38,11 +38,11 @@
 					<div class="row">
 						<div class="col-md">
 							<label for="nomer" class="col-form-label">Nomer Undangan <b class="text-danger">*</b></label>
-							<input type="text" class="form-control" id="nomer" name="no_undangan" value="{{ old('no_undangan') }}">
+							<input required type="text" class="form-control" id="nomer" name="no_undangan" value="{{ old('no_undangan') }}">
 						</div>
 						<div class="col-md">
 							<label for="tanggal" class="col-form-label">Tanggal Rapat <b class="text-danger">*</b></label>
-							<input type="date" class="form-control" id="tanggal" name="tgl" value="{{ old('tgl') }}">
+							<input required type="date" class="form-control" id="tanggal" name="tgl" value="{{ old('tgl') }}">
 						</div>
 					</div>
 					<div class="row">
@@ -63,7 +63,7 @@
 					<div class="row">
 						<div class="col-md">
 							<label for="pemimpin" class="col-form-label">Pemimpin Rapat <b class="text-danger">*</b></label>
-							<select class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
+							<select required class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
 								{{-- <option selected>Cari</option> --}}
 								@foreach($pegawai as $a)
 									@if(old('id_pemimpin_rapat')==$a->id)
@@ -76,7 +76,7 @@
 						</div>
 						<div class="col-md">
 							<label for="jenis-agenda" class="col-form-label">Jenis Rapat <b class="text-danger">*</b></label>
-							<select class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
+							<select required class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
 								{{-- <option selected>Cari</option> --}}
 								@foreach($jenis_rapat as $a)
 								@if(old('id_jenis_rapat')==$a->id)
@@ -92,7 +92,7 @@
 					<div class="row">
 						<div class="col-md">
 							<label for="total-peserta" class="col-form-label">Tamu Rapat <b class="text-danger">*</b></label>
-							<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">
+							<select required class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">
 								{{-- <option selected>Cari</option> --}}
 								@foreach($pegawai as $a)
 									<option value="{{$a->name}}">{{$a->name}}</option>
@@ -144,11 +144,13 @@
 							<input type="file" class="form-control" id="notulensi" name="file_notulensi">
 						</div>
 						<div class="col-md">
-						
 							<label for="summernote" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label>
 							<br>
 							{{-- <textarea id="area"></textarea> --}}
-							<button type="submit" class="btn btn-warning btn-lg oEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
+							<button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+								<i class="fas fa-file-pen"></i> Tulis Notulensi
+							</button>
+							{{-- <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-file-pen"></i> Tulis Notulensi</button> --}}
 						</div>
 					</div> 
 				{{-- </div> --}}
@@ -171,7 +173,6 @@
 @endsection
 
 @section('script')
-
     <script type="text/javascript">
 		imgInp.onchange = evt => {
 			const [file] = imgInp.files

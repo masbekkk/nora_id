@@ -12,7 +12,7 @@
     <!-- Page Specific CSS File -->
 	@yield('style')
 </head>
-<body>
+<body class="bg-linear">
 	@yield('modal')
 	<div id="app">
 		<div class="main-wrapper">

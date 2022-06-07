@@ -19,8 +19,8 @@
 {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"> --}}
 
 <style>
-	body {
+	/* body {
 		background-image: linear-gradient(to top, rgba(27, 145, 196, 0.15), rgba(25, 92, 171, 0.15));
-		/* background-color: rgba(25, 92, 171, 0.15); */
-	}
+		background-color: rgba(25, 92, 171, 0.15);
+	} */
 </style>

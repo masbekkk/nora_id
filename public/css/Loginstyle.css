@@ -8310,12 +8310,12 @@ h1, h2, h3, h4, h5,
   .btn.btn-primary {
     /* background: #6777ef !important; */
     background-image: linear-gradient(to left, #1A95C6, #185AA9);
-    border: 1px solid #6777ef !important;
+    /* border: 1px solid #6777ef !important; */
     color: #fff !important; }
-    .btn.btn-primary:hover {
+    /* .btn.btn-primary:hover {
       border: 1px solid #297187;
       background: transparent;
-      color: #297187; }
+      color: #297187; } */
     .btn.btn-primary.btn-outline-primary {
       border: 1px solid #297187;
       background: transparent;

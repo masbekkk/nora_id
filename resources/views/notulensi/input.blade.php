@@ -114,11 +114,17 @@
 							<input type="text" class="form-control" id="notulensi" name="agenda" value="{{ old('agenda') }}">
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">**</b></label><br>
+							<textarea class="form-control" id="detail" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
+						</div>
+					</div>
 					<br>
 					<div class="alert alert-danger" role="alert">
-						<b> Masukkan File .csv peserta rapat, atau isi secara manual</b><br>
+						<b>Masukkan File .csv peserta rapat, atau isi secara manual</b><br>
 						<small>Format csv harus data index ke 2 berisi email, contoh: 1,budi, budi@gmail.com</small>
-						<p> Contoh File format .csv yang benar <u><a target="blank" href="files/Book1.csv">Download File</a></u></p>
+						<p>Contoh File format .csv yang benar <u><a target="blank" href="files/Book1.csv">Download File</a></u></p>
 					</div>
 					<div class="row">
 						<div class="col-md">
@@ -136,7 +142,7 @@
 					</div>
 					<br>
 					<div class="alert alert-danger" role="alert">
-						<b> Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
+						<b>Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
 					</div>
 					<div class="row">
 						<div class="col-md">
@@ -150,13 +156,13 @@
 							{{-- <button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 								<i class="fas fa-file-pen"></i> Tulis Notulensi
 							</button> --}}
-							<button type="submit" class="btn btn-warning btn-lg oEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
+							<button class="btn btn-warning btn-lg oEbutn" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 						</div>
 					</div> 
 					<div class="row collapse" id="collapseExample">
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label><br>
-							<textarea class="form-control" id="area" name="notulensi_rapat">{{ old('notulensi_rapat') }}</textarea>
+							<label for="tulis" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label><br>
+							<textarea class="form-control" id="tulis" name="notulensi_rapat">{{ old('notulensi_rapat') }}</textarea>
 						</div>
 					</div>
 				</div>

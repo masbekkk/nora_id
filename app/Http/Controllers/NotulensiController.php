@@ -9,6 +9,7 @@ use App\Models\Notulensi;
 use App\Models\LokasiRapat;
 use App\Models\JenisRapat;
 use App\Models\User;
+use App\Models\PimpinanRapat;
 use App\Notifications\NewNotulensiNotify;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\Notifiable;
@@ -40,10 +41,12 @@ class NotulensiController extends Controller
 		if (Auth::user()->role_id == 2 || Auth::user()->role_id == 1) {
 			$lokasi = LokasiRapat::all();
 			$pegawai = User::where('role_id', 3)->where('email', '!=', 'pegawai@nora.id')->get();
+			$pimpinan_rapat = PimpinanRapat::all();
 			$jenis_rapat = JenisRapat::all();
 			view()->share([
 				'lokasi' => $lokasi,
 				'pegawai' => $pegawai,
+				'pimpinan_rapat' => $pimpinan_rapat,
 				'jenis_rapat' => $jenis_rapat
 			]);
 			return view('notulensi.input');
@@ -244,11 +247,13 @@ class NotulensiController extends Controller
 			$data = Notulensi::findorFail($id);
 			$lokasi = LokasiRapat::all();
 			$pegawai = User::where('role_id', 3)->where('email', '!=', 'pegawai@nora.id')->get();
+			$pimpinan_rapat = PimpinanRapat::all();
 			$jenis_rapat = JenisRapat::all();
 			view()->share([
 				'lokasi' => $lokasi,
 				'pegawai' => $pegawai,
 				'jenis_rapat' => $jenis_rapat,
+				'pimpinan_rapat' => $pimpinan_rapat,
 				'data' => $data
 			]);
 			return view('notulensi.edit');

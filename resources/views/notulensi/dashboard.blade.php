@@ -186,7 +186,7 @@
 											data-tgl="{{ $a->tgl->format('d F Y') }}"
 											data-lokasi="{{ $a->lokasi }}"
 											data-waktu="{{ $a->waktu }}"
-											data-pemimpin="{{ $a->pemimpin->name }}"
+											data-pemimpin="{{ $a->pemimpin->nama }}"
 											data-jenis="{{ $a->jenis->nama }}"
 											data-jml-agenda="{{ $a->jml_agenda }}"
 											data-tamu="{{ $a->tamu }}"

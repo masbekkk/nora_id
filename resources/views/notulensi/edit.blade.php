@@ -73,13 +73,13 @@
 							<label for="pemimpin" class="col-form-label">Pemimpin Rapat <b class="text-danger">*</b></label>
 							<select class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
 								{{-- <option selected>Cari</option> --}}
-								@foreach($pegawai as $a)
-									@if($data->id_pemimpin_rapat == $a->id)
-									<option selected value="{{$a->id}}">{{$a->name}}</option>
-									@else
-									<option value="{{$a->id}}">{{$a->name}}</option>
-									@endif
-								@endforeach
+								@foreach($pimpinan_rapat as $a)
+								@if($data->id_pemimpin_rapat ==$a->id)
+									<option selected value= {{ $a->id }} selected>{{ $a->nama }}</option>
+								@else
+									<option value= {{ $a->id }} >{{ $a->nama }}</option>
+								@endif
+							@endforeach
 							</select>
 						</div>
 						<div class="col-md">

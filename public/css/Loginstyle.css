@@ -8199,7 +8199,8 @@ h1, h2, h3, h4, h5,
     bottom: 0;
     width: 48px;
     height: 48px;
-    background: #6777ef;
+    /* background: #6777ef; */
+    background-image: linear-gradient(to left, #1A95C6, #185AA9);
     font-size: 20px;
     border-radius: 5px 0 0 5px; }
     .form-group .icon span {
@@ -8293,9 +8294,10 @@ h1, h2, h3, h4, h5,
 
 /* Style the checkmark/indicator */
 .checkbox-primary {
-  color: #6777ef; }
+  /* background-image: linear-gradient(to left, #1A95C6, #185AA9); */
+  color: linear-gradient(to left, #1A95C6, #185AA9) }
   .checkbox-primary input:checked ~ .checkmark:after {
-    color: #6777ef; }
+    color: linear-gradient(to left, #1A95C6, #185AA9) }
 
 .btn {
   cursor: pointer;
@@ -8306,13 +8308,14 @@ h1, h2, h3, h4, h5,
   .btn:hover, .btn:active, .btn:focus {
     outline: none; }
   .btn.btn-primary {
-    background: #6777ef !important;
-    border: 1px solid #6777ef !important;
+    /* background: #6777ef !important; */
+    background-image: linear-gradient(to left, #1A95C6, #185AA9);
+    /* border: 1px solid #6777ef !important; */
     color: #fff !important; }
-    .btn.btn-primary:hover {
+    /* .btn.btn-primary:hover {
       border: 1px solid #297187;
       background: transparent;
-      color: #297187; }
+      color: #297187; } */
     .btn.btn-primary.btn-outline-primary {
       border: 1px solid #297187;
       background: transparent;

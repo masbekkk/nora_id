@@ -69,6 +69,7 @@ class TestController extends Controller
         }
         $data->users_id = implode(',', $result);
         $data->notulensi = $request->notulensi;
+        $data->save();
         // $file = $request->file('peserta');
         // $path = 'files';
         // $string = rand(22,5033);
@@ -90,25 +91,25 @@ class TestController extends Controller
         // }
         // fclose($csvFile);
         // dd($peserta);
-        $data->peserta = $request->email_peserta;
-        // $data->total_peserta = $jml;
-        $data->total_peserta = 2;
-        $dompdf = new Dompdf();
-        $dompdf->loadHtml($request->notulensi);
-        $dompdf->render();
-        $Pdf = $dompdf->output();
-        $lokasi = 'files/rapat__' . $request->agenda . '__notulensi.pdf';
-        file_put_contents($lokasi, $Pdf);
+        // $data->peserta = $request->email_peserta;
+        // // $data->total_peserta = $jml;
+        // $data->total_peserta = 2;
+        // $dompdf = new Dompdf();
+        // $dompdf->loadHtml($request->notulensi);
+        // $dompdf->render();
+        // $Pdf = $dompdf->output();
+        // $lokasi = 'files/rapat__' . $request->agenda . '__notulensi.pdf';
+        // file_put_contents($lokasi, $Pdf);
       
-        $data->notulensi = $lokasi;
-        $arr = explode(',', $data->peserta);
-        foreach($arr as $a){
-            // $emel = User::find($a);
-            Notification::route('mail' , $a) //Sending mail to subscriber
-            ->notify(new NewNotulensiNotify('Peserta Rapat', $data->notulensi));
-            // $result[] = $emel->name;
-        }
-        $data->save();
+        // $data->notulensi = $lokasi;
+        // $arr = explode(',', $data->peserta);
+        // foreach($arr as $a){
+        //     // $emel = User::find($a);
+        //     Notification::route('mail' , $a) //Sending mail to subscriber
+        //     ->notify(new NewNotulensiNotify('Peserta Rapat', $data->notulensi));
+        //     // $result[] = $emel->name;
+        // }
+        // $data->save();
      
         return "oke";
   

@@ -178,7 +178,20 @@ class NotulensiController extends Controller
 
 		$data = Notulensi::findorFail($id);
 		$dompdf = new Dompdf();
-		$dompdf->loadHtml($request->notulensi_live);
+		$data_rapat = 
+	    '<p><strong>Rapat:&nbsp;&nbsp;</strong>' .$data->agenda. '</p>
+		<p><strong>Tanggal:&nbsp;</strong>' .$data->tgl->format('d F Y'). '</p>
+		<p><strong>Peserta Rapat:&nbsp;</strong>' .$data->peserta_rapat. '</p>
+		<p><strong>Pemimpin Rapat:</strong>' .$data->pemimpin->name. '</p>
+		<p><strong>Tamu Rapat:&nbsp;</strong>' .$data->tamu . '</p>
+		<p><strong>Total Peserta Rapat:</strong>' .$data->total_peserta . '</p>
+		<p><strong>Lokasi Rapat:&nbsp;</strong>' .$data->lokasi. '</p>
+		<p><strong>Jenis Rapat:&nbsp;</strong>' .$data->jenis->nama. '</p>
+		<p><strong>Notulen:&nbsp;</strong>' .$data->notulen->name. '</p>
+		<p><strong>Hasil Notulensi:</strong><br><br>' .$request->notulensi_live. '</p>';
+		// $isi_notulensi = $data_rapat . $
+		// dd($data_rapat);
+		$dompdf->loadHtml($data_rapat);
 		$dompdf->render();
 		$Pdf = $dompdf->output();
 		$lokasi = 'notulensis/rapat__' . $data->agenda . '__notulensi.pdf';

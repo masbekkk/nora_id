@@ -118,7 +118,7 @@
 
 	{{-- Content Table Section --}}
 	<div class="section-body">
-		<div class="card bg-transparent neumorph">
+		<div class="card bg-transparent neumorph text-dark" style="font-size: 1em !important;">
 			<div class="card-body pb-2">
 				<div class="table-responsive">
 					<table class="table table-striped w-100" id="table-1">

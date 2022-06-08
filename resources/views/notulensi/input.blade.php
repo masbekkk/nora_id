@@ -153,16 +153,14 @@
 							{{-- <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-file-pen"></i> Tulis Notulensi</button> --}}
 						</div>
 					</div> 
-				{{-- </div> --}}
-				<div class="row">
-					<div class="col-md">
-						<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">*</b></label><br>
-						<textarea class="form-control" id="area" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
+					<div class="row collapse" id="collapseExample">
+						<div class="col-md">
+							<label for="detail" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label><br>
+							<textarea class="form-control" id="area" name="notulensi_rapat">{{ old('notulensi_rapat') }}</textarea>
+						</div>
 					</div>
 				</div>
-			</div>
-				<br>
-				<div class="card-footer text-right bg-secondary">
+				<div class="card-footer text-right bg-transparent">
 					{{-- <button type="button" class="btn btn-danger">Close</button> --}}
 					<button type="submit" class="btn btn-primary btn-lg">Simpan</button>
 				</div>

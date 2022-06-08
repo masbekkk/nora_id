@@ -1,4 +1,4 @@
-<footer class="main-footer">
+<footer class="main-footer text-dark">
     <div class="footer-left">
         Copyright &copy; 2022 Kelompok A2. All rights reserved.
     </div>

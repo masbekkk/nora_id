@@ -29,7 +29,8 @@ class NotulensiController extends Controller
 
 	public function dashboard()
 	{
-		$data = Notulensi::orderBy('id', 'DESC')->get();
+		$data = Notulensi::with('pemimpin', 'notulen')->orderBy('id', 'DESC')->get();
+		// dd($data); /
 		view()->share([
 			'data' => $data
 		]);
@@ -64,7 +65,7 @@ class NotulensiController extends Controller
 			'id_jenis_rapat' => 'required',
 			// 'jml_agenda' => 'required',
 			// 'tamu' => 'required',
-			'detail_rapat' => 'required',
+			// 'detail_rapat' => 'required',
 			// 'agenda' => 'required',
 			// 'peserta_rapat' => 'required'
 		]);
@@ -282,7 +283,7 @@ class NotulensiController extends Controller
 			'id_jenis_rapat' => 'required',
 			// 'jml_agenda' => 'required',
 			// 'tamu' => 'required',
-			'detail_rapat' => 'required',
+			// 'detail_rapat' => 'required',
 			// 'agenda' => 'required',
 			// 'peserta_rapat' => 'required'
 		]);
@@ -326,6 +327,7 @@ class NotulensiController extends Controller
 			$data->peserta_rapat = $request->peserta_rapat;
 			$data->total_peserta = $request->jml_peserta_rapat;
 		}
+		dd($request->tamu);
 		if ($request->tamu != NULL) {
 			$data->tamu = implode(',', $request->tamu);
 			$arr = explode(',', $data->tamu);
@@ -333,7 +335,7 @@ class NotulensiController extends Controller
 			// $get_id[] = [];
 			foreach ($arr as $nama) {
 				$user = User::where('name', $nama)->first();
-				// dd($user->id);
+				// dd($user);
 				$get_id[] = $user->id;
 			}
 			// dd($get_id);
@@ -373,7 +375,7 @@ class NotulensiController extends Controller
 			// }
 			if ($request->tamu != NULL) {
 				foreach ($get_id as $a) {
-					$emel = User::find($a);
+					$emel = User::where('name', $a);
 					Notification::route('mail', $emel->email) //Sending mail to subscriber
 						->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
 					$result[] = $emel->name;

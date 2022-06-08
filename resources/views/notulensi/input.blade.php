@@ -91,7 +91,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="total-peserta" class="col-form-label">Tamu Rapat <b class="text-danger">*</b></label>
+							<label for="total-peserta" class="col-form-label">Peserta Rapat <b class="text-danger">*</b></label>
 							<select required class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">
 								{{-- <option selected>Cari</option> --}}
 								@foreach($pegawai as $a)
@@ -122,15 +122,15 @@
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="peserta" class="col-form-label">File Peserta Rapat (.csv)</label><br>
+							<label for="peserta" class="col-form-label">File Tamu Rapat (.csv)</label><br>
 							<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
 						</div>
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Email Peserta Rapat</label>
+							<label for="detail" class="col-form-label">Email Tamu Rapat</label>
 							<input type="text" class="form-control" id="detail" name="peserta_rapat" value="{{ old('peserta_rapat') }}">
 						</div>
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Jumlah Peserta Rapat</label>
+							<label for="detail" class="col-form-label">Jumlah Tamu Rapat</label>
 							<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{ old('jml_peserta_rapat') }}">
 						</div>
 					</div>
@@ -156,7 +156,7 @@
 				{{-- </div> --}}
 				<div class="row">
 					<div class="col-md">
-						<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">*</b></label><br>
+						<label for="detail" class="col-form-label">Detail Rapat </label><br>
 						<textarea class="form-control" id="area" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
 					</div>
 				</div>

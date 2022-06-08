@@ -147,10 +147,10 @@
 							<label for="summernote" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label>
 							<br>
 							{{-- <textarea id="area"></textarea> --}}
-							<button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+							{{-- <button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 								<i class="fas fa-file-pen"></i> Tulis Notulensi
-							</button>
-							{{-- <button type="submit" class="btn btn-warning btn-lg"><i class="fas fa-file-pen"></i> Tulis Notulensi</button> --}}
+							</button> --}}
+							<button type="submit" class="btn btn-warning btn-lg oEbutn"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 						</div>
 					</div> 
 				{{-- </div> --}}
@@ -210,7 +210,7 @@
 	<script>
 		 $(document).ready(function() {
 			$('.select2').select2({
-				closeOnSelect: false,
+				
 			});
 		});
 	</script>

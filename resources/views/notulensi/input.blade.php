@@ -26,7 +26,8 @@
 	<div class="section-body">
 		<h2 class="section-title">Masukan Data Notulensi</h2>
 		<p class="section-lead">Pastikan untuk memasukan sesuatu yang wadidaw</p>
-		<form action="{{ route('store.notulensi', ['value' => 1]) }}" method="POST" enctype="multipart/form-data">
+		<form name="input" action="{{ route('store.notulensi', ['value' => 1]) }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ route('store.notulensi', ['value' => 1]) }}" id="submit" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="card bg-transparent neumorph">
 				<div class="card-body pb-0">
@@ -145,30 +146,30 @@
 						<b>Upload File Notulensi jika tidak menulis notulensi secara langsung</b>
 					</div>
 					<div class="row">
-						<div class="col-md">
+						<div class="col-md-10">
 							<label for="notulensi" class="col-form-label">Unggah File Notulensi <b class="text-danger">**</b></label>
 							<input type="file" class="form-control" id="notulensi" name="file_notulensi">
 						</div>
-						<div class="col-md">
-							<label for="summernote" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label>
+						<div class="col-md-2">
+							<label class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label>
 							<br>
 							{{-- <textarea id="area"></textarea> --}}
 							{{-- <button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 								<i class="fas fa-file-pen"></i> Tulis Notulensi
 							</button> --}}
-							<button class="btn btn-warning btn-lg oEbutn" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
+							<button type="button" class="btn btn-warning btn-lg oEbutn w-100" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 						</div>
 					</div> 
 					<div class="row collapse" id="collapseExample">
 						<div class="col-md">
-							<label for="tulis" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label><br>
-							<textarea class="form-control" id="tulis" name="notulensi_rapat">{{ old('notulensi_rapat') }}</textarea>
+							<label for="live" class="col-form-label">Tulis Notulensi</label><br>
+							<textarea class="form-control" id="live" name="notulensi_rapat">{{ old('notulensi_rapat') }}</textarea>
 						</div>
 					</div>
 				</div>
 				<div class="card-footer text-right bg-transparent">
 					{{-- <button type="button" class="btn btn-danger">Close</button> --}}
-					<button type="submit" class="btn btn-primary btn-lg">Simpan</button>
+					<button type="submit" class="btn btn-primary btn-lg mt-3">Simpan</button>
 				</div>
 			</div>
 		</form>
@@ -212,17 +213,55 @@
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 	<script>
-		 $(document).ready(function() {
-			$('.select2').select2({
-				
-			});
+		$(document).ready(function() {
+			$('.select2').select2();
+		});
+		$(".oEbutn").click(function() {
+			$(this).closest("form").attr("action", "{{route('store.notulensi', ['value' => 2])}}");
+			// $('#submit').attr('action', 'store/notulensi/2');       
 		});
 	</script>
- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
- <script>
-	$('#area').summernote({
-		height: 100,
-        dialogsInBody: true
-	});
-  </script>
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+	<script>
+		$('#detail').summernote({
+			height: 100,
+			dialogsInBody: true
+		});
+	</script>
+	<script>
+		function validateForm() {
+			let filePesertaRapat = document.forms["input"]["file_peserta_rapat"].value;
+			let pesertaRapat = document.forms["input"]["peserta_rapat"].value;
+			let jmlPesertaRapat = document.forms["input"]["jml_peserta_rapat"].value
+			if (filePesertaRapat == "") {
+				if(pesertaRapat == "" && jmlPesertaRapat == ""){
+					alert("Harap isi salah satu antara File Peserta Rapat atau Peserta Rapat dan Jumlah Peserta Rapat");
+					return false;
+				}
+			}
+		}
+	</script>
+	<script src="https://cdn.tiny.cloud/1/kiparj1384q5s2j5owfutdsordqqp6lq4q2flaj8nj6u79z2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+	<script type="text/javascript">
+		tinymce.init({
+			selector: '#live',
+			// width: 600,
+			// height: 300,
+			plugins: [
+				'autosave', 'export pagebreak', 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+				'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+				'media', 'table', 'emoticons', 'template', 'help'
+			],
+			toolbar: 'restoredraft | export | undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+				'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+				'forecolor backcolor emoticons | help',
+			menu: {
+				favs: { title: 'Agenda Rapat: ', items: 'code visualaid | searchreplace | emoticons' }
+			},
+			menubar: 'favs file edit view insert format tools table help',
+			content_css: 'css/content.css',
+			autosave_restore_when_empty: true,
+			autosave_ask_before_unload: false
+		});
+	</script>
 @endsection

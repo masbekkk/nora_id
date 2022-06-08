@@ -27,6 +27,7 @@
 		<h2 class="section-title">Masukan Data Notulensi</h2>
 		<p class="section-lead">Pastikan untuk memasukan sesuatu yang wadidaw</p>
 		<form name="input" action="{{ route('store.notulensi', ['value' => 1]) }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ route('store.notulensi', ['value' => 1]) }}" id="submit" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="card bg-transparent neumorph">
 				<div class="card-body pb-0">
@@ -116,8 +117,8 @@
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">**</b></label><br>
-							<textarea class="form-control" id="detail" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
+							<label for="detail" class="col-form-label">Detail Rapat </label><br>
+							<textarea class="form-control" id="area" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
 						</div>
 					</div>
 					<br>
@@ -156,13 +157,13 @@
 							{{-- <button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
 								<i class="fas fa-file-pen"></i> Tulis Notulensi
 							</button> --}}
-							<button class="btn btn-warning btn-lg oEbutn" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
+							<button type="button" class="btn btn-warning btn-lg oEbutn" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 						</div>
 					</div> 
 					<div class="row collapse" id="collapseExample">
 						<div class="col-md">
-							<label for="tulis" class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label><br>
-							<textarea class="form-control" id="tulis" name="notulensi_rapat">{{ old('notulensi_rapat') }}</textarea>
+							<label for="tulis" class="col-form-label">Tulis Notulensi </label><br>
+							<textarea class="form-control" id="live" name="notulensi_rapat">{{ old('notulensi_rapat') }}</textarea>
 						</div>
 					</div>
 				</div>
@@ -217,6 +218,10 @@
 				
 			});
 		});
+		$(".oEbutn").click(function() {
+			$(this).closest("form").attr("action", "{{route('store.notulensi', ['value' => 2])}}");
+			// $('#submit').attr('action', 'store/notulensi/2');       
+		});
 	</script>
  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
  <script>
@@ -240,4 +245,27 @@
 	}
   </script>
 
+    <script src="https://cdn.tiny.cloud/1/kiparj1384q5s2j5owfutdsordqqp6lq4q2flaj8nj6u79z2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+	<script type="text/javascript">
+		  tinymce.init({
+			  selector: '#live',
+			  // width: 600,
+			  // height: 300,
+			  plugins: [
+				  'autosave', 'export pagebreak', 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
+				  'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
+				  'media', 'table', 'emoticons', 'template', 'help'
+			  ],
+			  toolbar: 'restoredraft | export | undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
+				  'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
+				  'forecolor backcolor emoticons | help',
+			  menu: {
+				  favs: { title: 'Agenda Rapat: ', items: 'code visualaid | searchreplace | emoticons' }
+			  },
+			  menubar: 'favs file edit view insert format tools table help',
+			  content_css: 'css/content.css',
+			  autosave_restore_when_empty: true,
+			  autosave_ask_before_unload: false
+		  });
+	</script>
 @endsection

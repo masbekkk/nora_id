@@ -13,7 +13,7 @@ class Notulensi extends Model
 
 	public function pemimpin()
 	{
-		return $this->belongsTo(User::class, 'id_pemimpin_rapat');
+		return $this->belongsTo(PimpinanRapat::class, 'id_pemimpin_rapat');
 	}
 
 	public function jenis()

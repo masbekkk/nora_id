@@ -9,6 +9,7 @@ use App\Models\Notulensi;
 use App\Models\LokasiRapat;
 use App\Models\JenisRapat;
 use App\Models\User;
+use App\Models\PimpinanRapat;
 use App\Notifications\NewNotulensiNotify;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Notifications\Notifiable;
@@ -28,7 +29,8 @@ class NotulensiController extends Controller
 
 	public function dashboard()
 	{
-		$data = Notulensi::orderBy('id', 'DESC')->get();
+		$data = Notulensi::with('pemimpin', 'notulen')->orderBy('id', 'DESC')->get();
+		// dd($data); /
 		view()->share([
 			'data' => $data
 		]);
@@ -40,10 +42,12 @@ class NotulensiController extends Controller
 		if (Auth::user()->role_id == 2 || Auth::user()->role_id == 1) {
 			$lokasi = LokasiRapat::all();
 			$pegawai = User::where('role_id', 3)->where('email', '!=', 'pegawai@nora.id')->get();
+			$pimpinan_rapat = PimpinanRapat::all();
 			$jenis_rapat = JenisRapat::all();
 			view()->share([
 				'lokasi' => $lokasi,
 				'pegawai' => $pegawai,
+				'pimpinan_rapat' => $pimpinan_rapat,
 				'jenis_rapat' => $jenis_rapat
 			]);
 			return view('notulensi.input');
@@ -61,7 +65,7 @@ class NotulensiController extends Controller
 			'id_jenis_rapat' => 'required',
 			// 'jml_agenda' => 'required',
 			// 'tamu' => 'required',
-			'detail_rapat' => 'required',
+			// 'detail_rapat' => 'required',
 			// 'agenda' => 'required',
 			// 'peserta_rapat' => 'required'
 		]);
@@ -244,11 +248,13 @@ class NotulensiController extends Controller
 			$data = Notulensi::findorFail($id);
 			$lokasi = LokasiRapat::all();
 			$pegawai = User::where('role_id', 3)->where('email', '!=', 'pegawai@nora.id')->get();
+			$pimpinan_rapat = PimpinanRapat::all();
 			$jenis_rapat = JenisRapat::all();
 			view()->share([
 				'lokasi' => $lokasi,
 				'pegawai' => $pegawai,
 				'jenis_rapat' => $jenis_rapat,
+				'pimpinan_rapat' => $pimpinan_rapat,
 				'data' => $data
 			]);
 			return view('notulensi.edit');
@@ -277,7 +283,7 @@ class NotulensiController extends Controller
 			'id_jenis_rapat' => 'required',
 			// 'jml_agenda' => 'required',
 			// 'tamu' => 'required',
-			'detail_rapat' => 'required',
+			// 'detail_rapat' => 'required',
 			// 'agenda' => 'required',
 			// 'peserta_rapat' => 'required'
 		]);
@@ -321,6 +327,7 @@ class NotulensiController extends Controller
 			$data->peserta_rapat = $request->peserta_rapat;
 			$data->total_peserta = $request->jml_peserta_rapat;
 		}
+		dd($request->tamu);
 		if ($request->tamu != NULL) {
 			$data->tamu = implode(',', $request->tamu);
 			$arr = explode(',', $data->tamu);
@@ -328,7 +335,7 @@ class NotulensiController extends Controller
 			// $get_id[] = [];
 			foreach ($arr as $nama) {
 				$user = User::where('name', $nama)->first();
-				// dd($user->id);
+				// dd($user);
 				$get_id[] = $user->id;
 			}
 			// dd($get_id);
@@ -368,7 +375,7 @@ class NotulensiController extends Controller
 			// }
 			if ($request->tamu != NULL) {
 				foreach ($get_id as $a) {
-					$emel = User::find($a);
+					$emel = User::where('name', $a);
 					Notification::route('mail', $emel->email) //Sending mail to subscriber
 						->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
 					$result[] = $emel->name;

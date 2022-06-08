@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
 		$this->call(JenisRapatSeeder::class);
 		$this->call(LokasiRapatSeeder::class);
 		$this->call(UsersSeeder::class);
+    $this->call(PimpinanRapatSeeder::class);
     }
 }

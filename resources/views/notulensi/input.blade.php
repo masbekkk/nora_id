@@ -65,11 +65,11 @@
 							<label for="pemimpin" class="col-form-label">Pemimpin Rapat <b class="text-danger">*</b></label>
 							<select required class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
 								{{-- <option selected>Cari</option> --}}
-								@foreach($pegawai as $a)
+								@foreach($pimpinan_rapat as $a)
 									@if(old('id_pemimpin_rapat')==$a->id)
-										<option value= {{ $a->id }} selected>{{ $a->name }}</option>
+										<option selected value= {{ $a->id }} selected>{{ $a->nama }}</option>
 									@else
-										<option value= {{ $a->id }} >{{ $a->name }}</option>
+										<option value= {{ $a->id }} >{{ $a->nama }}</option>
 									@endif
 								@endforeach
 							</select>
@@ -91,7 +91,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="total-peserta" class="col-form-label">Tamu Rapat <b class="text-danger">*</b></label>
+							<label for="total-peserta" class="col-form-label">Peserta Rapat <b class="text-danger">*</b></label>
 							<select required class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">
 								{{-- <option selected>Cari</option> --}}
 								@foreach($pegawai as $a)
@@ -128,15 +128,15 @@
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="peserta" class="col-form-label">File Peserta Rapat (.csv)</label><br>
+							<label for="peserta" class="col-form-label">File Tamu Rapat (.csv)</label><br>
 							<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
 						</div>
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Email Peserta Rapat</label>
+							<label for="detail" class="col-form-label">Email Tamu Rapat</label>
 							<input type="text" class="form-control" id="detail" name="peserta_rapat" value="{{ old('peserta_rapat') }}">
 						</div>
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Jumlah Peserta Rapat</label>
+							<label for="detail" class="col-form-label">Jumlah Tamu Rapat</label>
 							<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{ old('jml_peserta_rapat') }}">
 						</div>
 					</div>

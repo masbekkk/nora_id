@@ -73,13 +73,13 @@
 							<label for="pemimpin" class="col-form-label">Pemimpin Rapat <b class="text-danger">*</b></label>
 							<select class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
 								{{-- <option selected>Cari</option> --}}
-								@foreach($pegawai as $a)
-									@if($data->id_pemimpin_rapat == $a->id)
-									<option selected value="{{$a->id}}">{{$a->name}}</option>
-									@else
-									<option value="{{$a->id}}">{{$a->name}}</option>
-									@endif
-								@endforeach
+								@foreach($pimpinan_rapat as $a)
+								@if($data->id_pemimpin_rapat ==$a->id)
+									<option selected value= {{ $a->id }} selected>{{ $a->nama }}</option>
+								@else
+									<option value= {{ $a->id }} >{{ $a->nama }}</option>
+								@endif
+							@endforeach
 							</select>
 						</div>
 						<div class="col-md">
@@ -98,11 +98,12 @@
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="total-peserta" class="col-form-label">Tamu Rapat <b class="text-danger">*</b></label>
+							<label for="total-peserta" class="col-form-label">Peserta Rapat <b class="text-danger">*</b></label>
 							<select class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple" value="{{$data->tamu}}">
+								{{-- @if($data->tamu ) --}}
 								<option selected value="{{$data->tamu}}">{{$data->tamu}}</option>
 								@foreach($pegawai as $a)
-								<option value="{{$a->id}}">{{$a->name}}</option>
+								<option value="{{$a->name}}">{{$a->name}}</option>
 								@endforeach
 							</select>
 						</div>
@@ -160,12 +161,12 @@
 						</div>
 					</div>
 									{{-- </div> --}}
-				<div class="row">
-					<div class="col-md">
-						<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">*</b></label><br>
-						<textarea class="form-control" id="area" name="detail_rapat" value="{{$data->detail_rapat}}">{{$data->detail_rapat}}</textarea>
-					</div>
-				</div>
+					<div class="row">
+						<div class="col-md">
+							<label for="detail" class="col-form-label">Detail Rapat </label><br>
+							<textarea class="form-control" id="area" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
+						</div>
+						</div>
 			</div>
 				</div>
 

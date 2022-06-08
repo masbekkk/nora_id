@@ -54,6 +54,8 @@
 	            </div>
                 <center>
                     <button type="submit" class="btn btn-primary rounded submit">Masuk</button>
+					<br><br>
+					<a href="">atau buat akun baru</a>
                 </center>
 	          </form>
 	        </div>

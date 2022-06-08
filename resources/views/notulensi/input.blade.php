@@ -116,7 +116,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">**</b></label><br>
+							<label for="detail" class="col-form-label">Detail Rapat</label><br>
 							<textarea class="form-control" id="detail" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
 						</div>
 					</div>

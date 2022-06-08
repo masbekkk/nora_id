@@ -46,20 +46,20 @@
 	            		<label class="checkbox-wrap checkbox-primary mb-0">Save Password
 									  <input type="checkbox" name="remember" >
 									  <span class="checkmark"></span>
-									</label>
-								</div>
-								<div class="w-100 d-flex justify-content-end">
+						</label>
+					</div>
+					<div class="w-100 d-flex justify-content-end">
 		            	
 	            	</div>
 	            </div>
                 <center>
                     <button type="submit" class="btn btn-primary rounded submit">Masuk</button>
 					<br><br>
-					<a href="">atau buat akun baru</a>
+					<a href="">Buat akun baru</a>
                 </center>
 	          </form>
 	        </div>
-				</div>
+			</div>
 			</div>
 		</div>
 	</section>

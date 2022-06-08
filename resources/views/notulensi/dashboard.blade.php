@@ -44,9 +44,12 @@
 							<td id="mdata-waktu"></td>
 						</tr>
 						<tr>
-							<td>Ruang / Lokasi Rapat</td>
+							<td>Ruang / Total Peserta Rapat</td>
 							<td style="width:1%">:</td>
-							<td id="mdata-lokasi"></td>
+							<td id="">
+								<span id="mdata-lokasi"></span> /
+								<span id="mdata-total-peserta"></span>	
+							</td>
 						</tr>
 						<tr>
 							<td>Pimpinan Rapat</td>
@@ -77,11 +80,6 @@
 							<td>Peserta Rapat</td>
 							<td style="width:1%">:</td>
 							<td id="mdata-peserta-rapat"></td>
-						</tr>
-						<tr>
-							<td>Total Peserta Rapat</td>
-							<td style="width:1%">:</td>
-							<td id="mdata-total-peserta"></td>
 						</tr>
 						<tr>
 							<td>Detail Rapat</td>

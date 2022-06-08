@@ -26,7 +26,7 @@
 	<div class="section-body">
 		<h2 class="section-title">Masukan Data Notulensi</h2>
 		<p class="section-lead">Pastikan untuk memasukan sesuatu yang wadidaw</p>
-		<form action="{{ route('store.notulensi', ['value' => 1]) }}" method="POST" enctype="multipart/form-data">
+		<form name="input" action="{{ route('store.notulensi', ['value' => 1]) }}" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="card bg-transparent neumorph">
 				<div class="card-body pb-0">
@@ -225,4 +225,19 @@
         dialogsInBody: true
 	});
   </script>
+  <script>
+	function validateForm() {
+  		let filePesertaRapat = document.forms["input"]["file_peserta_rapat"].value;
+  		let pesertaRapat = document.forms["input"]["peserta_rapat"].value;
+  		let jmlPesertaRapat = document.forms["input"]["jml_peserta_rapat"].value
+  		if (filePesertaRapat == "") {
+			if(pesertaRapat == "" && jmlPesertaRapat == ""){
+				alert("Harap isi salah satu antara File Peserta Rapat atau Peserta Rapat dan Jumlah Peserta Rapat");
+  				return false;
+			}
+  		  
+  		}
+	}
+  </script>
+
 @endsection

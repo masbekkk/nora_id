@@ -1046,16 +1046,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.4.3",
+            "version": "7.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab"
+                "reference": "e3ff079b22820c2029d4c2a87796b6a0b8716ad8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
-                "reference": "74a8602c6faec9ef74b7a9391ac82c5e65b1cdab",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/e3ff079b22820c2029d4c2a87796b6a0b8716ad8",
+                "reference": "e3ff079b22820c2029d4c2a87796b6a0b8716ad8",
                 "shasum": ""
             },
             "require": {
@@ -1150,7 +1150,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.4.3"
+                "source": "https://github.com/guzzle/guzzle/tree/7.4.4"
             },
             "funding": [
                 {
@@ -1166,7 +1166,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-25T13:24:33+00:00"
+            "time": "2022-06-09T21:39:15+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1254,16 +1254,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "a119247127ff95789a2d95c347cd74721fbedaa4"
+                "reference": "83260bb50b8fc753c72d14dc1621a2dac31877ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/a119247127ff95789a2d95c347cd74721fbedaa4",
-                "reference": "a119247127ff95789a2d95c347cd74721fbedaa4",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/83260bb50b8fc753c72d14dc1621a2dac31877ee",
+                "reference": "83260bb50b8fc753c72d14dc1621a2dac31877ee",
                 "shasum": ""
             },
             "require": {
@@ -1287,7 +1287,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -1349,7 +1349,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.2.2"
+                "source": "https://github.com/guzzle/psr7/tree/2.3.0"
             },
             "funding": [
                 {
@@ -1365,7 +1365,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-08T19:55:23+00:00"
+            "time": "2022-06-09T08:26:02+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2133,16 +2133,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.6.0",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0"
+                "reference": "5579edf28aee1190a798bfa5be8bc16c563bd524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/247918972acd74356b0a91dfaa5adcaec069b6c0",
-                "reference": "247918972acd74356b0a91dfaa5adcaec069b6c0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5579edf28aee1190a798bfa5be8bc16c563bd524",
+                "reference": "5579edf28aee1190a798bfa5be8bc16c563bd524",
                 "shasum": ""
             },
             "require": {
@@ -2221,7 +2221,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.6.0"
+                "source": "https://github.com/Seldaek/monolog/tree/2.7.0"
             },
             "funding": [
                 {
@@ -2233,7 +2233,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-10T09:36:00+00:00"
+            "time": "2022-06-09T08:59:12+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3985,18 +3985,6 @@
         },
         {
             "name": "symfony/event-dispatcher",
-<<<<<<< HEAD
-            "version": "v5.4.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "8e6ce1cc0279e3ff3c8ff0f43813bc88d21ca1bc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/8e6ce1cc0279e3ff3c8ff0f43813bc88d21ca1bc",
-                "reference": "8e6ce1cc0279e3ff3c8ff0f43813bc88d21ca1bc",
-=======
             "version": "v6.0.9",
             "source": {
                 "type": "git",
@@ -4007,7 +3995,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/5c85b58422865d42c6eb46f7693339056db098a8",
                 "reference": "5c85b58422865d42c6eb46f7693339056db098a8",
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
                 "shasum": ""
             },
             "require": {
@@ -4061,11 +4048,7 @@
             "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
             "homepage": "https://symfony.com",
             "support": {
-<<<<<<< HEAD
-                "source": "https://github.com/symfony/event-dispatcher/tree/v5.4.9"
-=======
                 "source": "https://github.com/symfony/event-dispatcher/tree/v6.0.9"
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
             },
             "funding": [
                 {
@@ -4081,11 +4064,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2022-05-05T16:45:39+00:00"
-=======
             "time": "2022-05-05T16:45:52+00:00"
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
         },
         {
             "name": "symfony/event-dispatcher-contracts",
@@ -5551,18 +5530,6 @@
         },
         {
             "name": "symfony/string",
-<<<<<<< HEAD
-            "version": "v5.4.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/string.git",
-                "reference": "985e6a9703ef5ce32ba617c9c7d97873bb7b2a99"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/985e6a9703ef5ce32ba617c9c7d97873bb7b2a99",
-                "reference": "985e6a9703ef5ce32ba617c9c7d97873bb7b2a99",
-=======
             "version": "v6.0.9",
             "source": {
                 "type": "git",
@@ -5573,7 +5540,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/string/zipball/df9f03d595aa2d446498ba92fe803a519b2c43cc",
                 "reference": "df9f03d595aa2d446498ba92fe803a519b2c43cc",
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
                 "shasum": ""
             },
             "require": {
@@ -5629,11 +5595,7 @@
                 "utf8"
             ],
             "support": {
-<<<<<<< HEAD
-                "source": "https://github.com/symfony/string/tree/v5.4.9"
-=======
                 "source": "https://github.com/symfony/string/tree/v6.0.9"
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
             },
             "funding": [
                 {
@@ -5653,18 +5615,6 @@
         },
         {
             "name": "symfony/translation",
-<<<<<<< HEAD
-            "version": "v5.4.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation.git",
-                "reference": "1639abc1177d26bcd4320e535e664cef067ab0ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/1639abc1177d26bcd4320e535e664cef067ab0ca",
-                "reference": "1639abc1177d26bcd4320e535e664cef067ab0ca",
-=======
             "version": "v6.0.9",
             "source": {
                 "type": "git",
@@ -5675,7 +5625,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation/zipball/9ba011309943955a3807b8236c17cff3b88f67b6",
                 "reference": "9ba011309943955a3807b8236c17cff3b88f67b6",
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
                 "shasum": ""
             },
             "require": {
@@ -5741,11 +5690,7 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
-<<<<<<< HEAD
-                "source": "https://github.com/symfony/translation/tree/v5.4.9"
-=======
                 "source": "https://github.com/symfony/translation/tree/v6.0.9"
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
             },
             "funding": [
                 {
@@ -5761,11 +5706,7 @@
                     "type": "tidelift"
                 }
             ],
-<<<<<<< HEAD
-            "time": "2022-05-06T12:33:37+00:00"
-=======
             "time": "2022-05-06T14:27:17+00:00"
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
         },
         {
             "name": "symfony/translation-contracts",
@@ -6658,16 +6599,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.14.9",
+            "version": "v1.14.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "8435763e7735f6eff15b03df014cea1217fc826e"
+                "reference": "0ea5d683af4d189071efcdb9e83946c10dab82c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/8435763e7735f6eff15b03df014cea1217fc826e",
-                "reference": "8435763e7735f6eff15b03df014cea1217fc826e",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/0ea5d683af4d189071efcdb9e83946c10dab82c3",
+                "reference": "0ea5d683af4d189071efcdb9e83946c10dab82c3",
                 "shasum": ""
             },
             "require": {
@@ -6714,7 +6655,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-06-06T14:28:04+00:00"
+            "time": "2022-06-09T07:10:28+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -8717,9 +8658,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-<<<<<<< HEAD
-    "plugin-api-version": "2.2.0"
-=======
-    "plugin-api-version": "2.1.0"
->>>>>>> fbb5c9c17961313f7403853208a9bef1f815a247
+    "plugin-api-version": "2.3.0"
 }

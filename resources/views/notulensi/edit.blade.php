@@ -102,13 +102,8 @@
 							<select required class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">
 
 								@foreach($pegawai as $a)
-									@if($data->tamu == $a->name)
-									<option selected value="{{$data->tamu}}">{{$data->tamu}}</option>
-									@else
-									{{-- @if(explode(',', $data->tamu) == $data->tamu)
-									<option selected value="{{explode(',', $a->name)}}">{{$a->name}} --}}
+
 									<option value="{{$a->name}}">{{$a->name}}</option>
-									@endif
 								@endforeach
 							</select>
 						</div>

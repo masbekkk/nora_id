@@ -522,7 +522,7 @@ class NotulensiController extends Controller
 					// dd($emel->email);
 					Notification::route('mail', $emel->email)->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
 					// dd($send);
-					// $result[] = $emel->name;
+					$result[] = $emel->name;
 				}
 				$data->tamu = implode(',', $result);
 			}

@@ -26,8 +26,7 @@
 	<div class="section-body">
 		<h2 class="section-title">Masukan Data Notulensi</h2>
 		<p class="section-lead">Pastikan untuk memasukan sesuatu yang wadidaw</p>
-		<form name="input" action="{{ route('store.notulensi', ['value' => 1]) }}" method="POST" enctype="multipart/form-data">
-		<form action="{{ route('store.notulensi', ['value' => 1]) }}" id="submit" method="POST" enctype="multipart/form-data">
+		<form action="{{route('create.notulensi')}}" method="POST" enctype="multipart/form-data">
 			@csrf
 			<div class="card bg-transparent neumorph">
 				<div class="card-body pb-0">
@@ -36,6 +35,7 @@
 						<p>Pastikan untuk mengisi <b class="h6 font-weight-bold">semua input</b> yang memiliki tanda <span class="text-danger h6">*</span></p>
 						<p>Pastikan untuk mengisi <b class="h6 font-weight-bold">salah satu dari input</b> yang memiliki tanda <span class="text-danger h6">**</span></p>
 					</div>
+				
 					<div class="row">
 						<div class="col-md">
 							<label for="nomer" class="col-form-label">Nomer Undangan <b class="text-danger">*</b></label>
@@ -50,7 +50,7 @@
 						<div class="col-md">
 							<label for="lokasi" class="col-form-label">Ruang/Lokasi <b class="text-danger">*</b></label>
 							<select class="form-control select2" id="lokasi" name="lokasi">
-								{{-- <option selected>Cari</option> --}}
+							
 								@foreach($lokasi as $a)
 									<option value="{{$a->nama}}">{{$a->nama}}</option>
 								@endforeach
@@ -65,7 +65,7 @@
 						<div class="col-md">
 							<label for="pemimpin" class="col-form-label">Pemimpin Rapat <b class="text-danger">*</b></label>
 							<select required class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
-								{{-- <option selected>Cari</option> --}}
+								
 								@foreach($pimpinan_rapat as $a)
 									@if(old('id_pemimpin_rapat')==$a->id)
 										<option selected value= {{ $a->id }} selected>{{ $a->nama }}</option>
@@ -78,14 +78,14 @@
 						<div class="col-md">
 							<label for="jenis-agenda" class="col-form-label">Jenis Rapat <b class="text-danger">*</b></label>
 							<select required class="form-control select2" id="jenis-agenda" name="id_jenis_rapat">
-								{{-- <option selected>Cari</option> --}}
+								
 								@foreach($jenis_rapat as $a)
 								@if(old('id_jenis_rapat')==$a->id)
 										<option value= {{ $a->id }} selected>{{ $a->nama }}</option>
 									@else
 										<option value= {{ $a->id }} >{{ $a->nama }}</option>
 									@endif
-								{{-- <option value="{{$a->id}}">{{$a->nama}}</option> --}}
+								
 								@endforeach
 							</select>
 						</div>
@@ -94,16 +94,13 @@
 						<div class="col-md">
 							<label for="total-peserta" class="col-form-label">Peserta Rapat <b class="text-danger">*</b></label>
 							<select required class="form-control select2" id="total-peserta" name="tamu[]" multiple="multiple">
-								{{-- <option selected>Cari</option> --}}
+								
 								@foreach($pegawai as $a)
 									<option value="{{$a->name}}">{{$a->name}}</option>
 								@endforeach
 							</select>
 						</div>
-						{{-- <div class="col-md">
-							<label for="detail" class="col-form-label">Detail Rapat <b class="text-danger">*</b></label>
-							<textarea class="form-control" id="detail" name="detail_rapat">{{ old('detail_rapat') }}</textarea>
-						</div> --}}
+					
 					</div>
 					<div class="row">
 						<div class="col-md">
@@ -129,15 +126,15 @@
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="peserta" class="col-form-label">File Tamu Rapat (.csv)</label><br>
+							<label for="peserta" class="col-form-label">File Tamu Rapat (.csv)</label><b class="text-danger" id="file_tamu"></b><br>
 							<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
 						</div>
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Email Tamu Rapat</label>
+							<label for="detail" class="col-form-label">Email Tamu Rapat</label><b class="text-danger" id="email_tamu"></b>
 							<input type="text" class="form-control" id="detail" name="peserta_rapat" value="{{ old('peserta_rapat') }}">
 						</div>
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Jumlah Tamu Rapat</label>
+							<label for="detail" class="col-form-label">Jumlah Tamu Rapat</label><b class="text-danger" id="jml_tamu"></b>
 							<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{ old('jml_peserta_rapat') }}">
 						</div>
 					</div>
@@ -153,17 +150,14 @@
 						<div class="col-md-2">
 							<label class="col-form-label">Tulis Notulensi <b class="text-danger">**</b></label>
 							<br>
-							{{-- <textarea id="area"></textarea> --}}
-							{{-- <button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-								<i class="fas fa-file-pen"></i> Tulis Notulensi
-							</button> --}}
-							<button type="button" class="btn btn-warning btn-lg oEbutn w-100" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
+					
+							<button type="button" class="btn btn-warning btn-lg w-100" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-file-pen"></i> Tulis Notulensi</button>
 						</div>
 					</div> 
 					<div class="row collapse" id="collapseExample">
 						<div class="col-md">
 							<label for="live" class="col-form-label">Tulis Notulensi</label><br>
-							<textarea class="form-control" id="live" name="notulensi_rapat">{{ old('notulensi_rapat') }}</textarea>
+							<textarea class="form-control" id="live_notulensi" name="notulensi_live">{{ old('notulensi_rapat') }}</textarea>
 						</div>
 					</div>
 				</div>
@@ -185,7 +179,7 @@
 				blah.src = URL.createObjectURL(file)
 			}
 		}
-    </script>
+    </script> 
 	<script type="text/javascript">
 		var SITEURL = "{{URL('/')}}";
 		$(function() {
@@ -216,10 +210,22 @@
 		$(document).ready(function() {
 			$('.select2').select2();
 		});
-		$(".oEbutn").click(function() {
-			$(this).closest("form").attr("action", "{{route('store.notulensi', ['value' => 2])}}");
-			// $('#submit').attr('action', 'store/notulensi/2');       
-		});
+
+	</script>
+	<script>
+		function validateForm() {
+			let filePesertaRapat = document.forms["input"]["file_peserta_rapat"].value;
+			let pesertaRapat = document.forms["input"]["peserta_rapat"].value;
+			let jmlPesertaRapat = document.forms["input"]["jml_peserta_rapat"].value;
+			let text;
+			if (filePesertaRapat == "") {
+				if(pesertaRapat == "" && jmlPesertaRapat == ""){
+					text = "Harap isi Email Peserta Rapat dan Jumlah Peserta Rapat";
+				}
+			}
+			document.getElementById("email_tamu").innerHTML = text;
+			document.getElementById("jml_tamu").innerHTML = text;
+		}
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 	<script>
@@ -228,23 +234,10 @@
 			dialogsInBody: true
 		});
 	</script>
-	<script>
-		function validateForm() {
-			let filePesertaRapat = document.forms["input"]["file_peserta_rapat"].value;
-			let pesertaRapat = document.forms["input"]["peserta_rapat"].value;
-			let jmlPesertaRapat = document.forms["input"]["jml_peserta_rapat"].value
-			if (filePesertaRapat == "") {
-				if(pesertaRapat == "" && jmlPesertaRapat == ""){
-					alert("Harap isi salah satu antara File Peserta Rapat atau Peserta Rapat dan Jumlah Peserta Rapat");
-					return false;
-				}
-			}
-		}
-	</script>
 	<script src="https://cdn.tiny.cloud/1/kiparj1384q5s2j5owfutdsordqqp6lq4q2flaj8nj6u79z2/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 	<script type="text/javascript">
 		tinymce.init({
-			selector: '#live',
+			selector: '#live_notulensi',
 			// width: 600,
 			// height: 300,
 			plugins: [

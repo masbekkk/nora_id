@@ -6,9 +6,3 @@
  */
 
 "use strict";
-
-
-
-// $(".eEbutn").click(function() {
-//     $(this).closest("form").attr("action", "/update/notulensi/2");       
-// });

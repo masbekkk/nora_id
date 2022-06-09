@@ -29,7 +29,7 @@ class NotulensiController extends Controller
 
 	public function dashboard()
 	{
-		$data = Notulensi::with('pemimpin', 'notulen')->orderBy('id', 'DESC')->get();
+		$data = Notulensi::with('pemimpin', 'notulen')->orderBy('updated_at', 'DESC')->get();
 		// dd($data); /
 		view()->share([
 			'data' => $data

@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-	// return redirect()->route('dashboard.notulensi');
-	return view('landing');
+	return redirect()->route('dashboard.notulensi');
+	// return view('landing');
 })->name('/');
 
 

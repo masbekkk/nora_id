@@ -123,18 +123,19 @@
 						<b>Masukkan File .csv peserta rapat, atau isi secara manual</b><br>
 						<small>Format csv harus data index ke 2 berisi email, contoh: 1,budi, budi@gmail.com</small>
 						<p>Contoh File format .csv yang benar <u><a target="blank" href="files/Book1.csv">Download File</a></u></p>
+						{{-- <label for="peserta" class="error">Please select your gender</label> --}}
 					</div>
 					<div class="row">
 						<div class="col-md">
-							<label for="peserta" class="col-form-label">File Tamu Rapat (.csv)</label><b class="text-danger" id="file_tamu"></b><br>
+							<label for="peserta" class="col-form-label">File Tamu Rapat (.csv)</label> <b class="text-danger">**</b></b><br>
 							<input type="file" class="form-control" id="peserta" name="file_peserta_rapat">
 						</div>
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Email Tamu Rapat</label><b class="text-danger" id="email_tamu"></b>
+							<label for="detail" class="col-form-label">Email Tamu Rapat</label> <b class="text-danger">**</b></b>
 							<input type="text" class="form-control" id="detail" name="peserta_rapat" value="{{ old('peserta_rapat') }}">
 						</div>
 						<div class="col-md">
-							<label for="detail" class="col-form-label">Jumlah Tamu Rapat</label><b class="text-danger" id="jml_tamu"></b>
+							<label for="detail" class="col-form-label">Jumlah Tamu Rapat</label> <b class="text-danger">**</b></b>
 							<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{ old('jml_peserta_rapat') }}">
 						</div>
 					</div>
@@ -257,4 +258,21 @@
 			autosave_ask_before_unload: false
 		});
 	</script>
+
+{{-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script>
+	// just for the demos, avoids form submit
+	jQuery.validator.setDefaults({
+	  debug: true,
+	  success: "valid"
+	});
+	$( "#myform" ).validate({
+	  rules: {
+		peserta: {
+		  required: true
+		}
+	  }
+	});
+	</script> --}}
 @endsection

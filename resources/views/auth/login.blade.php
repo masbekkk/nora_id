@@ -43,7 +43,7 @@
 	            </div>
 	            <div class="form-group d-flex align-items-center">
 	            	<div class="w-100">
-	            		<label class="checkbox-wrap checkbox-primary mb-0">Save Password
+	            		<label class="checkbox-wrap checkbox-primary mb-0">Remember Me
 									  <input type="checkbox" name="remember" >
 									  <span class="checkmark"></span>
 						</label>
@@ -55,7 +55,7 @@
                 <center>
                     <button type="submit" class="btn btn-primary rounded submit">Masuk</button>
 					<br><br>
-					<a href="">Buat akun baru</a>
+					<a href="/register">Buat akun baru</a>
                 </center>
 	          </form>
 	        </div>

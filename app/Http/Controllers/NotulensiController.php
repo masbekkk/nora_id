@@ -140,8 +140,8 @@ class NotulensiController extends Controller
 				foreach ($tamu as $a) {
 					$emel = User::where('name', $a)->first();
 					// dd($emel->email);
-					$send = Notification::route('mail', $emel->email)->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
-					dd($send);
+					Notification::route('mail', $emel->email)->notify(new NewNotulensiNotify($emel->name, $data->file_notulensi, $data->agenda));
+					// dd($send);
 					$result[] = $emel->name;
 				}
 				$data->tamu = implode(',', $result);

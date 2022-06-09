@@ -19,37 +19,31 @@ class UsersSeeder extends Seeder
 		User::insert(
 			array(
 				array(
-					'name' => "sekretaris1",
+					'name' => "annisa",
 					'email' => "annisaarsylia@gmail.com",
 					'password' => Hash::make('password'),
 					'role_id' => 2,
 				),
 				array(
-					'name' => "sekretaris2",
-					'email' => "abdillahromadhon512@gmail.com",
-					'password' => Hash::make('password'),
-					'role_id' => 2,
-				),
-				array(
-					'name' => "pegawai1",
+					'name' => "denas",
 					'email' => "rohmantesting83@gmail.com",
 					'password' => Hash::make('password'),
 					'role_id' => 3,
 				),
 				array(
-					'name' => "pegawai2",
+					'name' => "iga",
 					'email' => "igadwilestari0@gmail.com",
 					'password' => Hash::make('password'),
 					'role_id' => 3,
 				),
 				array(
-					'name' => "pegawai3",
-					'email' => "subkhanpinter22@gmail.com",
+					'name' => "subkhan",
+					'email' => "mohammadsubkhan149@gmail.com",
 					'password' => Hash::make('password'),
 					'role_id' => 3,
 				),
 				array(
-					'name' => "pegawai4",
+					'name' => "nafis",
 					'email' => "waridunnafis@gmail.com",
 					'password' => Hash::make('password'),
 					'role_id' => 3,

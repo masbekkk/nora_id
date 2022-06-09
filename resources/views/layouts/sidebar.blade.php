@@ -10,7 +10,7 @@
 			<li class="menu-header">Menu Utama</li>
 			<li class="{{ Route::is('dashboard.notulensi') ? 'active' : '' }}"><a class="nav-link" href="{{ route('dashboard.notulensi') }}"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
 			@if(Auth::user()->role_id == 2 || Auth::user()->role_id == 1)
-				<li class="{{ Route::is('create.notulensi') ? 'active' : '' }}"><a class="nav-link" href="{{ route('create.notulensi') }}"><i class="fas fa-file-arrow-up"></i> <span>Input Notulensi</span></a></li>
+				<li class="{{ Route::is('create.notulensi') ? 'active' : '' }}"><a class="nav-link" href="{{ route('create.notulensi') }}"><i class="fas fa-file-arrow-up"></i> <span>Tambah Notulensi</span></a></li>
 			@endif
 			@if(Auth::user()->role_id == 1)
 				<li class="{{ Route::is('users') ? 'active' : '' }}"><a class="nav-link" href="{{ route('users') }}"><i class="fas fa-users"></i> <span>Data Pengguna</span></a></li>

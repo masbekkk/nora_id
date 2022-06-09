@@ -5,7 +5,7 @@
 	<link rel="icon" href="{{ asset('img/noraid-logo-sm.png') }}" />
 	<meta charset="UTF-8">
   	<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	{{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
 
 	@include('layouts.style')
 

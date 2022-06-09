@@ -6,11 +6,3 @@
  */
 
 "use strict";
-
-$(".oEbutn").click(function() {
-    $(this).closest("form").attr("action", "/store/notulensi/2");       
-});
-
-// $(".eEbutn").click(function() {
-//     $(this).closest("form").attr("action", "/update/notulensi/2");       
-// });

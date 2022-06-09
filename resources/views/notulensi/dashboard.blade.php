@@ -116,7 +116,7 @@
 
 	{{-- Content Table Section --}}
 	<div class="section-body">
-		<div class="card bg-transparent neumorph">
+		<div class="card bg-transparent neumorph text-dark" style="font-size: 1em !important;">
 			<div class="card-body pb-2">
 				<div class="table-responsive">
 					<table class="table table-striped w-100" id="table-1">
@@ -136,7 +136,7 @@
 								<td class="sorting_1 align-middle text-center">{{ ++$keys }}</td>
 								<td class="align-middle">{{ $a->no_undangan }}</td>
 								<td class="align-middle">{{ $a->jenis->nama }}</td>
-								<td class="align-middle">{{ $a->pemimpin->name }}</td>
+								<td class="align-middle">{{ $a->pemimpin->nama }}</td>
 								<td class="align-middle">{{ $a->tgl->format('d F Y') }}</td>
 								
 								{{-- Action untuk sekretaris --}}
@@ -158,7 +158,7 @@
 											data-tgl="{{ $a->tgl->format('d F Y') }}"
 											data-lokasi="{{ $a->lokasi }}"
 											data-waktu="{{ $a->waktu }}"
-											data-pemimpin="{{ $a->pemimpin->name }}"
+											data-pemimpin="{{ $a->pemimpin->nama }}"
 											data-jenis="{{ $a->jenis->nama }}"
 											data-jml-agenda="{{ $a->jml_agenda }}"
 											data-tamu="{{ $a->tamu }}"
@@ -190,7 +190,7 @@
 											data-jenis="{{ $a->jenis->nama }}"
 											data-jml-agenda="{{ $a->jml_agenda }}"
 											data-tamu="{{ $a->tamu }}"
-											data-detail="{{ $a->detail_rapat }}"
+											data-detail="{!! $a->detail_rapat !!}"
 											data-file="{{ route('download.notulensi', $a->id) }}"
 											data-agenda="{{ $a->agenda }}"
 											data-peserta="{{ $a->peserta_rapat }}"

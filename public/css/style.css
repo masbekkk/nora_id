@@ -3021,6 +3021,6 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 	border: none;
 	border-radius: 0px;
 	/* background-image: linear-gradient(to top, rgba(27, 145, 196, 0.15), rgba(25, 92, 171, 0.15)); */
-	background: rgba(25, 92, 171, 0.15);
+	/* background: rgba(25, 92, 171, 0.15); */
 	box-shadow:  5px 5px 10px rgba(23, 82, 154, 0.07), -5px -5px 10px rgba(24, 83, 155, 0.04);
 }

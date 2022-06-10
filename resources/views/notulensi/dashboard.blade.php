@@ -162,7 +162,8 @@
 											data-jenis="{{ $a->jenis->nama }}"
 											data-jml-agenda="{{ $a->jml_agenda }}"
 											data-tamu="{{ $a->tamu }}"
-											data-detail="{!! $a->detail_rapat !!}"
+											data-detail="{{strip_tags($a->detail_rapat)}}"
+											{{-- data-detail="{!! $a->detail_rapat !!}" --}}
 											data-file="{{ route('download.notulensi', $a->id) }}"
 											data-agenda="{{ $a->agenda }}"
 											data-peserta="{{ $a->peserta_rapat }}"
@@ -190,7 +191,7 @@
 											data-jenis="{{ $a->jenis->nama }}"
 											data-jml-agenda="{{ $a->jml_agenda }}"
 											data-tamu="{{ $a->tamu }}"
-											data-detail="{!! $a->detail_rapat !!}"
+											data-detail="{{strip_tags($a->detail_rapat)}}"
 											data-file="{{ route('download.notulensi', $a->id) }}"
 											data-agenda="{{ $a->agenda }}"
 											data-peserta="{{ $a->peserta_rapat }}"

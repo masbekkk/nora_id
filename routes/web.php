@@ -20,6 +20,11 @@ Route::get('/', function () {
 })->name('/');
 
 
+Route::get('/landing-page', [App\Http\Controllers\LandingController::class, 'index'])->name('landing');
+Route::get('/about-us', [App\Http\Controllers\LandingController::class, 'about'])->name('about');
+Route::get('/our-services', [App\Http\Controllers\LandingController::class, 'services'])->name('services');
+Route::get('/contact-us', [App\Http\Controllers\LandingController::class, 'contact'])->name('contact');
+
 Route::get('/test', [App\Http\Controllers\TestController::class, 'index'])->name('test');
 Route::get('/test-dashboard', [App\Http\Controllers\TestController::class, 'show'])->name('test-dashboard');
 Route::get('/coba', [App\Http\Controllers\TestController::class, 'coba'])->name('test');

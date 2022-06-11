@@ -105,7 +105,7 @@
 					<div class="row">
 						<div class="col-md">
 							<label for="agenda" class="col-form-label">Jumlah Agenda</label>
-							<input type="number" class="form-control" id="agenda" name="jml_agenda" value="{{ old('jml_agenda') }}">
+							<input min="0" type="number" class="form-control" id="agenda" name="jml_agenda" value="{{ old('jml_agenda') }}">
 						</div>
 						<div class="col-md">
 							<label for="notulensi" class="col-form-label">Agenda</label>
@@ -134,10 +134,10 @@
 							<label for="detail" class="col-form-label">Email Tamu Rapat</label> <b class="text-danger">**</b></b>
 							<input type="text" class="form-control" id="detail" name="peserta_rapat" value="{{ old('peserta_rapat') }}">
 						</div>
-						<div class="col-md">
+						{{-- <div class="col-md">
 							<label for="detail" class="col-form-label">Jumlah Tamu Rapat</label> <b class="text-danger">**</b></b>
 							<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{ old('jml_peserta_rapat') }}">
-						</div>
+						</div> --}}
 					</div>
 					<br>
 					<div class="alert alert-danger" role="alert">

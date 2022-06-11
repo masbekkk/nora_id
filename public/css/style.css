@@ -1316,8 +1316,9 @@ h6 .badge {
 
 .btn-primary, .btn-primary.disabled {
   box-shadow: 0 2px 6px #acb5f6;
-  background-color: #6777ef;
-  border-color: #6777ef; }
+  background-image: linear-gradient(to left, #185AA9, #1A95C6);
+  /* border-color: linear-gradient(to left, #1A95C6, #185AA9);  */
+}
   .btn-primary:focus, .btn-primary.disabled:focus {
     background-color: #394eea !important; }
     .btn-primary:focus:active, .btn-primary.disabled:focus:active {
@@ -2816,7 +2817,7 @@ body.layout-3 .main-footer {
       .main-sidebar .sidebar-menu li a:hover {
         background-color: #f8fafb; }
     .main-sidebar .sidebar-menu li.active a {
-      color: #6777ef;
+      color: #1A95C6;
       font-weight: 600;
       background-color: #f8fafb; }
       .main-sidebar .sidebar-menu li.active a.has-dropdown:after {

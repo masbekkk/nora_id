@@ -65,7 +65,6 @@
 						<div class="col-md">
 							<label for="pemimpin" class="col-form-label">Pemimpin Rapat <b class="text-danger">*</b></label>
 							<select required class="form-control select2" id="pemimpin" name="id_pemimpin_rapat">
-								
 								@foreach($pimpinan_rapat as $a)
 									@if(old('id_pemimpin_rapat')==$a->id)
 										<option selected value= {{ $a->id }} selected>{{ $a->nama }}</option>

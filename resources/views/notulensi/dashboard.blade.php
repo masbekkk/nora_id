@@ -89,7 +89,7 @@
 						<tr class="pt-2">
 							<td>File Notulensi</td>
 							<td style="width:1%" class="h-100 pt-2">:</td>
-							<td id="mdata-file-notulensi"><a class="btn btn-success h-100" href="{{ route('download.notulensi', ['id' => '1']) }}"><i class="fa-solid fa-file-arrow-down"></i> Download File</a></td>
+							<td id="mdata-file-notulensi"><a class="btn btn-success h-100" href="{{ route('download.notulensi', ['id' => '1']) }}"><i class="fa-solid fa-arrow-down-to-square"></i> Download File</a></td>
 						</tr>
 					</table>
 				</div>
@@ -171,7 +171,7 @@
 											data-notulen="{{ $a->notulen->name }}">
 												<i class="fas fa-circle-info"></i>
 											</a>
-											<a class="btn btn-success w-50 ml-1 btn-sm text-white" href="{{ route('download.notulensi', $a->id) }}" title="Download"><i class="fas fa-file-arrow-down"></i></a>
+											<a class="btn btn-success w-50 ml-1 btn-sm text-white" href="{{ route('download.notulensi', $a->id) }}" title="Download"><i class="fas fa-arrow-down-to-square"></i></a>
 										</div>
 									</div>
 								</td>

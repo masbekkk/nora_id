@@ -41,7 +41,7 @@
 						<tr>
 							<td>Waktu Rapat</td>
 							<td style="width:1%">:</td>
-							<td id="mdata-waktu"></td>
+							<td id="mdata-waktu"></td> WIB
 						</tr>
 						<tr>
 							<td>Ruang / Total Peserta Rapat</td>

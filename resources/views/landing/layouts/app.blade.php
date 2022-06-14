@@ -40,7 +40,7 @@ https://templatemo.com/tm-573-eduwell
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
                       <a href="{{ route('landing') }}" class="logo">
-                          <img src="{{ asset('landing/assets/images/templatemo-eduwell.png') }}" alt="EduWell Template">
+                          <img src="{{ asset('landing/assets/images/nora-id-small.png') }}" alt="EduWell Template">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->

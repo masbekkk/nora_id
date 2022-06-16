@@ -186,33 +186,33 @@
                 <div class="col-lg-12">
                   <div class="menu">
                     <div class="active">
-                      <img src="{{  asset('landing/assets/images/denas.jpg')  }}" alt="">
-                      <h4>Denassyah Nur Rohman</h4>
+                      <img src="{{  asset('landing/assets/images/denas-thumb.jpg')  }}" alt="">
+                      <h4>Denas</h4>
                       <span>Dev Lead Front End</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/bekhan.jpeg')  }}" alt="">
-                      <h4>Muhammad Subkhan</h4>
+                      <img src="{{  asset('landing/assets/images/bekhan-thumb.jpg')  }}" alt="">
+                      <h4>Bekhan</h4>
                       <span>Dev Lead Back End</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/nafis.jpeg')  }}" alt="">
-                      <h4>Waridun Nafis</h4>
-                      <span>Devloper||UI Designer</span>
+                      <img src="{{  asset('landing/assets/images/nafis-thumb.jpg')  }}" alt="">
+                      <h4>Nafis</h4>
+                      <span>Dev||UI Designer</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/abdil.jpg')  }}" alt="">
-                      <h4>Muhammad Abdillah Romadhon</h4>
+                      <img src="{{  asset('landing/assets/images/abdil-thumb.jpg')  }}" alt="">
+                      <h4>Abdil</h4>
                       <span>Developer</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/iga.jpg')  }}" alt="">
-                      <h4>Iga Dwi Lestari</h4>
+                      <img src="{{  asset('landing/assets/images/iga-thumb.jpg')  }}" alt="">
+                      <h4>Iga</h4>
                       <span>Developer</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/nisa.jpg')  }}" alt="">
-                      <h4>Annisa Arsylia Aiman</h4>
+                      <img src="{{  asset('landing/assets/images/nisa-thumb.jpg')  }}" alt="">
+                      <h4>Nisa</h4>
                       <span>Product Owner</span>
                     </div>
                   </div>
@@ -232,7 +232,7 @@
                           </div>
                         </div>
                         <div class="right-image">
-                          <img src="{{  asset('landing/assets/images/team-member-01.jpg')  }}" alt="">
+                          <img src="{{  asset('landing/assets/images/denas.jpg')  }}" alt="">
                         </div>
                       </div>
                     </li>
@@ -249,7 +249,7 @@
                           </div>
                         </div>
                         <div class="right-image">
-                          <img src="{{  asset('landing/assets/images/team-member-03.jpg')  }}" alt="">
+                          <img src="{{  asset('landing/assets/images/bekhan.jpg')  }}" alt="">
                         </div>
                       </div>
                     </li>
@@ -266,7 +266,7 @@
                           </div>
                         </div>
                         <div class="right-image">
-                          <img src="{{  asset('landing/assets/images/team-member-02.jpg')  }}" alt="">
+                          <img src="{{  asset('landing/assets/images/nafis.jpg')  }}" alt="">
                         </div>
                       </div>
                     </li>
@@ -283,7 +283,7 @@
                           </div>
                         </div>
                         <div class="right-image">
-                          <img src="{{  asset('landing/assets/images/team-member-04.jpg')  }}" alt="">
+                          <img src="{{  asset('landing/assets/images/abdil.jpg')  }}" alt="">
                         </div>
                       </div>
                       </li>
@@ -300,7 +300,7 @@
                             </div>
                           </div>
                           <div class="right-image">
-                            <img src="{{  asset('landing/assets/images/team-member-05.jpg')  }}" alt="">
+                            <img src="{{  asset('landing/assets/images/iga.jpg')  }}" alt="">
                           </div>
                         </div>
                         </li>

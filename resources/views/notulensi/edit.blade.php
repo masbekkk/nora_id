@@ -140,10 +140,10 @@
 							<label for="detail" class="col-form-label">Email Tamu Rapat</label><b class="text-danger" id="email_tamu"></b>
 							<input type="text" class="form-control" id="detail" name="peserta_rapat" value="{{ $data->peserta_rapat }}">
 						</div>
-						<div class="col-md">
+						{{-- <div class="col-md">
 							<label for="detail" class="col-form-label">Jumlah Tamu Rapat</label><b class="text-danger" id="jml_tamu"></b>
 							<input type="number" class="form-control" id="detail" name="jml_peserta_rapat" value="{{ $data->total_peserta}}">
-						</div>
+						</div> --}}
 					</div>
 					<br>
 					<div class="alert alert-info" role="alert">

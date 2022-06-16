@@ -85,20 +85,20 @@
                 <div class="icon">
                   <img src="{{ asset('landing/assets/images/service-icon-02.png') }}" alt="">
                 </div>
-                <h4>Download</h4>
-                <p>Aplikasi ini dapat mendownload file yang sudah di upload oleh sekretaris.</p>
+                <h4>Search</h4>
+                <p>Aplikasi ini dapat mencari file yang sudah di upload oleh sekretaris sesuai dengan data yang tampil di dashboard.</p>
               </div>
             </div>
-            {{-- <div class="item">
+            <div class="item">
               <div class="service-item">
                 <div class="icon">
                   <img src="{{ asset('landing/assets/images/service-icon-03.png') }}" alt="">
                 </div>
-                <h4>Download</h4>
-                <p>Aplikasi ini dapat mendownload file yang sudah di upload oleh sekretaris.</p>
+                <h4>Filter</h4>
+                <p>Aplikasi ini dapat memfilter file yang sudah di upload oleh sekretaris sesuai dengan data yang tampil di dashboard.</p>
               </div>
             </div>
-            <div class="item">
+            {{-- <div class="item">
               <div class="service-item">
                 <div class="icon">
                   <img src="{{ asset('landing/assets/images/service-icon-04.png') }}" alt="">
@@ -131,7 +131,189 @@
     </div>
   </section>
 
-  <section class="our-courses" id="courses">
+  <section class="get-info" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="left-image">
+            <img src="{{  asset('landing/assets/images/about-left-image.png')  }}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 align-self-center">
+          <div class="section-heading">
+            <h6>Get info</h6>
+            <h4>Read More <em>About Us</em></h4>
+            <p>You are allowed 100% to download and use our templates from TemplateMo for your commercial or business websites. You are <strong>not allowed</strong> to redistribute this template ZIP file on any other website without a permission from us.<br><br>There are some unethical people on this planet earth who copied our templates so easily without any permission from us and then reposted on their websites. Their Karma will hit them really hard. Yeah, that is right.</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="info-item">
+                <div class="icon">
+                  <img src="{{  asset('landing/assets/images/service-icon-01.png')  }}" alt="">
+                </div>
+                <h4>Rekap Hasil Rapat</h4>
+                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="info-item">
+                <div class="icon">
+                  <img src="{{  asset('landing/assets/images/service-icon-02.png')  }}" alt="">
+                </div>
+                <h4>Unduh Data Rapat</h4>
+                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h6>Our Team</h6>
+            <h4>Our Team <em>Members</em></h4>
+          </div>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+          <div class="naccs">
+            <div class="tabs">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="menu">
+                    <div class="active">
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-01.jpg')  }}" alt="">
+                      <h4>Annisa Arsylia Aiman</h4>
+                      <span>Product Owner</span>
+                    </div>
+                    <div>
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-03.jpg')  }}" alt="">
+                      <h4>Denassyah Nur Rohman</h4>
+                      <span>Dev Lead Front End</span>
+                    </div>
+                    <div>
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-02.jpg')  }}" alt="">
+                      <h4>Muhammad Subkhan</h4>
+                      <span>Dev Lead Back End</span>
+                    </div>
+                    <div>
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-04.jpg')  }}" alt="">
+                      <h4>Waridun Nafis</h4>
+                      <span>Devloper||UI Designer</span>
+                    </div>
+                    <div>
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-05.jpg')  }}" alt="">
+                      <h4>Muhammad Abdillah Romadhon</h4>
+                      <span>Developer</span>
+                    </div>
+                    <div>
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-05.jpg')  }}" alt="">
+                      <h4>Iga Dwi Lestari</h4>
+                      <span>Developer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="left-content">
+                          <h4>Ruby Foster</h4>
+                          <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                          <span><a href="#">Facebook</a></span>
+                          <span><a href="#">Twitter</a></span>
+                          <span class="last-span"><a href="#">Linkedin</a></span>
+                          <div class="text-button">
+                            <a href="contact-us.html">Contact Member</a>
+                          </div>
+                        </div>
+                        <div class="right-image">
+                          <img src="{{  asset('landing/assets/images/team-member-01.jpg')  }}" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="left-content">
+                          <h4>Luis Oconnell</h4>
+                          <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                          <span><a href="#">Facebook</a></span>
+                          <span><a href="#">Twitter</a></span>
+                          <span class="last-span"><a href="#">Linkedin</a></span>
+                          <div class="text-button">
+                            <a href="contact-us.html">Contact Member</a>
+                          </div>
+                        </div>
+                        <div class="right-image">
+                          <img src="{{  asset('landing/assets/images/team-member-03.jpg')  }}" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="left-content">
+                          <h4>Jackie Riggs</h4>
+                          <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                          <span><a href="#">Facebook</a></span>
+                          <span><a href="#">Twitter</a></span>
+                          <span class="last-span"><a href="#">Linkedin</a></span>
+                          <div class="text-button">
+                            <a href="contact-us.html">Contact Member</a>
+                          </div>
+                        </div>
+                        <div class="right-image">
+                          <img src="{{  asset('landing/assets/images/team-member-02.jpg')  }}" alt="">
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="left-content">
+                          <h4>Alfred Small</h4>
+                          <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                          <span><a href="#">Facebook</a></span>
+                          <span><a href="#">Twitter</a></span>
+                          <span class="last-span"><a href="#">Linkedin</a></span>
+                          <div class="text-button">
+                            <a href="contact-us.html">Contact Member</a>
+                          </div>
+                        </div>
+                        <div class="right-image">
+                          <img src="{{  asset('landing/assets/images/team-member-04.jpg')  }}" alt="">
+                        </div>
+                      </div>
+                      </li>
+                      <li>
+                        <div>
+                          <div class="left-content">
+                            <h4>Dennis Mitchel</h4>
+                            <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                            <span><a href="#">Facebook</a></span>
+                            <span><a href="#">Twitter</a></span>
+                            <span class="last-span"><a href="#">Linkedin</a></span>
+                            <div class="text-button">
+                              <a href="contact-us.html">Contact Member</a>
+                            </div>
+                          </div>
+                          <div class="right-image">
+                            <img src="{{  asset('landing/assets/images/team-member-05.jpg')  }}" alt="">
+                          </div>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{-- <section class="our-courses" id="courses">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
@@ -236,7 +418,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <section class="simple-cta">
     <div class="container">

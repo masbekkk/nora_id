@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="left-image">
-            <img src="assets/images/about-left-image.png" alt="">
+            <img src="{{  asset('landing/assets/images/about-left-image.png')  }}" alt="">
           </div>
         </div>
         <div class="col-lg-6 align-self-center">
@@ -33,7 +33,7 @@
             <div class="col-lg-6">
               <div class="info-item">
                 <div class="icon">
-                  <img src="assets/images/service-icon-01.png" alt="">
+                  <img src="{{  asset('landing/assets/images/service-icon-01.png')  }}" alt="">
                 </div>
                 <h4>Best Strategy</h4>
                 <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
@@ -42,7 +42,7 @@
             <div class="col-lg-6">
               <div class="info-item">
                 <div class="icon">
-                  <img src="assets/images/service-icon-02.png" alt="">
+                  <img src="{{  asset('landing/assets/images/service-icon-02.png')  }}" alt="">
                 </div>
                 <h4>Creative Ideas</h4>
                 <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
@@ -70,27 +70,27 @@
                 <div class="col-lg-12">
                   <div class="menu">
                     <div class="active">
-                      <img src="assets/images/team-member-thumb-01.jpg" alt="">
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-01.jpg')  }}" alt="">
                       <h4>Ruby Foster</h4>
                       <span>CEO-FOUNDER</span>
                     </div>
                     <div>
-                      <img src="assets/images/team-member-thumb-03.jpg" alt="">
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-03.jpg')  }}" alt="">
                       <h4>Luis Oconnell</h4>
                       <span>CEO-FOUNDER</span>
                     </div>
                     <div>
-                      <img src="assets/images/team-member-thumb-02.jpg" alt="">
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-02.jpg')  }}" alt="">
                       <h4>Jackie Riggs</h4>
                       <span>CEO-FOUNDER</span>
                     </div>
                     <div>
-                      <img src="assets/images/team-member-thumb-04.jpg" alt="">
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-04.jpg')  }}" alt="">
                       <h4>Alfred Small</h4>
                       <span>CEO-FOUNDER</span>
                     </div>
                     <div>
-                      <img src="assets/images/team-member-thumb-05.jpg" alt="">
+                      <img src="{{  asset('landing/assets/images/team-member-thumb-05.jpg')  }}" alt="">
                       <h4>Denis Mitchel</h4>
                       <span>CEO-FOUNDER</span>
                     </div>
@@ -111,7 +111,7 @@
                           </div>
                         </div>
                         <div class="right-image">
-                          <img src="assets/images/team-member-01.jpg" alt="">
+                          <img src="{{  asset('landing/assets/images/team-member-01.jpg')  }}" alt="">
                         </div>
                       </div>
                     </li>
@@ -128,7 +128,7 @@
                           </div>
                         </div>
                         <div class="right-image">
-                          <img src="assets/images/team-member-03.jpg" alt="">
+                          <img src="{{  asset('landing/assets/images/team-member-03.jpg')  }}" alt="">
                         </div>
                       </div>
                     </li>
@@ -145,7 +145,7 @@
                           </div>
                         </div>
                         <div class="right-image">
-                          <img src="assets/images/team-member-02.jpg" alt="">
+                          <img src="{{  asset('landing/assets/images/team-member-02.jpg')  }}" alt="">
                         </div>
                       </div>
                     </li>
@@ -162,7 +162,7 @@
                           </div>
                         </div>
                         <div class="right-image">
-                          <img src="assets/images/team-member-04.jpg" alt="">
+                          <img src="{{  asset('landing/assets/images/team-member-04.jpg')  }}" alt="">
                         </div>
                       </div>
                       </li>
@@ -179,7 +179,7 @@
                             </div>
                           </div>
                           <div class="right-image">
-                            <img src="assets/images/team-member-05.jpg" alt="">
+                            <img src="{{  asset('landing/assets/images/team-member-05.jpg')  }}" alt="">
                           </div>
                         </div>
                         </li>
@@ -198,7 +198,7 @@
       <div class="row">
         <div class="col-lg-5 offset-lg-1">
           <div class="left-image">
-            <img src="assets/images/cta-left-image.png" alt="">
+            <img src="{{  asset('landing/assets/images/cta-left-image.png')  }}" alt="">
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
@@ -229,56 +229,56 @@
                 ters retroed gentrify street portland.”</p>
                 <h4>Andrea Furistos</h4>
                 <span>CEO-FOUNDER</span>
-                <img src="assets/images/quote.png" alt="">
+                <img src="{{  asset('landing/assets/images/quote.png')  }}" alt="">
             </div>
             <div class="item">
               <p>“Food & truck tumeric hoodie chiasore bit-
                 ters retroed gentrify street portland.”</p>
                 <h4>Andrea Furistos</h4>
                 <span>CEO-FOUNDER</span>
-                <img src="assets/images/quote.png" alt="">
+                <img src="{{  asset('landing/assets/images/quote.png')  }}" alt="">
             </div>
             <div class="item">
               <p>“Food & truck tumeric hoodie chiasore bit-
                 ters retroed gentrify street portland.”</p>
                 <h4>Andrea Furistos</h4>
                 <span>CEO-FOUNDER</span>
-                <img src="assets/images/quote.png" alt="">
+                <img src="{{  asset('landing/assets/images/quote.png')  }}" alt="">
             </div>
             <div class="item">
               <p>“Food & truck tumeric hoodie chiasore bit-
                 ters retroed gentrify street portland.”</p>
                 <h4>Andrea Furistos</h4>
                 <span>CEO-FOUNDER</span>
-                <img src="assets/images/quote.png" alt="">
+                <img src="{{  asset('landing/assets/images/quote.png')  }}" alt="">
             </div>
             <div class="item">
               <p>“Food & truck tumeric hoodie chiasore bit-
                 ters retroed gentrify street portland.”</p>
                 <h4>Andrea Furistos</h4>
                 <span>CEO-FOUNDER</span>
-                <img src="assets/images/quote.png" alt="">
+                <img src="{{  asset('landing/assets/images/quote.png')  }}" alt="">
             </div>
             <div class="item">
               <p>“Food & truck tumeric hoodie chiasore bit-
                 ters retroed gentrify street portland.”</p>
                 <h4>Andrea Furistos</h4>
                 <span>CEO-FOUNDER</span>
-                <img src="assets/images/quote.png" alt="">
+                <img src="{{  asset('landing/assets/images/quote.png')  }}" alt="">
             </div>
             <div class="item">
               <p>“Food & truck tumeric hoodie chiasore bit-
                 ters retroed gentrify street portland.”</p>
                 <h4>Andrea Furistos</h4>
                 <span>CEO-FOUNDER</span>
-                <img src="assets/images/quote.png" alt="">
+                <img src="{{  asset('landing/assets/images/quote.png')  }}" alt="">
             </div>
             <div class="item">
               <p>“Food & truck tumeric hoodie chiasore bit-
                 ters retroed gentrify street portland.”</p>
                 <h4>Andrea Furistos</h4>
                 <span>CEO-FOUNDER</span>
-                <img src="assets/images/quote.png" alt="">
+                <img src="{{ asset('landing/assets/images/quote.png') }}" alt="">
             </div>
           </div>
         </div>
@@ -314,7 +314,7 @@
         <div class="col-lg-8">
           <div id="video">
             <div class="thumb">
-              <img src="assets/images/video-thumb.jpg" alt="">
+              <img src="{{ asset('landing/assets/images/video-thumb.jpg') }}" alt="">
               <div class="play-button">
                 <a rel="nofollow" href="https://www.youtube.com/templatemo" target="_blank"><i class="fa fa-play"></i></a>
               </div>

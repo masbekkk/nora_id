@@ -142,8 +142,8 @@
         <div class="col-lg-6 align-self-center">
           <div class="section-heading">
             <h6>Get info</h6>
-            <h4>Read More <em>About Us</em></h4>
-            <p>You are allowed 100% to download and use our templates from TemplateMo for your commercial or business websites. You are <strong>not allowed</strong> to redistribute this template ZIP file on any other website without a permission from us.<br><br>There are some unethical people on this planet earth who copied our templates so easily without any permission from us and then reposted on their websites. Their Karma will hit them really hard. Yeah, that is right.</p>
+            <h4>Read More <em>About Nora.id</em></h4>
+            <p>Nore.id merupakan Sistem Informasi Notulensi Rapat berbasis website yang di develop oleh mahasiswa D3 tingkat 2 <strong>Politeknik Elektronika Negeri Surabaya</strong> untuk memenuhi tugas dari mata kuliah Rekayasa Perangkat Lunak dan Workhsop Produksi Perangkat Lunak.<br><br>Walaupun berbasis website aplikasi ini juga dapat digunakan atau di akses melalui smartphone karena aplikasi ini merupakan aplikasi yang responsive. Aplikasi ini memiliki beberapa fitur yang sangat bermanfaat dan mudah di implementasikan seperti fitur CRUD, Notulensi secara live, dan notifikasi rapat by email.</p>
           </div>
           <div class="row">
             <div class="col-lg-6">
@@ -186,34 +186,34 @@
                 <div class="col-lg-12">
                   <div class="menu">
                     <div class="active">
-                      <img src="{{  asset('landing/assets/images/team-member-thumb-01.jpg')  }}" alt="">
-                      <h4>Annisa Arsylia Aiman</h4>
-                      <span>Product Owner</span>
-                    </div>
-                    <div>
-                      <img src="{{  asset('landing/assets/images/team-member-thumb-03.jpg')  }}" alt="">
+                      <img src="{{  asset('landing/assets/images/denas.jpg')  }}" alt="">
                       <h4>Denassyah Nur Rohman</h4>
                       <span>Dev Lead Front End</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/team-member-thumb-02.jpg')  }}" alt="">
+                      <img src="{{  asset('landing/assets/images/bekhan.jpeg')  }}" alt="">
                       <h4>Muhammad Subkhan</h4>
                       <span>Dev Lead Back End</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/team-member-thumb-04.jpg')  }}" alt="">
+                      <img src="{{  asset('landing/assets/images/nafis.jpeg')  }}" alt="">
                       <h4>Waridun Nafis</h4>
                       <span>Devloper||UI Designer</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/team-member-thumb-05.jpg')  }}" alt="">
+                      <img src="{{  asset('landing/assets/images/abdil.jpg')  }}" alt="">
                       <h4>Muhammad Abdillah Romadhon</h4>
                       <span>Developer</span>
                     </div>
                     <div>
-                      <img src="{{  asset('landing/assets/images/team-member-thumb-05.jpg')  }}" alt="">
+                      <img src="{{  asset('landing/assets/images/iga.jpg')  }}" alt="">
                       <h4>Iga Dwi Lestari</h4>
                       <span>Developer</span>
+                    </div>
+                    <div>
+                      <img src="{{  asset('landing/assets/images/nisa.jpg')  }}" alt="">
+                      <h4>Annisa Arsylia Aiman</h4>
+                      <span>Product Owner</span>
                     </div>
                   </div>
                 </div>
@@ -452,30 +452,30 @@
         <div class="col-lg-12">
           <div class="owl-testimonials owl-carousel" style="position: relative; z-index: 5;">
             <div class="item">
-              <p>“just think about TemplateMo if you need free CSS templates for your website”</p>
-                <h4>Catherine Walk</h4>
-                <span>CEO &amp; Founder</span>
+              <p>“Hal sulit dapat menjadi kebaikan, namun hal mudah terkadang dapat mematikan suatu hal”</p>
+                <h4>Mr. Adam</h4>
+                <span>Dosen RPL</span>
                 <img src="{{ asset('landing/assets/images/quote.png') }}" alt="">
             </div>
             <div class="item">
-              <p>“think about our website first when you need free HTML templates for your website”</p>
-                <h4>David Martin</h4>
-                <span>CTO of Tech Company</span>
+              <p>“Lakukanlah testing dari sisi unnormal agar kita tahu aplikasi tersebut sudah diterapkan erorr handling atau belum.”</p>
+                <h4>Mrs. Desy</h4>
+                <span>Dosen RPL</span>
                 <img src="{{ asset('landing/assets/images/quote.png') }}" alt="">
             </div>
             <div class="item">
-              <p>“just think about our website wherever you need free templates for your website”</p>
-                <h4>Sophia Whity</h4>
-                <span>CEO and Co-Founder</span>
+              <p>“Persiapkan Aplikasi secara matang agar ketika dilirik oleh pak direktur saat expo kalian sudah siap dengan produk yang berkualitas”</p>
+                <h4>Mrs. Sinta</h4>
+                <span>Sekertaris Pens</span>
                 <img src="{{ asset('landing/assets/images/quote.png') }}" alt="">
             </div>
             <div class="item">
-              <p>“Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.”</p>
-                <h4>Helen Shiny</h4>
-                <span>Tech Officer</span>
+              <p>“Pastikan yang mana tamu yang mana peserta rapat agar tidak terjadi silo.”</p>
+                <h4>Mrs. Nailus</h4>
+                <span>Dosen RPL</span>
                 <img src="{{ asset('landing/assets/images/quote.png') }}" alt="">
             </div>
-            <div class="item">
+            {{-- <div class="item">
               <p>“Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.”</p>
                 <h4>George Soft</h4>
                 <span>Gadget Reviewer</span>
@@ -497,7 +497,7 @@
               <p>“Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.”</p>
                 <h4>Olivia Too</h4>
                 <span>Creative Designer</span>
-                <img src="{{ asset('landing/assets/images/quote.png') }}" alt="">
+                <img src="{{ asset('landing/assets/images/quote.png') }}" alt=""> --}}
             </div>
           </div>
         </div>
@@ -542,7 +542,7 @@
                 <div class="section-heading">
                   <h6>Contact us</h6>
                   <h4>Say <em>Hello</em></h4>
-                  <p>IF you need a working contact form by PHP script, please visit TemplateMo's contact page for more info.</p>
+                  <p>Jika ada keluhan, saran atau kerja sama bisa kirim pesan disini!.</p>
                 </div>
               </div>
               <div class="col-lg-12">
@@ -578,10 +578,12 @@
           </ul>
         </div>
         <div class="col-lg-12">
-          <p class="copyright">Copyright © 2022 EduWell Co., Ltd. All Rights Reserved. 
-          
-          <br>Design: <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+          <p class="copyright">Copyright &copy; 2022 Kelompok A2. All rights reserved </p>
+          {{-- <br>Design: <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p> --}}
         </div>
+        <div class="footer-right">
+          v2.0.0
+      </div>
       </div>
     </div>
   </section>

@@ -136,7 +136,7 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="left-image">
-            <img src="{{  asset('landing/assets/images/about-left-image.png')  }}" alt="">
+            <img src="{{  asset('landing/assets/images/amico.png')  }}" alt="">
           </div>
         </div>
         <div class="col-lg-6 align-self-center">

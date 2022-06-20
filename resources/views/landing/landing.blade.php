@@ -224,11 +224,11 @@
                         <div class="left-content">
                           <h4>Denassyah Nurrahman</h4>
                           <p>Devlead at Front End Nora.id<br>3120500002<br>2 D3 IT A</p>
-                          <span><a href="#">Email</a></span>
+                          <span><a href="mailto:rohmantesting83@gmail.com">Email</a></span>
                           <span><a href="https://www.instagram.com/denasnurrohman/">Instagram</a></span>
-                          <span class="last-span"><a href="#">Linkedin</a></span>
+                          <span class="https://www.linkedin.com/in/denassyah-nurrohman-a5a79314a/"><a href="#">Linkedin</a></span>
                           <div class="text-button">
-                            <a href="contact-us.html">Contact Member</a>
+                            <a href="https://wa.me/+6285815943017">Contact Member</a>
                           </div>
                         </div>
                         <div class="right-image">
@@ -241,11 +241,11 @@
                         <div class="left-content">
                           <h4>Muhammad Subkhan</h4>
                           <p>Devlead at Back End Nora.id<br>3120500001<br>2 D3 IT A</p>
-                          <span><a href="#">Email</a></span>
-                          <span><a href="#">Instagram</a></span>
-                          <span class="last-span"><a href="#">Linkedin</a></span>
+                          <span><a href="mailto:mohammadsubkhan149@gmail.com">Email</a></span>
+                          <span><a href="https://www.instagram.com/subkhaaan13/">Instagram</a></span>
+                          <span class="last-span"><a href="https://www.linkedin.com/in/mohammad-subkhan/">Linkedin</a></span>
                           <div class="text-button">
-                            <a href="contact-us.html">Contact Member</a>
+                            <a href="https://wa.me/+6282132397302 ">Contact Member</a>
                           </div>
                         </div>
                         <div class="right-image">
@@ -258,11 +258,11 @@
                         <div class="left-content">
                           <h4>Waridun Nafis</h4>
                           <p>Developer Front End and UI/UX Designer Nora.id<br>3120500016<br>2 D3 IT A</p>
-                          <span><a href="#">Email</a></span>
-                          <span><a href="#">Instagram</a></span>
-                          <span class="last-span"><a href="#">Linkedin</a></span>
+                          <span><a href="mailto:waridunnafis@gmail.com">Email</a></span>
+                          <span><a href="https://www.instagram.com/waridun_nafis/">Instagram</a></span>
+                          <span class="last-span"><a href="https://www.linkedin.com/in/waridunnafis/">Linkedin</a></span>
                           <div class="text-button">
-                            <a href="contact-us.html">Contact Member</a>
+                            <a href="https://wa.me/+6281335442117">Contact Member</a>
                           </div>
                         </div>
                         <div class="right-image">
@@ -275,11 +275,11 @@
                         <div class="left-content">
                           <h4>Abdillah Romadhon</h4>
                           <p>Developer Front End Nora.id<br>3120500029<br>2 D3 IT A</p>
-                          <span><a href="#">Email</a></span>
-                          <span><a href="#">Instagram</a></span>
-                          <span class="last-span"><a href="#">Linkedin</a></span>
+                          <span><a href="mailto:abdillahromadhon512@gmail.com">Email</a></span>
+                          <span><a href="https://www.instagram.com/romadhon_abdillah/">Instagram</a></span>
+                          <span class="last-span"><a href="https://www.linkedin.com/in/abdillah-romadhon-a8ba751bb/">Linkedin</a></span>
                           <div class="text-button">
-                            <a href="contact-us.html">Contact Member</a>
+                            <a href="https://wa.me/+6283134897978">Contact Member</a>
                           </div>
                         </div>
                         <div class="right-image">
@@ -289,15 +289,15 @@
                       </li>
                       <li>
                         <div>
-                          
+
                           <div class="left-content">
                             <h4>Iga</h4>
                             <p>Daveloper<br>2120500003<br>2 D3 IT A</p>
-                            <span><a href="#">Email</a></span>
-                            <span><a href="#">Instagram</a></span>
-                            <span class="last-span"><a href="#">Linkedin</a></span>
+                            <span><a href="mailto:igadwilestari0@gmail.com">Email</a></span>
+                            <span><a href="https://www.instagram.com/idl03_/">Instagram</a></span>
+                            <span class="last-span"><a href="https://www.linkedin.com/in/iga-dwi-lestari-520a39193/">Linkedin</a></span>
                             <div class="text-button">
-                              <a href="contact-us.html">Contact Member</a>
+                              <a href="https://wa.me/+6289698934921">Contact Member</a>
                             </div>
                           </div>
                           <div class="right-image">
@@ -310,11 +310,11 @@
                           <div class="left-content">
                             <h4>Annisa Arsylia</h4>
                             <p>Product Owner Nora.id<br>3120500024<br>2 D3 IT A</p>
-                            <span><a href="#">Email</a></span>
-                            <span><a href="#">Instagram</a></span>
-                            <span class="last-span"><a href="#">Linkedin</a></span>
+                            <span><a href="mailto:annisaasrylia@gmail.com">Email</a></span>
+                            <span><a href="https://www.instagram.com/oyyiniss_/">Instagram</a></span>
+                            <span class="last-span"><a href="https://www.linkedin.com/in/annisa-arsylia-ab8572200/">Linkedin</a></span>
                             <div class="text-button">
-                              <a href="contact-us.html">Contact Member</a>
+                              <a href="https://wa.me/+6285259752035">Contact Member</a>
                             </div>
                           </div>
                           <div class="right-image">

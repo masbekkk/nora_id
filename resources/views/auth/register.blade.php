@@ -124,7 +124,10 @@
                                             {{ __('Register') }}
                                         </button>
                                     </div>
+                                    <br><br>
+					                
                                 </div>
+                                <center><a href="/login">Masuk disini</a></center>
                             </center>
                         </form>
                     </div>

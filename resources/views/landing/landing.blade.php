@@ -224,8 +224,8 @@
                         <div class="left-content">
                           <h4>Denassyah Nurrahman</h4>
                           <p>Devlead at Front End Nora.id<br>3120500002<br>2 D3 IT A</p>
-                          <span><a href="#">Facebook</a></span>
-                          <span><a href="#">Twitter</a></span>
+                          <span><a href="#">Email</a></span>
+                          <span><a href="https://www.instagram.com/denasnurrohman/">Instagram</a></span>
                           <span class="last-span"><a href="#">Linkedin</a></span>
                           <div class="text-button">
                             <a href="contact-us.html">Contact Member</a>
@@ -241,8 +241,8 @@
                         <div class="left-content">
                           <h4>Muhammad Subkhan</h4>
                           <p>Devlead at Back End Nora.id<br>3120500001<br>2 D3 IT A</p>
-                          <span><a href="#">Facebook</a></span>
-                          <span><a href="#">Twitter</a></span>
+                          <span><a href="#">Email</a></span>
+                          <span><a href="#">Instagram</a></span>
                           <span class="last-span"><a href="#">Linkedin</a></span>
                           <div class="text-button">
                             <a href="contact-us.html">Contact Member</a>
@@ -258,8 +258,8 @@
                         <div class="left-content">
                           <h4>Waridun Nafis</h4>
                           <p>Developer Front End and UI/UX Designer Nora.id<br>3120500016<br>2 D3 IT A</p>
-                          <span><a href="#">Facebook</a></span>
-                          <span><a href="#">Twitter</a></span>
+                          <span><a href="#">Email</a></span>
+                          <span><a href="#">Instagram</a></span>
                           <span class="last-span"><a href="#">Linkedin</a></span>
                           <div class="text-button">
                             <a href="contact-us.html">Contact Member</a>
@@ -275,8 +275,8 @@
                         <div class="left-content">
                           <h4>Abdillah Romadhon</h4>
                           <p>Developer Front End Nora.id<br>3120500029<br>2 D3 IT A</p>
-                          <span><a href="#">Facebook</a></span>
-                          <span><a href="#">Twitter</a></span>
+                          <span><a href="#">Email</a></span>
+                          <span><a href="#">Instagram</a></span>
                           <span class="last-span"><a href="#">Linkedin</a></span>
                           <div class="text-button">
                             <a href="contact-us.html">Contact Member</a>
@@ -289,11 +289,12 @@
                       </li>
                       <li>
                         <div>
+                          
                           <div class="left-content">
                             <h4>Iga</h4>
                             <p>Daveloper<br>2120500003<br>2 D3 IT A</p>
-                            <span><a href="#">Facebook</a></span>
-                            <span><a href="#">Twitter</a></span>
+                            <span><a href="#">Email</a></span>
+                            <span><a href="#">Instagram</a></span>
                             <span class="last-span"><a href="#">Linkedin</a></span>
                             <div class="text-button">
                               <a href="contact-us.html">Contact Member</a>
@@ -309,8 +310,8 @@
                           <div class="left-content">
                             <h4>Annisa Arsylia</h4>
                             <p>Product Owner Nora.id<br>3120500024<br>2 D3 IT A</p>
-                            <span><a href="#">Facebook</a></span>
-                            <span><a href="#">Twitter</a></span>
+                            <span><a href="#">Email</a></span>
+                            <span><a href="#">Instagram</a></span>
                             <span class="last-span"><a href="#">Linkedin</a></span>
                             <div class="text-button">
                               <a href="contact-us.html">Contact Member</a>

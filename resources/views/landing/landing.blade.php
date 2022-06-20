@@ -212,7 +212,7 @@
                     </div>
                     <div>
                       <img src="{{  asset('landing/assets/images/nisa-thumb.jpg')  }}" alt="">
-                      <h4>Nisa</h4>
+                      <h4>Annisa</h4>
                       <span>Product Owner</span>
                     </div>
                   </div>
@@ -222,8 +222,8 @@
                     <li class="active">
                       <div>
                         <div class="left-content">
-                          <h4>Ruby Foster</h4>
-                          <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                          <h4>Denassyah Nurrahman</h4>
+                          <p>Devlead at Front End Nora.id<br>3120500002<br>2 D3 IT A</p>
                           <span><a href="#">Facebook</a></span>
                           <span><a href="#">Twitter</a></span>
                           <span class="last-span"><a href="#">Linkedin</a></span>
@@ -239,8 +239,8 @@
                     <li>
                       <div>
                         <div class="left-content">
-                          <h4>Luis Oconnell</h4>
-                          <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                          <h4>Muhammad Subkhan</h4>
+                          <p>Devlead at Back End Nora.id<br>3120500001<br>2 D3 IT A</p>
                           <span><a href="#">Facebook</a></span>
                           <span><a href="#">Twitter</a></span>
                           <span class="last-span"><a href="#">Linkedin</a></span>
@@ -256,8 +256,8 @@
                     <li>
                       <div>
                         <div class="left-content">
-                          <h4>Jackie Riggs</h4>
-                          <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                          <h4>Waridun Nafis</h4>
+                          <p>Developer Front End and UI/UX Designer Nora.id<br>3120500016<br>2 D3 IT A</p>
                           <span><a href="#">Facebook</a></span>
                           <span><a href="#">Twitter</a></span>
                           <span class="last-span"><a href="#">Linkedin</a></span>
@@ -273,8 +273,8 @@
                     <li>
                       <div>
                         <div class="left-content">
-                          <h4>Alfred Small</h4>
-                          <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                          <h4>Abdillah Romadhon</h4>
+                          <p>Developer Front End Nora.id<br>3120500029<br>2 D3 IT A</p>
                           <span><a href="#">Facebook</a></span>
                           <span><a href="#">Twitter</a></span>
                           <span class="last-span"><a href="#">Linkedin</a></span>
@@ -290,8 +290,8 @@
                       <li>
                         <div>
                           <div class="left-content">
-                            <h4>Dennis Mitchel</h4>
-                            <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                            <h4>Iga</h4>
+                            <p>Daveloper<br>2120500003<br>2 D3 IT A</p>
                             <span><a href="#">Facebook</a></span>
                             <span><a href="#">Twitter</a></span>
                             <span class="last-span"><a href="#">Linkedin</a></span>
@@ -308,7 +308,7 @@
                         <div>
                           <div class="left-content">
                             <h4>Annisa Arsylia</h4>
-                            <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                            <p>Product Owner Nora.id<br>3120500024<br>2 D3 IT A</p>
                             <span><a href="#">Facebook</a></span>
                             <span><a href="#">Twitter</a></span>
                             <span class="last-span"><a href="#">Linkedin</a></span>

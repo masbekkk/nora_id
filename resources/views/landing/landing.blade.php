@@ -98,33 +98,6 @@
                 <p>Aplikasi ini dapat memfilter file yang sudah di upload oleh sekretaris sesuai dengan data yang tampil di dashboard.</p>
               </div>
             </div>
-            {{-- <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="{{ asset('landing/assets/images/service-icon-04.png') }}" alt="">
-                </div>
-                <h4>Download</h4>
-                <p>Aplikasi ini dapat mendownload file yang sudah di upload oleh sekretaris.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="{{ asset('landing/assets/images/service-icon-01.png') }}" alt="">
-                </div>
-                <h4>Download</h4>
-                <p>Aplikasi ini dapat mendownload file yang sudah di upload oleh sekretaris.</p>
-              </div>
-            </div>
-            <div class="item">
-              <div class="service-item">
-                <div class="icon">
-                  <img src="{{ asset('landing/assets/images/service-icon-02.png') }}" alt="">
-                </div>
-                <h4>Download</h4>
-                <p>Aplikasi ini dapat mendownload file yang sudah di upload oleh sekretaris.</p>
-              </div>
-            </div> --}}
           </div>
         </div>
       </div>
@@ -446,11 +419,11 @@
           </div>
         </div>
         <div class="col-lg-5 align-self-center">
-          <h6>Get the sale right now!</h6>
-          <h4>Up to 50% OFF For 1+ courses</h4>
-          <p>Kogi VHS freegan bicycle rights try-hard green juice probably haven't heard of them cliche la croix af chillwave.</p>
+          <h6>Langganan Sekarang</h6>
+          <h4>Segera Inventarisir Rapat Anda</h4>
+          <p>Segera berlangganan nora.id untuk mendapat fitur inventaris Notulensi Rapat pertama di Indonesia</p>
           <div class="white-button">
-            <a href="contact-us.html">View Courses</a>
+            <a href="mailto:notulensirapat.id@gmail.com">Hubungi Kami</a>
           </div>
         </div>
       </div>
@@ -587,11 +560,11 @@
         </div>
         <div class="col-lg-12">
           <ul class="social-icons">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            {{-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a href="#"><i class="fa fa-rss"></i></a></li> --}}
+            <li><a href="mailto:notulensirapat.id@gmail.com"><i class="fa fa-envelope"></i></a></li>
           </ul>
         </div>
         <div class="col-lg-12">

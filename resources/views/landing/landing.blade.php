@@ -303,7 +303,24 @@
                             <img src="{{  asset('landing/assets/images/iga.jpg')  }}" alt="">
                           </div>
                         </div>
-                        </li>
+                      </li>
+                      <li>
+                        <div>
+                          <div class="left-content">
+                            <h4>Annisa Arsylia</h4>
+                            <p>Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape tofu subway tile cronut. Deep v ennui subway tile organic seitan kogi freegan bicycle rights try-hard green juice probably.</p>
+                            <span><a href="#">Facebook</a></span>
+                            <span><a href="#">Twitter</a></span>
+                            <span class="last-span"><a href="#">Linkedin</a></span>
+                            <div class="text-button">
+                              <a href="contact-us.html">Contact Member</a>
+                            </div>
+                          </div>
+                          <div class="right-image">
+                            <img src="{{  asset('landing/assets/images/nisa.jpg')  }}" alt="">
+                          </div>
+                        </div>
+                      </li>
                     </ul>
                 </div>
               </div>

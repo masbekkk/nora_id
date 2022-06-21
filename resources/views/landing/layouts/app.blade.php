@@ -9,7 +9,8 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>EduWell - Education HTML5 Template</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('landing/assets/images/noraid-logo-sm.png') }}">
+    <title>Nora id - Platform Notulensi Rapat Indonesia</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -46,19 +47,12 @@ https://templatemo.com/tm-573-eduwell
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                           <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                          <li class="scroll-to-section"><a href="#services">Services</a></li>
-                          <li class="scroll-to-section"><a href="#courses">Courses</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Pages</a>
-                              <ul class="sub-menu">
-                                  <li><a href="{{ route('about') }}">About Us</a></li>
-                                  <li><a href="{{ route('services') }}">Our Services</a></li>
-                                  <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                              </ul>
-                          </li>
-                          <li class="scroll-to-section"><a href="#testimonials">Testimonials</a></li> 
+                          <li class="scroll-to-section"><a href="#services">Layanan</a></li>
+                          <li class="scroll-to-section"><a href="#about">About Us</a></li>
                           <li class="scroll-to-section"><a href="#contact-section">Contact Us</a></li> 
-                      </ul>        
+                          <li class="scroll-to-section"><a href="#contact-section">Login</a></li> 
+                          <li class="scroll-to-section"><a href="#contact-section">Register</a></li> 
+                      </ul>
                       <a class='menu-trigger'>
                           <span>Menu</span>
                       </a>

@@ -18,9 +18,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/kosts', [App\Http\Controllers\Api\KostController::class, 'index'])->name('kosts');
-Route::post('/kosts', [App\Http\Controllers\Api\KostController::class, 'store'])->name('store.kosts');
-Route::put('/kosts/{id}', [App\Http\Controllers\Api\KostController::class, 'update'])->name('update.kosts');
-Route::delete('/kosts/{id}', [App\Http\Controllers\Api\KostController::class, 'update'])->name('update.kosts');
-Route::get('/detail-kosts/{id}', [App\Http\Controllers\Api\KostController::class, 'detail'])->name('detail.kosts');
-Route::post('/rating/{id}', [App\Http\Controllers\Api\KostController::class, 'storeRating'])->name('rating.kosts');
+Route::get('/kosts', [App\Http\Controllers\KostController::class, 'index'])->name('kosts');
+Route::post('/kosts', [App\Http\Controllers\KostController::class, 'store'])->name('store.kosts');
+Route::put('/kosts/{id}', [App\Http\Controllers\KostController::class, 'update'])->name('update.kosts');
+Route::delete('/kosts/{id}', [App\Http\Controllers\KostController::class, 'update'])->name('update.kosts');
+Route::get('/detail-kosts/{id}', [App\Http\Controllers\KostController::class, 'detail'])->name('detail.kosts');
+Route::post('/rating/{id}', [App\Http\Controllers\KostController::class, 'storeRating'])->name('rating.kosts');

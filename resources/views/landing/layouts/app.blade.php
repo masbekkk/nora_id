@@ -50,8 +50,8 @@ https://templatemo.com/tm-573-eduwell
                           <li class="scroll-to-section"><a href="#services">Layanan</a></li>
                           <li class="scroll-to-section"><a href="#about">About Us</a></li>
                           <li class="scroll-to-section"><a href="#contact-section">Contact Us</a></li> 
-                          <li class="scroll-to-section"><a href="#contact-section">Login</a></li> 
-                          <li class="scroll-to-section"><a href="#contact-section">Register</a></li> 
+                          <li ><a href="{{route('login')}}">Login</a></li> 
+                          <li ><a href="{{route('register')}}">Register</a></li> 
                       </ul>
                       <a class='menu-trigger'>
                           <span>Menu</span>

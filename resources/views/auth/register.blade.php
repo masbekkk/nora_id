@@ -125,9 +125,8 @@
                                         </button>
                                     </div>
                                     <br><br>
-					                
                                 </div>
-                                <center><a href="/login">Masuk disini</a></center>
+                                <a href="/login">Masuk disini</a>
                             </center>
                         </form>
                     </div>

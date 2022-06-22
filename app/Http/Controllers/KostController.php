@@ -13,7 +13,7 @@ class KostController extends Controller{
         $jml = Kost::count();
 
         return response()->json([
-            'jml' => $count,
+            'jml' => $jml,
             'data' => $data
         ]);
     }

@@ -14,9 +14,11 @@
 	</head>
 	<body class="vh-100" style="background-image: url(image/gedung.jpg); background-repeat: no-repeat; background-size: 100% 100%;">
 	<section class="ftco-section">
-		@include('sweetalert::alert')
+		
 		<div class="container">
+			
 			<div class="row justify-content-center">
+				@include('sweetalert::alert')
 				<div class="col-md-7 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
 		      	<div class="d-flex">

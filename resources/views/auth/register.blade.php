@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  	<title>Register NORA.id</title>
+  	<title>Register NoraID</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,7 +23,7 @@
                         {{-- <div class="card-header">{{ __('Register') }}</div> --}}
                         <div class="w-100">
                             <center>
-                                <h3 class="mb-4">Register NORA.ID</h3>
+                                <h3 class="mb-4">Register NoraID</h3>
                             </center>
                         </div>
 
@@ -127,9 +127,8 @@
                                         </button>
                                     </div>
                                     <br><br>
-					                
                                 </div>
-                                <center><a href="/login">Masuk disini</a></center>
+                                <a href="/login">Masuk disini</a>
                             </center>
                         </form>
                     </div>

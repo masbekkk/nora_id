@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login NORA.id</title>
+  	<title>Login NoraID</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -21,7 +21,7 @@
 		      	<div class="d-flex">
 		      		<div class="w-100">
                             <center>
-		      			        <h3 class="mb-4">Login NORA.ID</h3>
+		      			        <h3 class="mb-4">Login NoraID</h3>
                             </center>
 		      		</div>
 							{{-- <div class="w-100">

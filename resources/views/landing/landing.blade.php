@@ -8,7 +8,7 @@
         <div class="col-lg-6 align-self-center">
           <div class="header-text">
             <h6>Selamat datang di</h6>
-            <h2>Notulensi Rapat Indonesia <em>- Nora.id</em></h2>
+            <h2>Notulensi Rapat Indonesia <em>- NoraID</em></h2>
             <div class="main-button-gradient">
               <div class="scroll-to-section"><a href="#contact-section">Segera Berlangganan</a></div>
             </div>
@@ -115,7 +115,7 @@
         <div class="col-lg-6 align-self-center">
           <div class="section-heading">
             <h6>Get info</h6>
-            <h4>Read More <em>About Nora.id</em></h4>
+            <h4>Read More <em>About NoraID</em></h4>
             <p>Nore.id merupakan Sistem Informasi Notulensi Rapat berbasis website yang di develop oleh mahasiswa D3 tingkat 2 <strong>Politeknik Elektronika Negeri Surabaya</strong> untuk memenuhi tugas dari mata kuliah Rekayasa Perangkat Lunak dan Workhsop Produksi Perangkat Lunak.<br><br>Walaupun berbasis website aplikasi ini juga dapat digunakan atau di akses melalui smartphone karena aplikasi ini merupakan aplikasi yang responsive. Aplikasi ini memiliki beberapa fitur yang sangat bermanfaat dan mudah di implementasikan seperti fitur CRUD, Notulensi secara live, dan notifikasi rapat by email.</p>
           </div>
           <div class="row">
@@ -125,7 +125,7 @@
                   <img src="{{  asset('landing/assets/images/service-icon-01.png')  }}" alt="">
                 </div>
                 <h4>Rekap Hasil Rapat</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
+                <p>NoraID merupakan sistem informasi Inventarisir notulensi rapat yang di kembangkan oleh mahasiswa D3 Teknik Informatika 2020.</p>
               </div>
             </div>
             <div class="col-lg-6">
@@ -134,7 +134,8 @@
                   <img src="{{  asset('landing/assets/images/service-icon-02.png')  }}" alt="">
                 </div>
                 <h4>Unduh Data Rapat</h4>
-                <p>Food & truck tumeric taxidermy hoodie chiasore bitters retroed gentrify street portland.</p>
+                <p>Selain dapat merekap hasil rapat NoraID juga dapat mengunduh data hasil rapat.</p>
+                <br>
               </div>
             </div>
           </div>
@@ -196,7 +197,7 @@
                       <div>
                         <div class="left-content">
                           <h4>Denassyah Nurrahman</h4>
-                          <p>Devlead at Front End Nora.id<br>3120500002<br>2 D3 IT A</p>
+                          <p>Devlead at Front End NoraID<br>3120500002<br>2 D3 IT A</p>
                           <span><a href="mailto:rohmantesting83@gmail.com">Email</a></span>
                           <span><a href="https://www.instagram.com/denasnurrohman/">Instagram</a></span>
                           <span class="https://www.linkedin.com/in/denassyah-nurrohman-a5a79314a/"><a href="#">Linkedin</a></span>
@@ -213,7 +214,7 @@
                       <div>
                         <div class="left-content">
                           <h4>Muhammad Subkhan</h4>
-                          <p>Devlead at Back End Nora.id<br>3120500001<br>2 D3 IT A</p>
+                          <p>Devlead at Back End NoraID<br>3120500001<br>2 D3 IT A</p>
                           <span><a href="mailto:mohammadsubkhan149@gmail.com">Email</a></span>
                           <span><a href="https://www.instagram.com/subkhaaan13/">Instagram</a></span>
                           <span class="last-span"><a href="https://www.linkedin.com/in/mohammad-subkhan/">Linkedin</a></span>
@@ -230,7 +231,7 @@
                       <div>
                         <div class="left-content">
                           <h4>Waridun Nafis</h4>
-                          <p>Developer Front End and UI/UX Designer Nora.id<br>3120500016<br>2 D3 IT A</p>
+                          <p>Developer Front End and UI/UX Designer NoraID<br>3120500016<br>2 D3 IT A</p>
                           <span><a href="mailto:waridunnafis@gmail.com">Email</a></span>
                           <span><a href="https://www.instagram.com/waridun_nafis/">Instagram</a></span>
                           <span class="last-span"><a href="https://www.linkedin.com/in/waridunnafis/">Linkedin</a></span>
@@ -247,7 +248,7 @@
                       <div>
                         <div class="left-content">
                           <h4>Abdillah Romadhon</h4>
-                          <p>Developer Front End Nora.id<br>3120500029<br>2 D3 IT A</p>
+                          <p>Developer Front End NoraID<br>3120500029<br>2 D3 IT A</p>
                           <span><a href="mailto:abdillahromadhon512@gmail.com">Email</a></span>
                           <span><a href="https://www.instagram.com/romadhon_abdillah/">Instagram</a></span>
                           <span class="last-span"><a href="https://www.linkedin.com/in/abdillah-romadhon-a8ba751bb/">Linkedin</a></span>
@@ -282,7 +283,7 @@
                         <div>
                           <div class="left-content">
                             <h4>Annisa Arsylia</h4>
-                            <p>Product Owner Nora.id<br>3120500024<br>2 D3 IT A</p>
+                            <p>Product Owner NoraID<br>3120500024<br>2 D3 IT A</p>
                             <span><a href="mailto:annisaasrylia@gmail.com">Email</a></span>
                             <span><a href="https://www.instagram.com/oyyiniss_/">Instagram</a></span>
                             <span class="last-span"><a href="https://www.linkedin.com/in/annisa-arsylia-ab8572200/">Linkedin</a></span>
@@ -422,7 +423,7 @@
         <div class="col-lg-5 align-self-center">
           <h6>Langganan Sekarang</h6>
           <h4>Segera Inventarisir Rapat Anda</h4>
-          <p>Segera berlangganan nora.id untuk mendapat fitur inventaris Notulensi Rapat pertama di Indonesia</p>
+          <p>Segera berlangganan NoraID untuk mendapat fitur inventaris Notulensi Rapat pertama di Indonesia</p>
           <div class="white-button">
             <a href="mailto:notulensirapat.id@gmail.com">Hubungi Kami</a>
           </div>

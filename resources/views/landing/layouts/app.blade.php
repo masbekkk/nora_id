@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
     <link rel="icon" type="image/x-icon" href="{{ asset('landing/assets/images/noraid-logo-sm.png') }}">
-    <title>Nora id - Platform Notulensi Rapat Indonesia</title>
+    <title>NoraID - Platform Notulensi Rapat Indonesia</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('landing/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">

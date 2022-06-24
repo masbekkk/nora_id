@@ -46,13 +46,13 @@
                 <div class="card-body pb-0">
                     <div class="alert alert-info" role="alert">
                         <div class="row">
-                            <div class="col-sm-1">
-                                <div class="h-100 h1 d-flex align-items-center justify-content-center">
+                            <div class="col-xl-1 col-sm-2">
+                                <div class="h-100 h1 py-5 py-sm-0 d-flex align-items-center justify-content-center">
                                     <i class="fas fa-circle-exclamation fa-2xl"></i>
                                 </div>
                             </div>
-                            <div class="col-sm-11">
-                                <h5 class="h4"><b>Note</b></h5>
+                            <div class="col-xl-11 col-sm-10">
+                                <h5 class="h4 d-none d-sm-block"><b>Note</b></h5>
                                 <p>Pastikan untuk mengisi <b class="h6 font-weight-bold">semua input</b> yang memiliki tanda
                                     <span class="text-danger h6">*</span>
                                 </p>
@@ -154,12 +154,12 @@
                     <br>
                     <div class="alert alert-danger py-4" role="alert">
                         <div class="row">
-                            <div class="col-sm-1">
-                                <div class="h-100 h1 d-flex align-items-center justify-content-center">
+                            <div class="col-xl-1 col-sm-2">
+                                <div class="h-100 h1 py-5 py-sm-0 d-flex align-items-center justify-content-center">
                                     <i class="fas fa-triangle-exclamation fa-2xl"></i>
                                 </div>
                             </div>
-                            <div class="col-sm-11">
+                            <div class="col-xl-11 col-sm-10">
                                 <b class="h6 font-weight-bold">Harap masukkan file .csv peserta rapat, atau isi secara
                                     manual</b><br>
                                 <small>Format csv harus data index ke 2 berisi email, contoh: 1,budi, budi@gmail.com</small>

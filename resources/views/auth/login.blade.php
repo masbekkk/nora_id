@@ -1,27 +1,31 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Login NORA.id</title>
+  	<title>Login NoraID</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" href="{{ asset('img/noraid-logo-sm.png') }}" />
 	
 	<link rel="stylesheet" href="css/Loginstyle.css">
 
 	</head>
 	<body class="vh-100" style="background-image: url(image/gedung.jpg); background-repeat: no-repeat; background-size: 100% 100%;">
 	<section class="ftco-section">
+		
 		<div class="container">
+			
 			<div class="row justify-content-center">
+				@include('sweetalert::alert')
 				<div class="col-md-7 col-lg-5">
 					<div class="login-wrap p-4 p-md-5">
 		      	<div class="d-flex">
 		      		<div class="w-100">
                             <center>
-		      			        <h3 class="mb-4">Login NORA.ID</h3>
+		      			        <h3 class="mb-4">Login NoraID</h3>
                             </center>
 		      		</div>
 							{{-- <div class="w-100">

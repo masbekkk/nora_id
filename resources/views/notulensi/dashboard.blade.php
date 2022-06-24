@@ -119,7 +119,7 @@
 		<div class="card bg-transparent neumorph text-dark" style="font-size: 1em !important;">
 			<div class="card-body pb-2">
 				<div class="table-responsive">
-					<table class="table table-striped w-100" id="table-1">
+					<table class="table table-striped bg-white w-100" id="table-1">
 						<thead>                  
 							<tr role="row">
 								<th class="text-center" style="width: 25px;">No.</th>

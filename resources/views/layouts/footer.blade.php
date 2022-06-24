@@ -3,6 +3,6 @@
         Copyright &copy; 2022 Kelompok A2. All rights reserved.
     </div>
     <div class="footer-right">
-        v1.0.0
+        v2.0.0
     </div>
 </footer>

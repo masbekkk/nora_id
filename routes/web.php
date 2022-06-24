@@ -33,9 +33,6 @@ Route::post('/test/store', [App\Http\Controllers\TestController::class, 'store']
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
 Route::get('/dashboard', [App\Http\Controllers\NotulensiController::class, 'dashboard'])->name('dashboard.notulensi');
 
 

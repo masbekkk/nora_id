@@ -29,8 +29,14 @@ class KostController extends Controller{
         $data->provinsi = $request->provinsi;
         $data->alamat = $request->alamat;
         $data->kategori = $request->kategori;
-        $data->user_id = Auth::user()->id;
+        // $data->user_id = Auth::user()->id;
         $data->nomor_wa = $request->nomor_wa;
+        $data->rating = $request->rating;
+        $data->mapUrl = $request->mapUrl;
+        $data->photos = $request->photos;
+        $data->numberOfKitchens = $request->numberOfKitchens;
+        $data->numberOfBedrooms = $request->numberOfBedrooms;
+        $data->numberOfCupboards = $request->numberOfCupboards;
         if($data->save()) $value = 1;
         else $value = 0;
 
@@ -50,8 +56,14 @@ class KostController extends Controller{
         $data->provinsi = $request->provinsi;
         $data->alamat = $request->alamat;
         $data->kategori = $request->kategori;
-        $data->user_id = Auth::user()->id;
+        // $data->user_id = Auth::user()->id;
         $data->nomor_wa = $request->nomor_wa;
+        $data->rating = $request->rating;
+        $data->mapUrl = $request->mapUrl;
+        $data->photos = $request->photos;
+        $data->numberOfKitchens = $request->numberOfKitchens;
+        $data->numberOfBedrooms = $request->numberOfBedrooms;
+        $data->numberOfCupboards = $request->numberOfCupboards;
         if($data->save()) $value = 1;
         else $value = 0;
 

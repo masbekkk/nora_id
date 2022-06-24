@@ -25,6 +25,7 @@
   <!-- ***** Main Banner Area End ***** -->
 
   <section class="services" id="services">
+    @include('sweetalert::alert')
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -512,7 +513,7 @@
                     <i class="fa fa-phone"></i>
                   </div>
                   <h4>Phone</h4>
-                  <span>(031) 594-7280</span>
+                  <span>(+62) 821-3235-7302</span>
                 </div>
               </div>
               <div class="col-lg-4">
@@ -528,7 +529,8 @@
           </div>
         </div>
         <div class="col-lg-4">
-          <form id="contact" action="" method="post">
+          <form id="contact" action="{{route('store.saran')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="row">
               <div class="col-lg-12">
                 <div class="section-heading">
@@ -539,17 +541,18 @@
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <input type="name" name="name" id="name" placeholder="Full Name" autocomplete="on" required>
+                  <input type="name" name="nama" id="name" placeholder="Full Name" autocomplete="on" required>
+                  {{-- <b class="text-danger">*</b> --}}
                 </fieldset>
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required>
                 </fieldset>
               </div>
               <div class="col-lg-12">
                 <fieldset>
-                  <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                  <textarea name="pesan" id="message" placeholder="Your Message" required></textarea>
                 </fieldset>
               </div>
               <div class="col-lg-12">
@@ -570,11 +573,11 @@
           </ul>
         </div>
         <div class="col-lg-12">
-          <p class="copyright">Copyright &copy; 2022 Kelompok A2. All rights reserved </p>
+          <p class="copyright">Copyright &copy; 2022 | Nora.ID v2.0.0 by Team A2. All rights reserved </p>
           {{-- <br>Design: <a rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p> --}}
         </div>
         <div class="footer-right">
-          v2.0.0
+          {{-- v2.0.0 --}}
       </div>
       </div>
     </div>

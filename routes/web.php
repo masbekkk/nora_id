@@ -71,3 +71,5 @@ Route::get('/delete/jenis-lokasi/{id}', [App\Http\Controllers\LokasiRapatControl
 Route::get('/users', [App\Http\Controllers\UsersController::class, 'index'])->name('users');
 Route::get('/admin/change-role-user/{id}/{level}', [App\Http\Controllers\UsersController::class, 'chgRoleUser'])->name('chgRole');
 Route::get('/delete-users/{id}', [App\Http\Controllers\UsersController::class, 'delete'])->name('delete.users');
+
+Route::post('/store-saran', [App\Http\Controllers\SaranController::class, 'store'])->name('store.saran');
